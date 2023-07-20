@@ -5,7 +5,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Wrapper.Modules;
 
-//[RequireComponent(typeof(ParticleSystem))]
+[RequireComponent(typeof(ParticleSystem))]
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 
 public class TargetDisplay : UdonSharpBehaviour
