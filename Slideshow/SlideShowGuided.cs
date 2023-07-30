@@ -1,31 +1,49 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC.SDK3.Data;
 using VRC.SDK3.Image;
 using VRC.SDK3.StringLoading;
+using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
+using TMPro;
+
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 
 public class SlideShowGuided : UdonSharpBehaviour
 {
-    [SerializeField, Tooltip("URLs of images to load")]
+    [SerializeField, Tooltip("Primary URL of Slideshow JSON")]
+    private VRCUrl slideShowUrl;
+    
+    [SerializeField, Tooltip("Urls of images")]
     private VRCUrl[] imageUrls;
 
-    [SerializeField, Tooltip("URL of text file containing image list.")]
-    private VRCUrl listUrl;
-
     [SerializeField, Tooltip("Renderer to show downloaded images on.")]
+
     private new Renderer renderer;
 
-    [SerializeField, Tooltip("Text field for captions.")]
-    private Text field;
+    [SerializeField, Tooltip("Text field for current caption.")]
+    private TextMeshProUGUI textField;
 
     [SerializeField, Tooltip("Duration in seconds until the next image is shown.")]
     private float slideDurationSeconds = 10f;
 
     [SerializeField]
     private int _loadedIndex = -1;
+    [SerializeField,UdonSynced,FieldChangeCallback(nameof(SlideShowJSON))]
+    string slideShowJSON;
+    private string SlideShowJSON
+    {
+        get => slideShowJSON;
+        set
+        {
+            slideShowJSON = value;
+            RequestSerialization();
+        }
+    }
 
     private VRCImageDownloader _imageDownloader;
     private IUdonEventReceiver _udonEventReceiver;
@@ -34,26 +52,82 @@ public class SlideShowGuided : UdonSharpBehaviour
     [SerializeField]
     private string[] _url_captions = new string[0];
     private Texture2D[] _downloadedTextures;
-
-    void Start()
+    DataList slideKeys;
+    DataDictionary slideDictionary;
+    [SerializeField]
+    bool slidesLoaded = false;
+    [SerializeField]
+    int slideCount = 0;
+    DataDictionary currentSlide;
+    [SerializeField]
+    int thisSlideIndex = -1;
+    [SerializeField]
+    int thisImageIndex = -1;
+    [SerializeField]
+    string currentCaption;
+    private bool getSlide()
     {
-        Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
-        // Downloaded textures will be cached in a texture array.
-        _downloadedTextures = new Texture2D[imageUrls.Length];
+        if (slideCount <=0)
+            return false;
+        if ((thisSlideIndex <= 0) || (thisSlideIndex > slideCount))
+            thisSlideIndex = 1;
+        DataToken slideToken;
+        if(!slideDictionary.TryGetValue(slideKeys[thisSlideIndex], out slideToken))
+        {
+            return false;
+        }
 
+        currentSlide = slideToken.DataDictionary;
+        if (currentSlide == null)
+        {
+            Debug.Log("CurrentSlide == null");
+            return false;
+        }
+        thisImageIndex = thisSlideIndex;
+        currentCaption = "";
+        DataToken aToken;
+        if (currentSlide.TryGetValue("img", out aToken))
+        {
+
+            Debug.Log("img:"+aToken.ToString()+" T=" + aToken.TokenType.ToString());
+            thisImageIndex = aToken.TokenType == TokenType.String ? int.Parse(aToken.String) : int.Parse(aToken.ToString());
+        }
+        if (currentSlide.TryGetValue("caption", out aToken))
+        {
+            Debug.Log("caption:" + aToken.ToString());
+            currentCaption = aToken.String;
+        }
+        //if (slideShowUrlField != null)
+        //    slideShowUrlField. = currentSlideURL;
+        return true;
+    }
+    private bool initSlides()
+    {
+        if (slideDictionary == null)
+            return false;
+        slideCount = slideKeys.Count - 1;
+        if (slideCount <= 0)
+            return false;
+        thisSlideIndex = 0;
+        _downloadedTextures = new Texture2D[slideCount];
         // It's important to store the VRCImageDownloader as a variable, to stop it from being garbage collected!
         _imageDownloader = new VRCImageDownloader();
         if (_imageDownloader == null)
+        {
             Debug.Log("Start SlideShow:No Downloader");
-        // To receive Image and String loading events, 'this' is casted to the type needed
+            return false;
+        }
+        if (!getSlide())
+            return false;
+        slidesLoaded = true;
+        return true;
+    }
+    void Start()
+    {
+        slidesLoaded = false;
+        // To receive Image and String loading events, 'this' is cast into the type of the event
         _udonEventReceiver = (IUdonEventReceiver)this;
-
-        Debug.Log("Start SlideShow:Fetch URLS [" + listUrl + "]");
-        // Captions are downloaded once. On success, OnImageLoadSuccess() will be called.
-        VRCStringDownloader.LoadUrl(listUrl, _udonEventReceiver);
-
-        // Load the next image. Then do it again, and again, and...
-        //LoadNextRecursive();
+        LoadNextRecursive();
     }
 
     public void LoadNextRecursive()
@@ -64,8 +138,15 @@ public class SlideShowGuided : UdonSharpBehaviour
 
     private void LoadNext()
     {
+        if (!slidesLoaded)
+        {
+            Debug.Log("SlideShow Fetch URL [" + slideShowUrl + "]");
+            // Captions are downloaded once. On success, OnImageLoadSuccess() will be called.
+            VRCStringDownloader.LoadUrl(slideShowUrl, _udonEventReceiver);
+            return;
+        }
         Debug.Log("Loadnext");
-
+        /*
         // All clients share the same server time. That's used to sync the currently displayed image.
         _loadedIndex = (int)(Networking.GetServerTimeInMilliseconds() / 1000f / slideDurationSeconds) % imageUrls.Length;
 
@@ -88,25 +169,48 @@ public class SlideShowGuided : UdonSharpBehaviour
             _imageDownloader.DownloadImage(imageUrls[_loadedIndex], renderer.material, _udonEventReceiver, rgbInfo);
         }
 
-        UpdateCaptionText();
+        UpdateCaptionText("");
+        */
     }
 
-    private void UpdateCaptionText()
+    private void UpdateCaptionText(string caption)
     {
-        if (_loadedIndex < _captions.Length)
-        {
-            field.text = _captions[_loadedIndex];
-        }
-        else
-        {
-            field.text = "";
-        }
+        if (textField == null)
+            return;
+        textField.text = caption;
     }
 
     public override void OnStringLoadSuccess(IVRCStringDownload result)
     {
-        _captions = result.Result.Split('\n');
-        UpdateCaptionText();
+        DataToken jsonResult;
+        DataDictionary jsonDict;
+        string json = result.Result;
+        bool deSerialized = VRCJson.TryDeserializeFromJson(json,out jsonResult);
+
+        if (!deSerialized)
+        {
+            Debug.Log("json parse error");
+            return;
+        }
+        jsonDict = jsonResult.DataDictionary;
+        if (jsonDict == null)
+        {
+            Debug.Log("json no dictionary");
+            return;
+        }
+        Debug.Log("Has Dictionary");
+        DataToken valueToken;
+        DataList keys = jsonDict.GetKeys();
+        if (jsonDict.TryGetValue("slides",out valueToken))
+        {
+            slideDictionary = jsonDict;
+            slideKeys = keys;
+            initSlides();
+            return;
+        }
+        valueToken = keys[0];
+        Debug.Log("Unprocessed Dictionary Key[0]=" + valueToken.String);
+        return;
     }
 
     public override void OnStringLoadError(IVRCStringDownload result)
@@ -129,6 +233,7 @@ public class SlideShowGuided : UdonSharpBehaviour
     private void OnDestroy()
     {
         Debug.Log("!!!!!!Dispose");
-        _imageDownloader.Dispose();
+        if (_imageDownloader != null ) 
+            _imageDownloader.Dispose();
     }
 }
