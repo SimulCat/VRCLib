@@ -20,16 +20,21 @@ public class TargetDisplay : UdonSharpBehaviour
     private bool started = false;
     [SerializeField]
     float particleSize = 0.001f;
+
     [SerializeField]
-    float markerLifetime = 10f;
+    private float markerLifetime = 10f;
     public float MarkerLifetime { 
-        get => markerLifetime; 
-        set => markerLifetime = value;
+        get => markerLifetime;
+        set
+        {
+            if (value == markerLifetime) 
+                return;
+            markerLifetime = value;
+            needsReview = true;
+        }
     } 
     Vector3 particleSize3D = Vector3.zero;
-    [SerializeField]
-    bool sizeUpdateRequired = false;
-    [SerializeField]
+    bool needsReview = false;
     bool dissolveRequired = false;
     public float ParticleSize
     {
@@ -39,20 +44,21 @@ public class TargetDisplay : UdonSharpBehaviour
             if (particleSize != value)
             {
                 particleSize = value;
-                sizeUpdateRequired = true;
+                needsReview = true;
             }
             particleSize3D = Vector3.one * particleSize;
         }
     }
 //    [SerializeField] bool useLocalX;
   //  Vector3 localPos = Vector3.zero;
-    public void PlotParticle(Vector3 location, Color color, float lifetime = 5)
+    public void PlotParticle(Vector3 location, Color color, float lifetime = -1f)
     {
         if (!started)
             return;
         if (bufferCount >= bufferMax) 
             return;
-        markerLifetime = lifetime;
+        if (lifetime > 0) 
+            markerLifetime = lifetime;
         locationBuf[bufferCount] = location; 
         colourBuf[bufferCount] = color;
         bufferCount++;
@@ -82,7 +88,7 @@ public class TargetDisplay : UdonSharpBehaviour
             polltime += 0.3f;
         if (bufferCount <= 0)
             return;
-        if (!isTime && (sizeUpdateRequired || !dissolveRequired) && (bufferCount < bufferMax))
+        if (!isTime && (needsReview || !dissolveRequired) && (bufferCount < bufferMax))
             return;
         //localPos = transform.position;
         if (displayParticles == null)
@@ -110,17 +116,21 @@ public class TargetDisplay : UdonSharpBehaviour
             updateCount++;
         }
         bufferCount = 0;
-        if (sizeUpdateRequired || dissolveRequired)
+        if (needsReview || dissolveRequired)
         {
             updateCount++;
             for (int i = 0; i < particleCount; i++)
             {
-                if (sizeUpdateRequired)
+                if (needsReview)
+                {
                     particles[i].startSize3D = particleSize3D;
+                    if (particles[i].remainingLifetime > markerLifetime)
+                        particles[i].remainingLifetime = markerLifetime;
+                }
                 if (dissolveRequired)
                     particles[i].remainingLifetime /= 5;
             }
-            sizeUpdateRequired = false;
+            needsReview = false;
             dissolveRequired = false;
         }
         if (updateCount > 0)
