@@ -36,6 +36,13 @@ public class TargetDisplay : UdonSharpBehaviour
     Vector3 particleSize3D = Vector3.zero;
     bool needsReview = false;
     bool dissolveRequired = false;
+    public void SetPlay(bool isPlaying)
+    {
+        if (isPlaying)
+            displayParticles.Play();
+        else
+            displayParticles.Pause();
+    }
     public float ParticleSize
     {
         get => particleSize; 
