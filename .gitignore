@@ -25,6 +25,8 @@
 
 # Visual Studio cache directory
 .vs/
+# subversion files
+.svn/
 
 # Gradle cache directory
 .gradle/
