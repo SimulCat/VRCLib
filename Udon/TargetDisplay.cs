@@ -17,6 +17,7 @@ public class TargetDisplay : UdonSharpBehaviour
     private Color[] colourBuf;
     private Vector3[] locationBuf;
     private Vector3[] rotationBuf;
+    private Vector2[] sizeLifeBuf;
     private int bufferCount = 0;
     private bool started = false;
     [SerializeField]
@@ -34,7 +35,7 @@ public class TargetDisplay : UdonSharpBehaviour
             needsReview = true;
         }
     } 
-    Vector3 particleSize3D = Vector3.zero;
+
     bool needsReview = false;
     bool dissolveRequired = false;
     public void SetPlay(bool isPlaying)
@@ -54,22 +55,35 @@ public class TargetDisplay : UdonSharpBehaviour
                 particleSize = value;
                 needsReview = true;
             }
-            particleSize3D = Vector3.one * particleSize;
         }
     }
 //    [SerializeField] bool useLocalX;
   //  Vector3 localPos = Vector3.zero;
-    public void PlotParticle(Vector3 location, Color color, bool onGround, float lifetime = -1f)
+    public void PlotParticle(Vector3 location, Color color, bool onGround)
     {
         if (!started)
             return;
         if (bufferCount >= bufferMax) 
             return;
-        if (lifetime > 0) 
-            markerLifetime = lifetime;
         locationBuf[bufferCount] = location; 
         colourBuf[bufferCount] = color;
         rotationBuf[bufferCount] = onGround ? groundRotation3D : decalRotation3D;
+        sizeLifeBuf[bufferCount].x = particleSize;
+        sizeLifeBuf[bufferCount].y = markerLifetime;
+        bufferCount++;
+    }
+
+    public void FadeParticle(Vector3 location, Color color, bool onGround, float particleSize, float lifetime)
+    {
+        if (!started)
+            return;
+        if (bufferCount >= bufferMax)
+            return;
+        locationBuf[bufferCount] = location;
+        colourBuf[bufferCount] = color;
+        rotationBuf[bufferCount] = onGround ? groundRotation3D : decalRotation3D;
+        sizeLifeBuf[bufferCount].x = particleSize;
+        sizeLifeBuf[bufferCount].y = lifetime;
         bufferCount++;
     }
 
@@ -118,8 +132,8 @@ public class TargetDisplay : UdonSharpBehaviour
             particle.position = locationBuf[i];
             particle.startColor = colourBuf[i];
             //particle.startSize = locationBuf[i].w;
-            particle.startSize3D = particleSize3D;
-            particle.startLifetime = markerLifetime;
+            particle.startSize = sizeLifeBuf[i].x;
+            particle.startLifetime = sizeLifeBuf[i].y;
             particle.remainingLifetime = markerLifetime;
             particle.rotation3D = rotationBuf[i];
             particles[particleCount++] = particle;
@@ -133,7 +147,7 @@ public class TargetDisplay : UdonSharpBehaviour
             {
                 if (needsReview)
                 {
-                    particles[i].startSize3D = particleSize3D;
+                    particles[i].startSize = particleSize;
                     if (particles[i].remainingLifetime > markerLifetime)
                         particles[i].remainingLifetime = markerLifetime;
                 }
@@ -154,7 +168,7 @@ public class TargetDisplay : UdonSharpBehaviour
         colourBuf = new Color[bufferMax+1];
         locationBuf = new Vector3[bufferMax+1];
         rotationBuf = new Vector3[bufferMax+1];
-        ParticleSize = particleSize;
+        sizeLifeBuf = new Vector2[bufferMax+1];
         started = true;
     }
 }
