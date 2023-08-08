@@ -11,11 +11,12 @@ using VRC.Udon.Wrapper.Modules;
 public class TargetDisplay : UdonSharpBehaviour
 {
     [SerializeField] private ParticleSystem displayParticles;
-    [SerializeField] private int bufferMax = 20;
-    [SerializeField]
-    private Vector3 decalRotation3D = Vector3.zero;
+    [SerializeField] private int bufferMax = 40;
+    [SerializeField] private Vector3 decalRotation3D = Vector3.zero;
+    [SerializeField] private Vector3 groundRotation3D = Vector3.zero;
     private Color[] colourBuf;
     private Vector3[] locationBuf;
+    private Vector3[] rotationBuf;
     private int bufferCount = 0;
     private bool started = false;
     [SerializeField]
@@ -58,7 +59,7 @@ public class TargetDisplay : UdonSharpBehaviour
     }
 //    [SerializeField] bool useLocalX;
   //  Vector3 localPos = Vector3.zero;
-    public void PlotParticle(Vector3 location, Color color, float lifetime = -1f)
+    public void PlotParticle(Vector3 location, Color color, bool onGround, float lifetime = -1f)
     {
         if (!started)
             return;
@@ -68,6 +69,7 @@ public class TargetDisplay : UdonSharpBehaviour
             markerLifetime = lifetime;
         locationBuf[bufferCount] = location; 
         colourBuf[bufferCount] = color;
+        rotationBuf[bufferCount] = onGround ? groundRotation3D : decalRotation3D;
         bufferCount++;
     }
 
@@ -106,7 +108,8 @@ public class TargetDisplay : UdonSharpBehaviour
         //float myScale = displayParticles.transform.localScale.x;
         //float particleScale = myScale * displayParticles.main.startSize.constant;
         particleCount = displayParticles.particleCount;
-        particles = new ParticleSystem.Particle[bufferCount + particleCount];
+        if ((particles == null) || (particles.Length < bufferMax + particleCount ))
+            particles = new ParticleSystem.Particle[bufferMax + particleCount];
         particleCount = displayParticles.GetParticles(particles);
         int updateCount = 0;
         for (int i = 0; i < bufferCount; i++)
@@ -118,7 +121,7 @@ public class TargetDisplay : UdonSharpBehaviour
             particle.startSize3D = particleSize3D;
             particle.startLifetime = markerLifetime;
             particle.remainingLifetime = markerLifetime;
-            particle.rotation3D = decalRotation3D;
+            particle.rotation3D = rotationBuf[i];
             particles[particleCount++] = particle;
             updateCount++;
         }
@@ -145,10 +148,12 @@ public class TargetDisplay : UdonSharpBehaviour
     }
     void Start()
     {
+        polltime = Random.Range(1f, 3f);
         if (displayParticles == null)
             displayParticles = GetComponent<ParticleSystem>();
         colourBuf = new Color[bufferMax+1];
         locationBuf = new Vector3[bufferMax+1];
+        rotationBuf = new Vector3[bufferMax+1];
         ParticleSize = particleSize;
         started = true;
     }
