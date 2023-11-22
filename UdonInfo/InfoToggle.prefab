@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: a67cea678c6a62d49845225180a004a2, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.8348624, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -159,7 +159,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8878407416592638582}
   - component: {fileID: 8878407416592638583}
-  - component: {fileID: 1744481050}
   m_Layer: 0
   m_Name: InfoToggle
   m_TagString: Untagged
@@ -245,15 +244,3 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
---- !u!114 &1744481050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878407416592638581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
