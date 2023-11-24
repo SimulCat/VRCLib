@@ -10,71 +10,108 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class InfoPanel : UdonSharpBehaviour
 {
-    public Toggle panelToggle;
     public ToggleGroup subjectGroup;
     [SerializeField] Transform panelXfrm;
     [SerializeField] TextMeshProUGUI infoText;
+    [SerializeField] SyncedToggle[] toggles = null;
+    int toggleCount = 0;
 
-    bool hasToggle = false;
     bool hasGroup = false;
     bool hasTextField = false;
     bool hasTransform = false;
-    [SerializeField] private bool showPanel = true;
+    private bool iamOwner;
+    private VRCPlayerApi player;
+    private VRC.Udon.Common.Interfaces.NetworkEventTarget toTheOwner = VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner;
+    private VRC.Udon.Common.Interfaces.NetworkEventTarget toAll = VRC.Udon.Common.Interfaces.NetworkEventTarget.All;
+
+    [SerializeField,UdonSynced,FieldChangeCallback(nameof(ShowPanel))] 
+    private int showPanel = 0;
 
     [SerializeField,TextArea] string defaultText = string.Empty;
-    public void onToggleChanged()
-    {
-        bool newState = !showPanel;
-        if (hasToggle)
-            newState = panelToggle.isOn;
-        ShowPanel = newState;
-    }
-    public bool ShowPanel
+    public int ShowPanel
     {
         get => showPanel; 
         set
         {
             if (showPanel != value)
             {
-                if (value && hasTextField)
+                if (value > 0 && hasTextField)
                 {
                     infoText.text = defaultText;
                 }
                 showPanel = value;
             }
             if (hasTextField)
-                infoText.enabled = showPanel;
+                infoText.enabled = showPanel > 0;
             if (hasTransform) 
             { 
-                panelXfrm.gameObject.SetActive(showPanel);
+                panelXfrm.gameObject.SetActive(showPanel > 0);
             }
-            if (hasGroup && !showPanel)
+            if (hasGroup && showPanel <= 0)
             {
                 subjectGroup.SetAllTogglesOff();
             }
         }
     }
+    [SerializeField, UdonSynced, FieldChangeCallback(nameof(ToggleIndex))]
+    public int toggleIndex;
 
-    public void onGroupSelect(string toggleName)
+    private bool togglePending = false;
+    private int pendingToggle;
+    private int ToggleIndex
     {
-        if (!hasGroup)
-            return;
-        IEnumerable<Toggle> togs = subjectGroup.ActiveToggles();
-        //foreach (Toggle tog in togs)
+        get => toggleIndex;
+        set
         {
-           Debug.Log("Got Toggle [" + togs.ToString() + "]");
+            if (!iamOwner)
+            {
+                togglePending = true;
+                pendingToggle = value;
+                Networking.SetOwner(player, gameObject);
+                return;
+            }
+            togglePending = false;
+            toggleIndex = value;
+            if (value < toggleCount)
+            {
+                toggles[toggleIndex].setState(true);
+            }
+            RequestSerialization();
         }
     }
+    
     public void onPanelClose()
     {
-        ShowPanel = false;
+        ShowPanel = 0;
     }
+
+    private void UpdateOwnerShip()
+    {
+        iamOwner = Networking.IsOwner(this.gameObject);
+        if (iamOwner)
+        {
+            if (togglePending)
+                ToggleIndex = pendingToggle;
+        }
+    }
+
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        UpdateOwnerShip();
+    }
+
     void Start()
     {
+        toggleCount = 0;
+        if (toggles != null)
+            toggleCount = toggles.Length;
+        for (int i = 0; i < toggleCount; i++)
+            toggles[i].toggleIndex = i;
+        player = Networking.LocalPlayer;
+        UpdateOwnerShip();
         if (subjectGroup == null)
             subjectGroup = gameObject.GetComponent<ToggleGroup>();
 
-        hasToggle = panelToggle != null;
         hasTextField = infoText != null;
         if (hasTextField && panelXfrm == null)
         {
