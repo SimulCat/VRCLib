@@ -12,11 +12,6 @@ public class SyncedToggle : UdonSharpBehaviour
     private Toggle toggle;
     [SerializeField]
     private UdonBehaviour toggleClient;
-    [SerializeField]
-    private string clientVariableName;
-    [SerializeField]
-    private string topicName;
-    [SerializeField] 
     public int toggleIndex = -1;
     [SerializeField]
     private bool currentState = false;
@@ -26,24 +21,22 @@ public class SyncedToggle : UdonSharpBehaviour
     private bool hasToggle = false;
     [SerializeField]
     private bool hasClient = false;
-    [SerializeField]
-    private bool hasTopic = false;
 
     public bool CurrentState
     {
+        get 
+        { 
+            return currentState; 
+        }
         set 
         {
             currentState = value;
             if (reportedState != currentState) 
             {
-                if (hasClient)
+                if (hasClient && currentState)
                 {
-                    if (currentState && hasTopic)
-                    {
-                        toggleClient.SetProgramVariable<string>(clientVariableName, topicName);
-                        if (toggleIndex >= 0)
-                            toggleClient.SetProgramVariable<int>("toggleIndex", toggleIndex);
-                    }
+                    if (toggleIndex >= 0)
+                        toggleClient.SendCustomEvent("toggleIndex");
                 }
             }
             reportedState = value;
@@ -72,10 +65,7 @@ public class SyncedToggle : UdonSharpBehaviour
         if (toggle == null)
             toggle = GetComponent<Toggle>();
         hasToggle = toggle != null;
-        if (hasToggle && string.IsNullOrEmpty(topicName))
-            topicName = toggle.name;
         hasClient = toggleClient != null;
-        hasTopic = !string.IsNullOrEmpty(topicName);
         setState();
     }
 }
