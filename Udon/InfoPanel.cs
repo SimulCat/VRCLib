@@ -10,7 +10,10 @@ using VRC.Udon;
 public class InfoPanel : UdonSharpBehaviour
 {
     public ToggleGroup toggleGroup;
-    [SerializeField] Transform panelXfrm;
+    [SerializeField] Vector2 panelSize = Vector2.one;
+    [SerializeField] Vector2 shrinkSize = Vector2.one;
+    [SerializeField] float textBorder = 20;
+    [SerializeField] RectTransform panelXfrm;
     [SerializeField] TextMeshProUGUI infoText;
     [SerializeField] Toggle[] toggles = null;
     int toggleCount = 0;
@@ -18,7 +21,8 @@ public class InfoPanel : UdonSharpBehaviour
     bool hasTextField = false;
     private bool iamOwner;
     private VRCPlayerApi player;
-    private VRC.Udon.Common.Interfaces.NetworkEventTarget toTheOwner = VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner;
+    private RectTransform textRect;
+//    private VRC.Udon.Common.Interfaces.NetworkEventTarget toTheOwner = VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner;
     private VRC.Udon.Common.Interfaces.NetworkEventTarget toAll = VRC.Udon.Common.Interfaces.NetworkEventTarget.All;
 
     [SerializeField,UdonSynced,FieldChangeCallback(nameof(ShowPanel))] 
@@ -36,9 +40,18 @@ public class InfoPanel : UdonSharpBehaviour
             {
                 infoText.text = defaultText;
             }
+            Vector2 newSize = showPanel >= 0 ? panelSize : shrinkSize;
+            Vector3 newPosition = showPanel >= 0 ? Vector3.zero : new Vector3 (0, -(panelSize.y - shrinkSize.y)/2.0f,0);
             if (panelXfrm != null) 
-            { 
-                panelXfrm.gameObject.SetActive(showPanel >= 0);
+            {
+                panelXfrm.sizeDelta = newSize;
+                panelXfrm.localPosition = newPosition;
+            }
+            if (textRect != null)
+            {
+                Vector2 newTextDim = new Vector2(newSize.x - textBorder, newSize.y - textBorder);
+                textRect.sizeDelta = newTextDim;
+                //textRect.localPosition = newPosition;
             }
         }
     }
@@ -48,8 +61,11 @@ public class InfoPanel : UdonSharpBehaviour
         int newToggle = -1;
         for (int i = 0; newToggle < 0 && i < toggles.Length; i++)
         {
-            if (toggles[i].isOn)
-                newToggle = i;
+            if (toggles[i] != null)
+            {
+                if (toggles[i].isOn)
+                    newToggle = i;
+            }
         }
         SelectedToggle = newToggle;
     }
@@ -123,9 +139,13 @@ public class InfoPanel : UdonSharpBehaviour
         toggleGroup.allowSwitchOff = true;
         toggleGroup.SetAllTogglesOff(false);
         hasTextField = infoText != null;
-        if (hasTextField && panelXfrm == null)
+        if (hasTextField)
         {
-            panelXfrm = infoText.transform;
+            textRect = infoText.GetComponent<RectTransform>();
+        }
+        if ( panelXfrm != null)
+        {
+            panelSize = panelXfrm.sizeDelta;
         }
         toggleGroup.EnsureValidState();
         onToggleChanged();
