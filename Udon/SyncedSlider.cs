@@ -21,6 +21,8 @@ public class SyncedSlider : UdonSharpBehaviour
     [SerializeField]
     private bool unitsInteger = false;
     [SerializeField]
+    private bool displayInteger = false;
+    [SerializeField]
     private string sliderUnit;
     [SerializeField]
     private float unitDisplayScale = 1;
@@ -70,17 +72,16 @@ public class SyncedSlider : UdonSharpBehaviour
     }
     public void SetValues(float value, float min, float max)
     {
-        isInitialized = true;
-        currentValue = value;
-        reportedValue= value;
         minValue= min;
         maxValue= max;
+        reportedValue = value;
         if (slider != null)
         {
             slider.minValue= minValue/sliderScale;
             slider.maxValue= maxValue/sliderScale;
-            slider.value= currentValue/sliderScale;
+            slider.value = value / sliderScale;
         }
+        currentValue = value;
     }
     public string TitleText
     {
@@ -120,7 +121,9 @@ public class SyncedSlider : UdonSharpBehaviour
                     if (!hideLabel)
                     {
                         float displayValue = currentValue * unitDisplayScale;
-                        if (unitsInteger)
+                        if (displayInteger)
+                            displayValue = Mathf.RoundToInt(displayValue);
+                        if (unitsInteger || displayInteger)
                             sliderLabel.text = string.Format("{0}{1}", (int)displayValue, sliderUnit);
                         else
                             sliderLabel.text = string.Format("{0:0.0}{1}", displayValue, sliderUnit);
@@ -134,7 +137,7 @@ public class SyncedSlider : UdonSharpBehaviour
             if (reportedValue != currentValue)
             {
                 reportedValue = currentValue;
-                if ((SliderClient != null) && (!string.IsNullOrEmpty(clientVariableName)))
+                if (iHaveClientVar)
                 {
                     if (unitsInteger)
                         SliderClient.SetProgramVariable<int>(clientVariableName, Mathf.RoundToInt(currentValue));
@@ -182,16 +185,20 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnPointerDown()
     {
-        if ((SliderClient != null) && (!string.IsNullOrEmpty(clientPointerStateVar)))
+        if (iHaveClientPtr)
             SliderClient.SetProgramVariable<bool>(clientPointerStateVar, true);
     }
     public void OnPointerUp()
     {
-        if ((SliderClient != null) && (!string.IsNullOrEmpty(clientPointerStateVar)))
+        if (iHaveClientPtr)
             SliderClient.SetProgramVariable<bool>(clientPointerStateVar, false);
     }
+    private bool iHaveClientVar = false;
+    private bool iHaveClientPtr = false;
     public void Start()
     {
+        iHaveClientVar = (SliderClient != null) && (!string.IsNullOrEmpty(clientVariableName));
+        iHaveClientPtr = (SliderClient != null) && (!string.IsNullOrEmpty(clientPointerStateVar));
         if (sliderLabel == null)
             hideLabel = true;
         if (slider != null)
@@ -200,10 +207,8 @@ public class SyncedSlider : UdonSharpBehaviour
             if (!isInitialized)
             {
                 isInitialized = true;
-                maxValue = slider.maxValue * sliderScale;
-                minValue = slider.minValue * sliderScale;
             }
         }
-        SliderValueChange();
+        //CurrentValue = currentValue;
     }
 }
