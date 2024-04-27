@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using VRC.SDKBase;
 using VRC.Udon;
-using VRC.Udon.Serialization.OdinSerializer.Utilities;
 using System;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)] // Keeps performance up
@@ -77,12 +76,18 @@ public class SyncedSlider : UdonSharpBehaviour
         reportedValue = value;
         if (slider != null)
         {
-            slider.minValue= minValue/sliderScale;
-            slider.maxValue= maxValue/sliderScale;
-            slider.value = value / sliderScale;
+            slider.minValue = minValue / sliderScale;
+            slider.maxValue = maxValue / sliderScale;
         }
-        currentValue = value;
+        CurrentValue = value;
     }
+
+    public void SetValue(float value)
+    {
+        reportedValue = value;
+        CurrentValue = value;
+    }
+
     public string TitleText
     {
         get 
@@ -110,28 +115,27 @@ public class SyncedSlider : UdonSharpBehaviour
         set
         {
             currentValue = value;
+            float sliderValue = currentValue / sliderScale;
             if (slider != null)
             {
-                float sliderValue = currentValue / sliderScale;
-                if (slider.value != sliderValue)
-                    slider.value = sliderValue;
-                if (sliderLabel != null)
+                if (slider.value != sliderValue && !pointerIsDown)
+                    slider.SetValueWithoutNotify(sliderValue);
+            }
+            if (sliderLabel != null)
+            {
+                if (!hideLabel)
                 {
-
-                    if (!hideLabel)
-                    {
-                        float displayValue = currentValue * unitDisplayScale;
-                        if (displayInteger)
-                            displayValue = Mathf.RoundToInt(displayValue);
-                        if (unitsInteger || displayInteger)
-                            sliderLabel.text = string.Format("{0}{1}", (int)displayValue, sliderUnit);
-                        else
-                            sliderLabel.text = string.Format("{0:0.0}{1}", displayValue, sliderUnit);
-                    }
+                    float displayValue = currentValue * unitDisplayScale;
+                    if (displayInteger)
+                        displayValue = Mathf.RoundToInt(displayValue);
+                    if (unitsInteger || displayInteger)
+                        sliderLabel.text = string.Format("{0}{1}", (int)displayValue, sliderUnit);
                     else
-                    {
-                        sliderLabel.text = "";
-                    }
+                        sliderLabel.text = string.Format("{0:0.0}{1}", displayValue, sliderUnit);
+                }
+                else
+                {
+                    sliderLabel.text = "";
                 }
             }
             if (reportedValue != currentValue)
@@ -183,13 +187,17 @@ public class SyncedSlider : UdonSharpBehaviour
         }
     }
 
+    private bool pointerIsDown = false;
+    public bool PointerIsDown { get => pointerIsDown; }
     public void OnPointerDown()
     {
+        pointerIsDown=true;
         if (iHaveClientPtr)
             SliderClient.SetProgramVariable<bool>(clientPointerStateVar, true);
     }
     public void OnPointerUp()
     {
+        pointerIsDown = false;
         if (iHaveClientPtr)
             SliderClient.SetProgramVariable<bool>(clientPointerStateVar, false);
     }
