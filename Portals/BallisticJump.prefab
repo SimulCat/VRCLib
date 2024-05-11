@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 4885456637723263855}
   - component: {fileID: 132513319126003461}
   - component: {fileID: 4930984677435234601}
-  - component: {fileID: 8956472106922107942}
   m_Layer: 17
   m_Name: Panel
   m_TagString: Untagged
@@ -224,19 +223,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
---- !u!114 &8956472106922107942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3793891503499815303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllowFocusView: 1
 --- !u!1 &6491971499632359485
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +234,6 @@ GameObject:
   - component: {fileID: 6927567267488982847}
   - component: {fileID: 4765482362544862876}
   - component: {fileID: 3995572584018103766}
-  - component: {fileID: 5901005209374231695}
   m_Layer: 24
   m_Name: Description
   m_TagString: Untagged
@@ -265,7 +250,7 @@ RectTransform:
   m_GameObject: {fileID: 6491971499632359485}
   m_LocalRotation: {x: 0.2588188, y: 0.00040656322, z: -0.0015173552, w: 0.9659246}
   m_LocalPosition: {x: 0, y: 0, z: -0.75}
-  m_LocalScale: {x: 0.0019999992, y: 0.0019999999, z: 0.0019999994}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4885456637723263855}
@@ -322,23 +307,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &5901005209374231695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491971499632359485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &8694725771596602404
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,8 +439,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6927567267488982847}
   - {fileID: 4711483033381846273}
@@ -506,8 +474,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.262, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1426399863370025415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

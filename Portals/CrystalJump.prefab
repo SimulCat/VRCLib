@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4592806449514103045}
   - component: {fileID: 1774225076339316917}
   - component: {fileID: 6541117993982409500}
-  - component: {fileID: 2541048704783332536}
   m_Layer: 17
   m_Name: Panel
   m_TagString: Untagged
@@ -77,19 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
---- !u!114 &2541048704783332536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43106156631391613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllowFocusView: 1
 --- !u!1 &606363513243621310
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +103,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.262, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2561507085424262442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,12 +197,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<align=center>The Quantum Crystal</align>
-
-
-    <b>Crystal Demo:</b>
-
-'
+  m_text: "<align=center><b>The Quantum Crystal: \r\n100 Years Buried</b>\r\n\r\nA
+    map demonstrating William Duane's quantum interaction model from 1923, largely
+    neglected by quantum theorists.\r\n\r\n<i>\"a theory of the reflection of X-rays
+    by crystals\u201A based on quantum ideas without reference to interference law\"</i></align>\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -297,7 +281,6 @@ GameObject:
   - component: {fileID: 4246627926728906051}
   - component: {fileID: 5992983297139016498}
   - component: {fileID: 4040654881129628792}
-  - component: {fileID: 5213138571824302147}
   m_Layer: 24
   m_Name: Description
   m_TagString: Untagged
@@ -314,7 +297,7 @@ RectTransform:
   m_GameObject: {fileID: 5499679859087659866}
   m_LocalRotation: {x: 0.2588188, y: 0.00040656322, z: -0.0015173552, w: 0.9659246}
   m_LocalPosition: {x: 0, y: 0, z: -0.75}
-  m_LocalScale: {x: 0.0019999992, y: 0.0019999999, z: 0.0019999994}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4592806449514103045}
@@ -371,23 +354,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &5213138571824302147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499679859087659866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &7541576645300802781
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,8 +380,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.75}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4246627926728906051}
   - {fileID: 1117030155612077635}
