@@ -16,26 +16,9 @@ public class CameraZoom : UdonSharpBehaviour
     private float myCameraInitialFOV;
     private float screenDistance;
 
-    // Set the camera field of view to match the targetwidth & height rectangle 
-    [Tooltip("Spatial Scaling"), FieldChangeCallback(nameof(ExperimentScale))]
-
-    public float experimentScale = 10;
-    public float ExperimentScale
-    {
-        get => experimentScale;
-        set
-        {
-            if (experimentScale != value)
-            {
-                experimentScale = value;
-                UpdateScale();
-            }
-        }
-    }
-
     private void UpdateScale()
     {
-        screenDistance = Mathf.Abs(myCamera.transform.localPosition.x);//(myCamera.transform.position - myTarget.transform.position).magnitude;
+        screenDistance = Mathf.Abs(myCamera.transform.localPosition.x);
         targetAspect = targetWidthHeight.x / targetWidthHeight.y;
         myCamera.aspect = targetAspect;
         if ((screenDistance > 0) && (_zoom > 0))
