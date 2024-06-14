@@ -12,19 +12,17 @@ public class CameraZoom : UdonSharpBehaviour
     [SerializeField] Vector2 targetWidthHeight = new Vector2(1, 1);
     [SerializeField] float targetAspect = 0.75f;
     [SerializeField] int _zoom = 1;
-
     private float myCameraInitialFOV;
-    private float screenDistance;
+    [SerializeField] private float workingDistance = 1;
 
     private void UpdateScale()
     {
-        screenDistance = Mathf.Abs(myCamera.transform.localPosition.x);
         targetAspect = targetWidthHeight.x / targetWidthHeight.y;
         myCamera.aspect = targetAspect;
-        if ((screenDistance > 0) && (_zoom > 0))
+        if ((workingDistance > 0) && (_zoom > 0))
         {
             float targetHeight = targetWidthHeight.y / _zoom;
-            float theta = Mathf.Atan2(targetHeight, screenDistance);
+            float theta = Mathf.Atan2(targetHeight, workingDistance);
             theta *= Mathf.Rad2Deg;
             myCamera.fieldOfView = theta;
 
@@ -114,6 +112,8 @@ public class CameraZoom : UdonSharpBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (workingDistance <= 0)
+            workingDistance = Mathf.Abs(transform.localScale.x);
         if (myCamera == null)
             myCamera = GetComponent<Camera>();
         if (myTarget == null)
