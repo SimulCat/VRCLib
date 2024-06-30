@@ -49,7 +49,7 @@ public class CameraZoom : UdonSharpBehaviour
     {
         if (myCamera == null)
             return;
-        if (_enabled)
+        if (camEnabled)
         {
             if (displayMaterial != null)
             {
@@ -79,15 +79,16 @@ public class CameraZoom : UdonSharpBehaviour
         }
     }
 
-    bool _enabled = false;
+    [SerializeField]
+    bool camEnabled = false;
     public bool Enabled
     {
-        get => _enabled;
+        get => camEnabled;
         set
         {
-            if (_enabled != value)
+            if (camEnabled != value)
             {
-                _enabled = value;
+                camEnabled = value;
                 CheckTexture();
             }
         }
