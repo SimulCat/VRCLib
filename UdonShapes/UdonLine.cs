@@ -29,6 +29,8 @@ public class UdonLine : UdonSharpBehaviour
         get => lineWidth;
         set
         {
+            if (lineWidth == value) 
+                return;
             lineWidth = value;
             UpdateLine();
         }
@@ -36,8 +38,6 @@ public class UdonLine : UdonSharpBehaviour
 
     [SerializeField, FieldChangeCallback(nameof(LineColour))]
     public Color lineColour = Color.cyan;
-    [SerializeField, Range(0f, 1f),FieldChangeCallback(nameof(Alpha))]
-    public float alpha = 1;
     private Color currentColour = Color.white;
 
     public Color LineColour
@@ -45,16 +45,23 @@ public class UdonLine : UdonSharpBehaviour
         get => lineColour;
         set
         {
+            if (lineColour == value) 
+                return;
             lineColour = value;
             RefreshColours();
         }
     }
+
+    [SerializeField, Range(0f, 1f),FieldChangeCallback(nameof(Alpha))]
+    public float alpha = 1;
 
     public float Alpha
     {
         get => alpha;
         set
         {
+            if (alpha == value)
+                return;
             alpha = value;
             RefreshColours();
         }
@@ -70,6 +77,8 @@ public class UdonLine : UdonSharpBehaviour
         get => thetaDegrees;
         set
         {
+            if (thetaDegrees == value)
+                return;
             thetaDegrees = value;
             transform.localRotation = Quaternion.Euler(0, 0, thetaDegrees);
         }
@@ -108,8 +117,7 @@ public class UdonLine : UdonSharpBehaviour
 
     void Start()
     {
-        if (theLine == null)
-            theLine = GetComponent<LineRenderer>();
+        theLine = GetComponent<LineRenderer>();
         UpdateLine();
         RefreshColours();
         ThetaDegrees = thetaDegrees;
