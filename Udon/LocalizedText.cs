@@ -6,6 +6,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class LocalizedText : UdonSharpBehaviour
 {
     [SerializeField]
