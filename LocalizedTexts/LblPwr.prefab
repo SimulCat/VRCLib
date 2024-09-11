@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289280002163145799}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -162,9 +162,10 @@ MonoBehaviour:
   myText: {fileID: 3571391741458943960}
   languageIndex: 0
   texts:
-  - Total<br>Energy
-  - "\u5168\u30A8\u30CD\u30EB\u30AE\u30FC"
-  - "\u7E3D\u80FD\u91CF"
+  - "Energy<br><size=80%>(modulus)\xB2</size>"
+  - "<size=90%>\u5168\u30A8\u30CD\u30EB\u30AE\u30FC<br>(\u7D76\u5BFE\u5024\u306E\u4E8C\u4E57)</size>"
+  - "\u7E3D\u80FD\u91CF<br><size=90%>(\u5E73\u65B9\u6578\u7684\u5E73\u65B9)"
+  - "\u603B\u80FD\u91CF<br><size=90%>(\u5E73\u65B9\u6570\u7684\u5E73\u65B9)"
 --- !u!114 &5309908770925725902
 MonoBehaviour:
   m_ObjectHideFlags: 0

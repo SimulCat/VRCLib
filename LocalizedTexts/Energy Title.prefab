@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2912178868251239070}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Energy Flux:'
+  m_text: 'Energy Transport:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -163,8 +163,9 @@ MonoBehaviour:
   languageIndex: 0
   texts:
   - 'Energy Transport:'
-  - "\u30A8\u30CD\u30EB\u30AE\u30FC\u8F38\u9001:"
+  - "\u30A8\u30CD\u30EB\u30AE\u30FC\u306E\u8F38\u9001:"
   - "\u80FD\u6E90\u904B\u8F38\uFF1A"
+  - "\u80FD\u6E90\u8FD0\u8F93\uFF1A"
 --- !u!114 &5365880081035875551
 MonoBehaviour:
   m_ObjectHideFlags: 0

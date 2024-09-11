@@ -165,8 +165,9 @@ MonoBehaviour:
   languageIndex: 0
   texts:
   - Source<br>Count
-  - "\u30BD\u30FC\u30B9\u306E\u6570"
+  - "\u6CE2\u6E90\u6570"
   - "\u4F86\u6E90\u6578\u91CF"
+  - "\u6765\u6E90\u6570\u91CF"
 --- !u!114 &6982441423841677734
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3499668650527928472}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5E45\u5EA6<br><size=80%>\uFF08\u6A21\u6578\uFF09"
+  m_text: Amplitude<br><size=80%>(modulus)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -163,8 +163,9 @@ MonoBehaviour:
   languageIndex: 0
   texts:
   - Amplitude<br><size=80%>(modulus)
-  - "\u632F\u5E45<br><size=90%>(\u4FC2\u6570)"
-  - "\u5E45\u5EA6<br><size=90%>(\u6A21\u6578\uFF09"
+  - "\u632F\u5E45<br><size=90%>(\u7D76\u5BFE\u5024)"
+  - "\u5E45\u5EA6<br><size=90%>(\u7D55\u5C0D\u503C)"
+  - "\u5E45\u5EA6<br><size=90%>(\u7EDD\u5BF9\u503C)"
 --- !u!114 &5610096176756250593
 MonoBehaviour:
   m_ObjectHideFlags: 0
