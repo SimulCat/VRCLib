@@ -165,8 +165,9 @@ MonoBehaviour:
   languageIndex: 0
   texts:
   - Source<br>Spacing
-  - "\u30BD\u30FC\u30B9<br>\u9593\u9694"
-  - "\u6E90\u9593\u8DDD"
+  - "\u6E90\u306E<br>\u9593\u9694"
+  - "\u6E90<br>\u8DDD\u96E2"
+  - "\u6E90<br>\u8DDD\u79BB"
 --- !u!114 &8241360482553913539
 MonoBehaviour:
   m_ObjectHideFlags: 0

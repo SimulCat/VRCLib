@@ -587,6 +587,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7304814000934754105}
   languageIndex: 0
+  toggleIndex: -1
   localizedTexts:
   - {fileID: 2545612688876434192}
   - {fileID: 2561800813119863797}
@@ -603,6 +604,7 @@ MonoBehaviour:
   - {fileID: 544623410579076170}
   - {fileID: 4366818911843029998}
   - {fileID: 3137876599689148407}
+  localizationClients: []
 --- !u!114 &7304814000934754105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,7 +1657,6 @@ MonoBehaviour:
     (\u7D76\u5BFE\u5024\u306E\u4E8C\u4E57) \u3001\u304A\u3088\u3073\u5168\u30A8\u30CD\u30EB\u30AE\u30FC\u8F38\u9001\u91CF/\u904B\u52D5\u91CF\u3092\u8868\u793A\u3057\u307E\u3059\u3002"
   - "<b>\u9078\u64C7\uFF1A</b>\r\n<indent=4%><b>\u632F\u5E45\uFF1A</b>\u986F\u793A\u8907\u6578\u6CE2\u632F\u5E45\u7684\u9AD8\u5EA6\uFF08\u5BE6\u90E8\u3001\uFF09\u901F\u5EA6\uFF08\u865B\u90E8\uFF09\u548C\u5E45\u5EA6\u3002\r\n\r\n<b>\u80FD\u91CF\u901A\u91CF\uFF1A</b>\u986F\u793A\u4F4D\u80FD\uFF08\u5BE6\u90E8\u5E73\u65B9\uFF09\u3001\u52D5\u80FD\uFF08\u865B\u90E8\u5E73\u65B9\uFF09\u548C\u7E3D\u80FD\u91CF\u50B3\u8F38/\u52D5\u91CF\u3002"
   - "<b>\u9009\u62E9\uFF1A</b>\r\n<indent=4%><b>\u632F\u5E45\uFF1A</b>\u663E\u793A\u590D\u6570\u6CE2\u632F\u5E45\u7684\u9AD8\u5EA6\uFF08\u5B9E\u90E8\u3001\uFF09\u901F\u5EA6\uFF08\u865A\u90E8\uFF09\u548C\u5E45\u5EA6\u3002\r\n\r\n<b>\u80FD\u91CF\u901A\u91CF\uFF1A</b>\u663E\u793A\u4F4D\u52BF\uFF08\u5B9E\u90E8\u5E73\u65B9\uFF09\u3001\u52A8\u80FD\uFF08\u865A\u90E8\u5E73\u65B9\uFF09\u548C\u603B\u80FD\u91CF\u4F20\u8F93/\u52A8\u91CF\u3002"
-  languageIndex: 0
 --- !u!114 &723722073165430102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1990,8 +1991,7 @@ MonoBehaviour:
   pages:
   - {fileID: 4220627865209410048}
   - {fileID: 2641283021115033946}
-  localizationClients:
-  - {fileID: 7304814000934754105}
+  localizationClients: []
   activeInfoPage: -1
   defaultTexts:
   - Waves from Imaginary Numbers
@@ -3645,41 +3645,56 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 613758207207091119, guid: ab35e0e8a82af0a4194f622b117a77b1,
+    - target: {fileID: 1241313296890078509, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6967118494463113989}
-    - target: {fileID: 613758207207091119, guid: ab35e0e8a82af0a4194f622b117a77b1,
+      objectReference: {fileID: 1241313296890078509, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SendCustomEvent
-      objectReference: {fileID: 0}
-    - target: {fileID: 613758207207091119, guid: ab35e0e8a82af0a4194f622b117a77b1,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: lang_3
-      objectReference: {fileID: 0}
     - target: {fileID: 2197319507159867511, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
       propertyPath: m_Name
       value: LanguageCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4574140829237715800, guid: ab35e0e8a82af0a4194f622b117a77b1,
+    - target: {fileID: 2960926914674645481, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2960926914674645481, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+    - target: {fileID: 3319827582069813279, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3319827582069813279, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+    - target: {fileID: 7089829161567303152, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 7089829161567303152, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+    - target: {fileID: 8168440233102192247, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8168440233102192247, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+    - target: {fileID: 8168440233102192247, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+      propertyPath: localizationClients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168440233102192247, guid: ab35e0e8a82af0a4194f622b117a77b1,
+        type: 3}
+      propertyPath: localizationClients.Array.data[0]
       value: 
       objectReference: {fileID: 6967118494463113989}
-    - target: {fileID: 7190048479865512957, guid: ab35e0e8a82af0a4194f622b117a77b1,
+    - target: {fileID: 8168440233102192247, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: localizationClients.Array.data[1]
       value: 
-      objectReference: {fileID: 6967118494463113989}
-    - target: {fileID: 7443328789098981426, guid: ab35e0e8a82af0a4194f622b117a77b1,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6967118494463113989}
+      objectReference: {fileID: 7304814000934754105}
     - target: {fileID: 9206526953210548476, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4130,11 +4145,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2545191625227980432, guid: 6effcb81c33351d4a8c7cde8d491550b,
         type: 3}
-    - target: {fileID: 2545191625227980432, guid: 6effcb81c33351d4a8c7cde8d491550b,
-        type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3045150190576473146, guid: 6effcb81c33351d4a8c7cde8d491550b,
         type: 3}
       propertyPath: m_Name
@@ -5031,11 +5041,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6424466745660170387, guid: 51d25fdc17a58f9418ea473222346b10,
         type: 3}
-    - target: {fileID: 6424466745660170387, guid: 51d25fdc17a58f9418ea473222346b10,
-        type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5205,11 +5210,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6882736062723904426, guid: 8c0dafc6d0a135b468ad68c3591c0155,
         type: 3}
-    - target: {fileID: 6882736062723904426, guid: 8c0dafc6d0a135b468ad68c3591c0155,
-        type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7047149566847692076, guid: 8c0dafc6d0a135b468ad68c3591c0155,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -5420,11 +5420,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4757833628384572055, guid: 6a0c11e207551e148a842fe5a3216aa1,
         type: 3}
-    - target: {fileID: 4757833628384572055, guid: 6a0c11e207551e148a842fe5a3216aa1,
-        type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8332927662250446029, guid: 6a0c11e207551e148a842fe5a3216aa1,
         type: 3}
       propertyPath: SliderClient

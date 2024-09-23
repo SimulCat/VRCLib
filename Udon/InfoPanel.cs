@@ -23,7 +23,6 @@ public class InfoPanel : UdonSharpBehaviour
     [SerializeField] TextMeshProUGUI contentText;
     [SerializeField] Toggle[] toggles = null;
     [SerializeField] InfoPage[] pages = null;
-    [SerializeField] UdonBehaviour[] localizationClients;
 
     int toggleCount = 0;
 
@@ -46,17 +45,12 @@ public class InfoPanel : UdonSharpBehaviour
         set
         {
             languageIndex = value;
-            foreach (var page in pages)
+            if (pages != null && pages.Length > 0)
             {
-                if (page != null)
-                    page.LangaugeIndex = languageIndex;
-            }
-            if (localizationClients != null && localizationClients.Length > 0)
-            {
-                foreach (UdonBehaviour item in localizationClients)
+                foreach (var page in pages)
                 {
-                    if (item != null)
-                        item.SetProgramVariable<int>("languageIndex", languageIndex);
+                    if (page != null)
+                        page.LangaugeIndex = languageIndex;
                 }
             }
             ActiveInfoPage = activeInfoPage;
@@ -92,13 +86,13 @@ public class InfoPanel : UdonSharpBehaviour
                     if (pages[value] != null)
                     {
                         title = pages[value].PageTitle;
-                        contentText.text = string.Format("<align=center><b>{0}</b></align>\n<margin=2%>{1}</margin>", title, pages[value].PageBody);
+                        contentText.text = string.Format("<align=center><b>{0}</b></align>\n{1}", title, pages[value].PageBody);
                     }
                 }
                 else
                     contentText.text = defaultText;
             }
-            if (showHideContentPanel)
+            if (showHideContentPanel && contentPanelRect != null)
             {
                 if (hasClose)
                     closeButton.gameObject.SetActive(activeInfoPage >= 0);
@@ -114,6 +108,8 @@ public class InfoPanel : UdonSharpBehaviour
                         contentPanelRect.sizeDelta = newSize;
                         contentPanelRect.localPosition = newPosition;
                     }
+                    else
+                        Debug.Log(gameObject.name + "ActiveInfoPage: ValidSize=false");
                     contentPanelRect.gameObject.SetActive(validSize);
                 }
                 else
@@ -123,7 +119,6 @@ public class InfoPanel : UdonSharpBehaviour
             }
         }
     }
-
     public void onBtnClose()
     {
         if (selectedToggle >= 0)
@@ -148,34 +143,6 @@ public class InfoPanel : UdonSharpBehaviour
     }
 
     
-    public void lang_0()
-    {
-        LanguageIndex = 0;
-        //Debug.Log("Lang 0");
-    }
-    public void lang_1()
-    {
-        LanguageIndex = 1;
-        //Debug.Log("Lang 1");
-    }
-    public void lang_2()
-    {
-        LanguageIndex = 2;
-    }
-    public void lang_3()
-    {
-        Debug.Log("Lang 3");
-        LanguageIndex = 3;
-    }
-    public void lang_4()
-    {
-        LanguageIndex = 4;
-    }
-    public void lang_5()
-    {
-        LanguageIndex = 5;
-    }
-
     [SerializeField,UdonSynced,FieldChangeCallback(nameof(SelectedToggle))]
     private int selectedToggle = -1;
     private bool togglePending = false;
@@ -248,7 +215,7 @@ public class InfoPanel : UdonSharpBehaviour
         if (contentPanelRect != null)
             panelSize = contentPanelRect.sizeDelta;
         if (growShrink)
-            growShrink = (panelSize.x * panelSize.y) * (shrinkSize.x * shrinkSize.y) > 0;
+            growShrink = (shrinkSize.x * shrinkSize.y) > 0;
         toggleGroup.EnsureValidState();
         onToggle();
     }

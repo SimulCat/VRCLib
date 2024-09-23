@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1289280002163145799
+--- !u!1 &7758491791547609943
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 870411597644144186}
-  - component: {fileID: 5277065469561264370}
-  - component: {fileID: 3571391741458943960}
-  - component: {fileID: 3865639527007697621}
-  - component: {fileID: 5309908770925725902}
+  - component: {fileID: 1613317367725595458}
+  - component: {fileID: 1424393248510185272}
+  - component: {fileID: 6250473413320978285}
+  - component: {fileID: 5170645877619918600}
+  - component: {fileID: 7882917400386312986}
   m_Layer: 17
-  m_Name: LblPwr
+  m_Name: LblTogVVD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &870411597644144186
+--- !u!224 &1613317367725595458
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289280002163145799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 7758491791547609943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 94, y: -0.5}
-  m_SizeDelta: {x: 110, y: 17}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 22.5, y: 0}
+  m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5277065469561264370
+--- !u!222 &1424393248510185272
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289280002163145799}
+  m_GameObject: {fileID: 7758491791547609943}
   m_CullTransparentMesh: 0
---- !u!114 &3571391741458943960
+--- !u!114 &6250473413320978285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289280002163145799}
+  m_GameObject: {fileID: 7758491791547609943}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Total
+  m_text: Particle Momentum Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -137,13 +137,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3865639527007697621
+--- !u!114 &5170645877619918600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289280002163145799}
+  m_GameObject: {fileID: 7758491791547609943}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f6e034f954ef14bacd2ec6be5b79c7, type: 3}
@@ -158,21 +158,21 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 5309908770925725902}
-  myText: {fileID: 3571391741458943960}
+  _udonSharpBackingUdonBehaviour: {fileID: 7882917400386312986}
+  myText: {fileID: 6250473413320978285}
   languageIndex: 0
   texts:
-  - "Energy<br><size=80%>(modulus)\xB2</size>"
-  - "<size=90%>\u5168\u30A8\u30CD\u30EB\u30AE\u30FC<br>(\u7D76\u5BFE\u5024\u306E\u4E8C\u4E57)</size>"
-  - "\u7E3D\u80FD\u91CF<br><size=90%>\uFF08\u6A21\u6578\u7684\u5E73\u65B9\uFF09"
-  - "\u603B\u80FD\u91CF<br><size=90%>\uFF08\u6A21\u91CF\u7684\u5E73\u65B9\uFF09"
---- !u!114 &5309908770925725902
+  - Particle Momentum Change
+  - "\u7C92\u5B50\u306E\u904B\u52D5\u91CF\u306E\u5909\u5316"
+  - "\u7C92\u5B50\u52D5\u91CF\u7684\u8B8A\u5316"
+  - "\u7C92\u5B50\u52A8\u91CF\u7684\u53D8\u5316"
+--- !u!114 &7882917400386312986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289280002163145799}
+  m_GameObject: {fileID: 7758491791547609943}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
@@ -185,7 +185,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 2
+  _syncMethod: 0
   serializedProgramAsset: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
     type: 2}
   programSource: {fileID: 11400000, guid: 6f2ef19a3f106ae44991da16d0c64366, type: 2}

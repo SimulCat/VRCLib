@@ -11,20 +11,50 @@ public class LocalizedGroup : UdonSharpBehaviour
 
     private int currentLanguage = -1;
 
+    [SerializeField,FieldChangeCallback(nameof(ToggleIndex))]
+    private int toggleIndex = -1;
+
     [SerializeField]
     LocalizedText[] localizedTexts = null;
+
+    [SerializeField]
+    UdonBehaviour[] localizationClients = null;
+
+    public int ToggleIndex
+    {
+        get => toggleIndex;
+        set
+        {
+            toggleIndex = value;
+            if (languageIndex != toggleIndex)
+                LanguageIndex = toggleIndex;
+        }
+    }
+
     public int LanguageIndex 
     { 
         get => languageIndex;
         set
         {
             languageIndex = value;
-            if (localizedTexts == null || localizedTexts.Length <= 0) 
-                return;
-            foreach (var text in localizedTexts)
+            if (currentLanguage != languageIndex)
             {
-                if (text != null)
-                    text.LanguageIndex = languageIndex;
+                currentLanguage = languageIndex;
+                if (localizedTexts != null && localizedTexts.Length > 0)
+                {
+                    foreach (var text in localizedTexts)
+                    {
+                        if (text != null)
+                            text.LanguageIndex = languageIndex;
+                    }
+                }
+                if (localizationClients != null && localizationClients.Length > 0)
+                {
+                    foreach (var client in localizationClients)
+                    {
+                        client.SetProgramVariable<int>("languageIndex",languageIndex);
+                    }
+                }
             }
         }
     }
