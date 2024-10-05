@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 85826352c91703249a8c06ff465c1cbf, type: 2}
+  m_Material: {fileID: 2100000, guid: de1f1f8a1ee037f42ab2090008d5da78, type: 2}
   m_Color: {r: 0.09611962, g: 0.44293424, b: 0.754717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 5632751262418528507}
   - component: {fileID: 4683153376964916738}
   m_Layer: 17
-  m_Name: Wave Sim Control
+  m_Name: Wave Sim UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1068,7 +1068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.02, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 515, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4949419578534231662
@@ -1874,7 +1874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.068, y: 0.54}
+  m_AnchoredPosition: {x: -0.048, y: 0.54}
   m_SizeDelta: {x: 610, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1443759537494921117
@@ -1991,7 +1991,6 @@ MonoBehaviour:
   pages:
   - {fileID: 4220627865209410048}
   - {fileID: 2641283021115033946}
-  localizationClients: []
   activeInfoPage: -1
   defaultTexts:
   - Waves from Imaginary Numbers
@@ -2168,7 +2167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6933651634064751028}
   m_Layer: 17
-  m_Name: WaveDisplayUI
+  m_Name: SimulationUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,7 +2482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 85826352c91703249a8c06ff465c1cbf, type: 2}
+  m_Material: {fileID: 2100000, guid: de1f1f8a1ee037f42ab2090008d5da78, type: 2}
   m_Color: {r: 0.06666667, g: 0.3529412, b: 0.6117647, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3773,7 +3772,7 @@ PrefabInstance:
     - target: {fileID: 9206526953210548476, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.328
+      value: -0.317
       objectReference: {fileID: 0}
     - target: {fileID: 9206526953210548476, guid: ab35e0e8a82af0a4194f622b117a77b1,
         type: 3}
