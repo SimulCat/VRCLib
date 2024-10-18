@@ -161,7 +161,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8241360482553913539}
-  myText: {fileID: 0}
+  myText: {fileID: 5004886305978785800}
   languageIndex: 0
   texts:
   - Source<br>Spacing
