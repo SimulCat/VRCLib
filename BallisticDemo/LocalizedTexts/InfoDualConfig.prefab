@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4286112499015877860}
   - component: {fileID: 4142877400439457728}
   m_Layer: 17
-  m_Name: InfoDualSource
+  m_Name: InfoDualConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
