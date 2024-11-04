@@ -52,7 +52,8 @@ public class LocalizedGroup : UdonSharpBehaviour
                 {
                     foreach (var client in localizationClients)
                     {
-                        client.SetProgramVariable<int>("languageIndex",languageIndex);
+                        if (client != null) 
+                            client.SetProgramVariable<int>("languageIndex",languageIndex);
                     }
                 }
             }

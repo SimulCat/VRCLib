@@ -26,18 +26,18 @@ public class TweenSelect : UdonSharpBehaviour
 
 
     [SerializeField, UdonSynced, FieldChangeCallback(nameof(SelectState))]
-    private int selectState = 0;
+    private int selectState = 1;
 
-    [SerializeField]
+    //[SerializeField]
     private bool isPlayingOne = false;
-    [SerializeField]
+    //[SerializeField]
     private bool isPlayingTwo = false;
 
-    [SerializeField]
+    //[SerializeField]
     private bool stateOne = false;
-    [SerializeField]
+    //[SerializeField]
     private bool stateTwo = false;
-    [SerializeField]
+    //[SerializeField]
     private bool bothStates = false;
 
     bool locallyOwned = true;

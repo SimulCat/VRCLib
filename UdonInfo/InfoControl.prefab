@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowFocusView: 1
 --- !u!114 &6599559174632578108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowFocusView: 1
 --- !u!1 &3874622348744169695
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 48d0ef6c8a3caab4db724c6856f48412,
+      objectReference: {fileID: 11400000, guid: 0c4ebdb0d0e747c42af886ac0649096d,
         type: 2}
     - target: {fileID: 7618224890888347476, guid: 55364beb7ba2a8947a1432fca720b16d,
         type: 3}
