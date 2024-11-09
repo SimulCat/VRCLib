@@ -58,8 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 474722f98acc0184e80a13a21d2c2806, type: 2}
-  m_Color: {r: 0.3074545, g: 0.2763439, b: 0.4339623, a: 1}
+  m_Material: {fileID: 2100000, guid: e0e82266d8f3e5d4bad3273d88747449, type: 2}
+  m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2
+  m_PixelsPerUnitMultiplier: 3
 --- !u!1 &6491971499632359485
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313274347133426041, guid: c328e3cd83fb5284a92c73432116a752,
         type: 3}
+      propertyPath: texts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313274347133426041, guid: c328e3cd83fb5284a92c73432116a752,
+        type: 3}
       propertyPath: texts.Array.data[0]
       value: <align=center><b>Preview World</b> <br><br></align> A portal to current
         work under development.<br><br> <b>Ballistic Quantum:</b>Explore how the
@@ -516,6 +521,19 @@ PrefabInstance:
       propertyPath: texts.Array.data[3]
       value: "<align=center><b>\u9884\u89C8\u4E16\u754C</b><br> </align>\u5F53\u524D\u6B63\u5728\u5F00\u53D1\u7684\u5DE5\u4F5C\u95E8\u6237\u3002<br><b><br>\u5F39\u9053\u91CF\u5B50\uFF1A</b>\u63A2\u7D22\u4ECE\u91CF\u5B50\u7406\u8BBA\u83B7\u5F97\u7684\u6982\u7387\u5206\u5E03\u5982\u4F55\u4EE5\u4E0E\u7ECF\u5386\u5F39\u9053\u6269\u6563\u7684\u7ECF\u5178\u7C92\u5B50\u96C6\u5408\u76F8\u540C\u7684\u65B9\u5F0F\u6F14\u53D8\u3002
         <br><br>\u5982\u679C\u529F\u80FD\u4E0D\u5B8C\u6574\u6216\u65E0\u6CD5\u5B8C\u5168\u6B63\u5E38\u5DE5\u4F5C\uFF0C\u8BF7\u8010\u5FC3\u7B49\u5F85\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313274347133426041, guid: c328e3cd83fb5284a92c73432116a752,
+        type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "<align=center><b>\uBBF8\uB9AC\uBCF4\uAE30 \uC6D4\uB4DC</b> <br><br></align>
+        \uD604\uC7AC \uAC1C\uBC1C \uC911\uC778 \uC791\uC5C5\uC5D0 \uB300\uD55C \uD3EC\uD138\uC785\uB2C8\uB2E4.<br><br>
+        <b>\uD0C4\uB3C4 \uC591\uC790:</b>\uC591\uC790 \uC774\uB860\uC5D0\uC11C \uC5BB\uC740
+        \uD655\uB960 \uBD84\uD3EC\uAC00 \uD0C4\uB3C4 \uD655\uC0B0\uC744 \uACAA\uB294
+        \uACE0\uC804\uC801 \uC785\uC790 \uC559\uC0C1\uBE14\uACFC \uB3D9\uC77C\uD55C
+        \uBC29\uC2DD\uC73C\uB85C \uC5B4\uB5BB\uAC8C \uC9C4\uD654\uD558\uB294\uC9C0
+        \uC0B4\uD3B4\uBCF4\uC138\uC694. <br><br> \uAE30\uB2A5\uC774 \uBD88\uC644\uC804\uD558\uAC70\uB098
+        \uC81C\uB300\uB85C \uC791\uB3D9\uD558\uC9C0 \uC54A\uC744 \uACBD\uC6B0 \uC778\uB0B4\uC2EC\uC744
+        \uAC00\uC838\uC8FC\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 6313274347133426041, guid: c328e3cd83fb5284a92c73432116a752,
         type: 3}
