@@ -166,6 +166,7 @@ MonoBehaviour:
   - "\u6CE2\u306E\u52E2\u3044 <br>(\u6CE2\u52D5\u30D9\u30AF\u30C8\u30EB)"
   - "\u6CE2\u6D6A\u52D5\u91CF <br>(\u6CE2\u77E2\u91CF)"
   - "\u6CE2\u6D6A\u52A8\u91CF <br>(\u6CE2\u77E2\u91CF)"
+  - "\uD30C\uB3D9 \uC6B4\uB3D9\uB7C9<br>(k-\uBCA1\uD130)"
 --- !u!114 &7376187870900536221
 MonoBehaviour:
   m_ObjectHideFlags: 0
