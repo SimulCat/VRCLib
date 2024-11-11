@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6713879571076458809}
   - component: {fileID: 8164419684969736095}
   m_Layer: 17
-  m_Name: InfoVec
+  m_Name: InfoVecPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
