@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e0e82266d8f3e5d4bad3273d88747449, type: 2}
-  m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
+  m_Material: {fileID: 2100000, guid: e63289acce8192f418271a318edafc31, type: 2}
+  m_Color: {r: 0.22745098, g: 0.16862746, b: 0.34901962, a: 0.59607846}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -387,11 +387,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8222064756633301901, guid: c689d622c9c723c4db29c33341cf5a2d,
         type: 3}
-      propertyPath: texts.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222064756633301901, guid: c689d622c9c723c4db29c33341cf5a2d,
-        type: 3}
       propertyPath: texts.Array.data[0]
       value: Particle Simulation
       objectReference: {fileID: 0}
@@ -546,42 +541,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119325272370250703, guid: f4cf7a5e1bf3556469f4e6cfb2c76f23,
-        type: 3}
-      propertyPath: pageBodies.Array.data[0]
-      value: 'This simulation is based on the concept that, between scattering and
-        detection, quantum theory describes a probability distribution for a particle''s
-        position that behaves identically to the probability density for particles
-        moving outward through ballistic diffusion.
-
-
-        It employs Carolyne
-        Van Vliet''s quantum scattering model (1967, 2010) to integrate quantum scattering
-        directly with a ballistic model of particle diffusion. This eliminates the
-        need to propose a mechanism for the wave function to persist until the moment
-        of measurement and then "collapse".
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119325272370250703, guid: f4cf7a5e1bf3556469f4e6cfb2c76f23,
-        type: 3}
-      propertyPath: pageBodies.Array.data[1]
-      value: "\u3053\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u306F\u3001\u6563\u4E71\u3068\u691C\u51FA\u30A4\u30D9\u30F3\u30C8\u306E\u9593\u3067\u3001\u91CF\u5B50\u7406\u8AD6\u304C\u5F3E\u9053\u62E1\u6563\u3092\u901A\u3058\u3066\u5916\u5411\u304D\u306B\u79FB\u52D5\u3059\u308B\u7C92\u5B50\u306E\u78BA\u7387\u5BC6\u5EA6\u3068\u540C\u3058\u3088\u3046\u306B\u52D5\u4F5C\u3059\u308B\u7C92\u5B50\u306E\u4F4D\u7F6E\u306E\u78BA\u7387\u5206\u5E03\u3092\u8A18\u8FF0\u3059\u308B\u3068\u3044\u3046\u6982\u5FF5\u306B\u57FA\u3065\u3044\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u30AD\u30E3\u30ED\u30E9\u30A4\u30F3\u30FB\u30F4\u30A1\u30F3\u30FB\u30D5\u30EA\u30FC\u30C8\u306E\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\uFF081967\u5E74\u30012010\u5E74\uFF09\u306F\u3001\u91CF\u5B50\u6563\u4E71\u3092\u7C92\u5B50\u62E1\u6563\u306E\u5F3E\u9053\u30E2\u30C7\u30EB\u3068\u76F4\u63A5\u7D71\u5408\u3059\u308B\u3053\u3068\u3092\u53EF\u80FD\u306B\u3057\u3001\u6E2C\u5B9A\u306E\u77AC\u9593\u307E\u3067\u6301\u7D9A\u3059\u308B\u6CE2\u52D5\u95A2\u6570\u3092\u4EEE\u5B9A\u3059\u308B\u5FC5\u8981\u6027\u3092\u6392\u9664\u3057\u307E\u3059\u3002\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119325272370250703, guid: f4cf7a5e1bf3556469f4e6cfb2c76f23,
-        type: 3}
-      propertyPath: pageBodies.Array.data[2]
-      value: "\u8A72\u6A21\u64EC\u57FA\u65BC\u9019\u6A23\u7684\u6982\u5FF5\uFF1A\u5728\u6563\u5C04\u548C\u63A2\u6E2C\u4E8B\u4EF6\u4E4B\u9593\uFF0C\u91CF\u5B50\u7406\u8AD6\u63CF\u8FF0\u4E86\u7C92\u5B50\u4F4D\u7F6E\u7684\u6A5F\u7387\u5206\u4F48\uFF0C\u5176\u884C\u70BA\u8207\u7C92\u5B50\u901A\u904E\u5F48\u9053\u64F4\u6563\u5411\u5916\u79FB\u52D5\u7684\u6A5F\u7387\u5BC6\u5EA6\u76F8\u540C\u3002\n\n\u6B64\u6A21\u64EC\u63A1\u7528
-        Carolyne Van Vliet \u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B (1967, 2010)
-        \u5C07\u91CF\u5B50\u6563\u5C04\u76F4\u63A5\u8207\u5F48\u9053\u7C92\u5B50\u64F4\u6563\u6A21\u578B\u6574\u5408\u3002\u9019\u6D88\u9664\u4E86\u63D0\u51FA\u4E00\u7A2E\u4F7F\u6CE2\u51FD\u6578\u6301\u7E8C\u5230\u6E2C\u91CF\u6642\u523B\u7136\u5F8C\u201C\u5D29\u6F70\u201D\u7684\u6A5F\u5236\u7684\u9700\u8981\u3002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119325272370250703, guid: f4cf7a5e1bf3556469f4e6cfb2c76f23,
-        type: 3}
-      propertyPath: pageBodies.Array.data[3]
-      value: "\u8BE5\u6A21\u62DF\u57FA\u4E8E\u8FD9\u6837\u7684\u6982\u5FF5\uFF1A\u5728\u6563\u5C04\u548C\u68C0\u6D4B\u4E8B\u4EF6\u4E4B\u95F4\uFF0C\u91CF\u5B50\u7406\u8BBA\u63CF\u8FF0\u4E86\u7C92\u5B50\u4F4D\u7F6E\u7684\u6982\u7387\u5206\u5E03\uFF0C\u5176\u884C\u4E3A\u4E0E\u7C92\u5B50\u901A\u8FC7\u5F39\u9053\u6269\u6563\u5411\u5916\u79FB\u52A8\u7684\u6982\u7387\u5BC6\u5EA6\u76F8\u540C\u3002\n\n\u8BE5\u6A21\u62DF\u91C7\u7528
-        Carolyne Van Vliet \u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B (1967, 2010)
-        \u5C06\u91CF\u5B50\u6563\u5C04\u76F4\u63A5\u4E0E\u5F39\u9053\u7C92\u5B50\u6269\u6563\u6A21\u578B\u76F8\u7ED3\u5408\u3002\u8FD9\u6837\u5C31\u65E0\u9700\u63D0\u51FA\u4E00\u79CD\u673A\u5236\uFF0C\u4F7F\u6CE2\u51FD\u6570\u6301\u7EED\u5230\u6D4B\u91CF\u65F6\u523B\uFF0C\u7136\u540E\u201C\u5D29\u6E83\u201D\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 1119325272370250703, guid: f4cf7a5e1bf3556469f4e6cfb2c76f23,
         type: 3}

@@ -165,6 +165,8 @@ MonoBehaviour:
   - Particle Model
   - "\u7C92\u5B50\u30E2\u30C7\u30EB"
   - "\u7C92\u5B50\u6A21\u578B"
+  - "\u7C92\u5B50\u6A21\u578B"
+  - "\uC785\uC790 \uC2DC\uBBAC\uB808\uC774\uC158"
 --- !u!114 &1617632328005284430
 MonoBehaviour:
   m_ObjectHideFlags: 0

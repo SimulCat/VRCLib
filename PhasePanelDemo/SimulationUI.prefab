@@ -1485,13 +1485,14 @@ MonoBehaviour:
   pages:
   - {fileID: 4220627865209410048}
   - {fileID: 2641283021115033946}
-  activeInfoPage: -1
+  activeInfoPage: 0
   defaultTexts:
-  - Waves from Imaginary Numbers
-  - "\u865A\u6570\u304B\u3089\u306E\u6CE2"
-  - "\u4F86\u81EA\u865B\u6578\u7684\u6CE2\u6D6A"
-  - "\u6765\u81EA\u865A\u6570\u7684\u6CE2\u6D6A"
-  selectedToggle: -1
+  - Classical Waves by Complex Numbers
+  - "\u8907\u7D20\u6570\u306B\u3088\u308B\u53E4\u5178\u6CE2\u52D5\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3"
+  - "\u4F7F\u7528\u8907\u6578\u9032\u884C\u7D93\u5178\u6CE2\u6A21\u64EC"
+  - "\u4F7F\u7528\u590D\u6570\u7684\u7ECF\u5178\u6CE2\u6D6A\u6A21\u62DF"
+  - "\uBCF5\uC18C\uC218\uB97C \uC774\uC6A9\uD55C \uACE0\uC804\uD30C \uC2DC\uBBAC\uB808\uC774\uC158"
+  selectedToggle: 0
 --- !u!114 &6967118494463113989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,8 +2066,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
