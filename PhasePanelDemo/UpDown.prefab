@@ -560,7 +560,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: a354c64d137edf14fa0541ee3b27f6a7,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2037659776199600480}
   - component: {fileID: 2037659776199600481}
   - component: {fileID: 2037659776199600486}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
