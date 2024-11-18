@@ -203,8 +203,8 @@ MonoBehaviour:
   - "\u7528\u590D\u6570\u521B\u5EFA\u6CE2\u6D6A"
   - "\uBCF5\uC18C\uC218\uB85C \uD30C\uB3D9 \uB9CC\uB4E4\uAE30"
   pageBodies:
-  - "This wave animation works by scrolling a static field of complex numbers that
-    encodes the amplitude and phase information across the wave diffraction pattern.\r\n\r\nA
+  - "This wave animation works by scrolling across a static field of complex numbers
+    that encodes the amplitude and phase information of the wave diffraction pattern.\r\n\r\nA
     program on the GPU generates the complex number field, allowing the pattern to
     be recalculated in a single pass. \r\n\r\nRecalculation is triggered only whenever
     the wavelength or aperture pattern is changed."

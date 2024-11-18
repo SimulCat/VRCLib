@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Speed Spread
+  m_text: Speed Range
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -166,6 +166,7 @@ MonoBehaviour:
   - "\u901F\u5EA6\u7BC4\u56F2"
   - "\u901F\u5EA6\u7BC4\u570D"
   - "\u901F\u5EA6\u8303\u56F4"
+  - "\uC18D\uB3C4 \uBC94\uC704"
 --- !u!114 &4255708447914424572
 MonoBehaviour:
   m_ObjectHideFlags: 0

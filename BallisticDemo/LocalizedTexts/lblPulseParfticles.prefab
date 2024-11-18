@@ -163,9 +163,10 @@ MonoBehaviour:
   languageIndex: 0
   texts:
   - Pulse Particles
-  - "\u7C92\u5B50\u306E\u6D41\u308C"
+  - "\u30D1\u30EB\u30B9\u7C92\u5B50"
   - "\u8108\u885D\u7C92\u5B50"
   - "\u8109\u51B2\u7C92\u5B50"
+  - "\uD384\uC2A4 \uC785\uC790"
 --- !u!114 &922053824146174087
 MonoBehaviour:
   m_ObjectHideFlags: 0

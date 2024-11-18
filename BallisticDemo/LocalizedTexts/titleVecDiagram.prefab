@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Momentum Transfer in Diffraction
+  m_text: Momentum Transfer in Wave Diffraction
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -162,11 +162,11 @@ MonoBehaviour:
   myText: {fileID: 5897294868850070114}
   languageIndex: 0
   texts:
-  - Momentum Transfer<br>in Diffraction
-  - "\u56DE\u6298\u306B\u304A\u3051\u308B\u904B\u52D5\u91CF\u79FB\u52D5"
-  - "\u884D\u5C04\u4E2D\u7684\u52D5\u91CF\u50B3\u905E"
-  - "\u884D\u5C04\u4E2D\u7684\u52A8\u91CF\u8F6C\u79FB"
-  - "\uD68C\uC808\uC5D0\uC11C\uC758 \uC6B4\uB3D9\uB7C9 \uC804\uB2EC"
+  - Momentum Transfer in Wave Diffraction
+  - "\u6CE2\u306E\u56DE\u6298\u306B\u304A\u3051\u308B\u904B\u52D5\u91CF\u4F1D\u9054"
+  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52D5\u91CF\u50B3\u905E"
+  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52A8\u91CF\u4F20\u9012"
+  - "\uD30C\uB3D9 \uD68C\uC808\uC5D0\uC11C\uC758 \uC6B4\uB3D9\uB7C9 \uC804\uB2EC"
 --- !u!114 &656312730557704816
 MonoBehaviour:
   m_ObjectHideFlags: 0
