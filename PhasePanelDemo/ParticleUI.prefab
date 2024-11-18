@@ -132,7 +132,8 @@ MonoBehaviour:
   - {fileID: 3206851685686863984}
   - {fileID: 4514014884085233476}
   - {fileID: 8145477086121414972}
-  localizationClients: []
+  localizationClients:
+  - {fileID: 0}
 --- !u!114 &7980412485679880355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,16 +990,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4498097267591527626, guid: 0a8574ca471973d49b4df7b18bc76976,
         type: 3}
-      propertyPath: texts.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4498097267591527626, guid: 0a8574ca471973d49b4df7b18bc76976,
-        type: 3}
-      propertyPath: texts.Array.data[3]
-      value: "\u5F71\u50CF\u5BF9\u6BD4\u5EA6"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4498097267591527626, guid: 0a8574ca471973d49b4df7b18bc76976,
-        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4498097267591527626, guid: 0a8574ca471973d49b4df7b18bc76976,
@@ -1591,11 +1582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: togShowDensity
       objectReference: {fileID: 0}
-    - target: {fileID: 1228705634286738754, guid: f8e04f8f7f9eb1d4b93f3bd6272cff51,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 1795927857915284112, guid: f8e04f8f7f9eb1d4b93f3bd6272cff51,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1695,16 +1681,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6229735827206676261, guid: f8e04f8f7f9eb1d4b93f3bd6272cff51,
-        type: 3}
-      propertyPath: texts.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6229735827206676261, guid: f8e04f8f7f9eb1d4b93f3bd6272cff51,
-        type: 3}
-      propertyPath: texts.Array.data[3]
-      value: "\u663E\u793A\u7C92\u5B50\u673A\u7387\u5BC6\u5EA6"
       objectReference: {fileID: 0}
     - target: {fileID: 6229735827206676261, guid: f8e04f8f7f9eb1d4b93f3bd6272cff51,
         type: 3}
@@ -1853,54 +1829,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
         type: 3}
-      propertyPath: pageBodies.Array.data[0]
-      value: "When activated, this feature displays an overlay indicating the likelihood
-        of a particle passing through a specific point. \r\n\r\nThis overlay is created
-        using a process similar to ray tracing based on the probability distribution
-        for the momentum exchanged when a particle is deflected.\r\n\r\nThe probability
-        of a particle passing through a specific point is determined by tracing back
-        through each aperture to identify the portion of the momentum probability
-        distribution visible through it and then combining the contributions from
-        each aperture."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageBodies.Array.data[1]
-      value: "\u3053\u306E\u6A5F\u80FD\u3092\u6709\u52B9\u306B\u3059\u308B\u3068\u3001\u7C92\u5B50\u304C\u7279\u5B9A\u306E\u30DD\u30A4\u30F3\u30C8\u3092\u901A\u904E\u3059\u308B\u53EF\u80FD\u6027\u3092\u793A\u3059\u30AA\u30FC\u30D0\u30FC\u30EC\u30A4\u304C\u8868\u793A\u3055\u308C\u307E\u3059\u3002\n\n\u3053\u306E\u30AA\u30FC\u30D0\u30FC\u30EC\u30A4\u306F\u3001\u7C92\u5B50\u304C\u504F\u5411\u3057\u305F\u3068\u304D\u306B\u4EA4\u63DB\u3055\u308C\u308B\u904B\u52D5\u91CF\u306E\u78BA\u7387\u5206\u5E03\u306B\u57FA\u3065\u304F\u30EC\u30A4
-        \u30C8\u30EC\u30FC\u30B7\u30F3\u30B0\u306B\u4F3C\u305F\u30D7\u30ED\u30BB\u30B9\u3092\u4F7F\u7528\u3057\u3066\u4F5C\u6210\u3055\u308C\u307E\u3059\u3002\n\n\u7C92\u5B50\u304C\u7279\u5B9A\u306E\u30DD\u30A4\u30F3\u30C8\u3092\u901A\u904E\u3059\u308B\u78BA\u7387\u306F\u3001\u5404\u958B\u53E3\u90E8\u3092\u30C8\u30EC\u30FC\u30B9\u3057\u3066\u3001\u305D\u3053\u304B\u3089\u898B\u3048\u308B\u904B\u52D5\u91CF\u78BA\u7387\u5206\u5E03\u306E\u90E8\u5206\u3092\u7279\u5B9A\u3057\u3001\u5404\u958B\u53E3\u90E8\u304B\u3089\u306E\u5BC4\u4E0E\u3092\u7D44\u307F\u5408\u308F\u305B\u308B\u3053\u3068\u306B\u3088\u3063\u3066\u6C7A\u5B9A\u3055\u308C\u307E\u3059\u3002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageBodies.Array.data[2]
-      value: "\u555F\u52D5\u5F8C\uFF0C\u6B64\u529F\u80FD\u6703\u986F\u793A\u8986\u84CB\u5C64\uFF0C\u6307\u793A\u7C92\u5B50\u7A7F\u904E\u7279\u5B9A\u9EDE\u7684\u53EF\u80FD\u6027\u3002\r\n\r\n\u8A72\u758A\u52A0\u662F\u4F7F\u7528\u985E\u4F3C\u65BC\u5C04\u7DDA\u8FFD\u8E64\u7684\u904E\u7A0B\u5275\u5EFA\u7684\uFF0C\u8A72\u904E\u7A0B\u57FA\u65BC\u7C92\u5B50\u504F\u8F49\u6642\u4EA4\u63DB\u52D5\u91CF\u7684\u6A5F\u7387\u5206\u4F48\u3002\r\n\r\n\u7C92\u5B50\u901A\u904E\u7279\u5B9A\u9EDE\u7684\u6A5F\u7387\u662F\u900F\u904E\u56DE\u6EAF\u6BCF\u500B\u5B54\u5F91\u4F86\u78BA\u5B9A\u900F\u904E\u5B83\u53EF\u898B\u7684\u52D5\u91CF\u6A5F\u7387\u5206\u4F48\u7684\u90E8\u5206\uFF0C\u7136\u5F8C\u7D50\u5408\u6BCF\u500B\u5B54\u5F91\u7684\u8CA2\u737B\u4F86\u78BA\u5B9A\u7684\u3002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageBodies.Array.data[3]
-      value: "\u6FC0\u6D3B\u6B64\u529F\u80FD\u540E\uFF0C\u4F1A\u663E\u793A\u4E00\u4E2A\u53E0\u52A0\u5C42\uFF0C\u6307\u793A\u7C92\u5B50\u7A7F\u8FC7\u7279\u5B9A\u70B9\u7684\u53EF\u80FD\u6027\u3002\n\n\u6B64\u53E0\u52A0\u5C42\u4F7F\u7528\u7C7B\u4F3C\u4E8E\u5C04\u7EBF\u8FFD\u8E2A\u7684\u8FC7\u7A0B\u521B\u5EFA\uFF0C\u8BE5\u8FC7\u7A0B\u57FA\u4E8E\u7C92\u5B50\u504F\u8F6C\u65F6\u4EA4\u6362\u7684\u52A8\u91CF\u7684\u6982\u7387\u5206\u5E03\u3002\n\n\u7C92\u5B50\u7A7F\u8FC7\u7279\u5B9A\u70B9\u7684\u6982\u7387\u662F\u901A\u8FC7\u8FFD\u6EAF\u6BCF\u4E2A\u5B54\u5F84\u6765\u786E\u5B9A\u52A8\u91CF\u6982\u7387\u5206\u5E03\u4E2D\u53EF\u89C1\u7684\u90E8\u5206\uFF0C\u7136\u540E\u7ED3\u5408\u6BCF\u4E2A\u5B54\u5F84\u7684\u8D21\u732E\u6765\u786E\u5B9A\u7684\u3002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageTitles.Array.data[0]
-      value: Toggle Position Probability Density
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageTitles.Array.data[1]
-      value: "\u30C8\u30B0\u30EB\u4F4D\u7F6E\u78BA\u7387\u5BC6\u5EA6"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageTitles.Array.data[2]
-      value: "\u5207\u63DB\u4F4D\u7F6E\u6A5F\u7387\u5BC6\u5EA6"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
-      propertyPath: pageTitles.Array.data[3]
-      value: "\u5207\u6362\u4F4D\u7F6E\u6982\u7387\u5BC6\u5EA6"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
-        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 1714936211839288020, guid: b35325d7cd37e344c8ab453d729752e3,
@@ -2019,6 +1947,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344609923243864661, guid: b35325d7cd37e344c8ab453d729752e3,
+        type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344609923243864661, guid: b35325d7cd37e344c8ab453d729752e3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6151117752430190849, guid: b35325d7cd37e344c8ab453d729752e3,
         type: 3}
