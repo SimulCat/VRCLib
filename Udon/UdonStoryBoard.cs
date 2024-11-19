@@ -61,9 +61,9 @@ public class UdonStoryBoard : UdonSharpBehaviour
     {
         int newPage = Mathf.Clamp(nPage, 0, pageCount-1);
         if (forwardButton!= null)
-            forwardButton.enabled = newPage < (pageCount-1);
+            forwardButton.interactable = newPage < (pageCount-1);
         if (backButton != null)
-            backButton.enabled = newPage > 0;
+            backButton.interactable = newPage > 0;
         if ((pageCount > 0) && ((newPage != pageIndex) || (currentPage == null))) 
         {
             if (currentPage != null) 
@@ -76,10 +76,16 @@ public class UdonStoryBoard : UdonSharpBehaviour
             currentAudioSource = AudioSources[newPage];
             if (currentAudioSource != null)
             {
+                audioToggle.interactable = false;
                 if (AudioPlay)
                     AudioSources[newPage].PlayDelayed(1); 
                 else
                     AudioSources[newPage].Stop();
+            }
+            else
+            {
+                if (audioToggle!= null)
+                    audioToggle.interactable = false;
             }
         }
         pageIndex= newPage;
