@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UdonStoryBoard : UdonSharpBehaviour
 {
     public int pageCount;
-    public GameObject[] Pages;
+    public UdonStoryPage[] Pages;
     public AudioSource[] AudioSources;
     [SerializeField]
     private int pageIndex = -1;
@@ -23,7 +23,9 @@ public class UdonStoryBoard : UdonSharpBehaviour
     private Button backButton;
     [SerializeField]
     private AudioSource currentAudioSource = null;
-    private GameObject currentPage = null;
+
+    private UdonStoryPage currentPage = null;
+    private UdonStoryPage prevPage = null;
     public bool AudioPlay
     { 
         get => audioPlay;
@@ -66,13 +68,17 @@ public class UdonStoryBoard : UdonSharpBehaviour
             backButton.interactable = newPage > 0;
         if ((pageCount > 0) && ((newPage != pageIndex) || (currentPage == null))) 
         {
-            if (currentPage != null) 
-                currentPage.SetActive(false);
             if (currentAudioSource != null)
                 currentAudioSource.Stop();
+            prevPage = currentPage;
             currentPage = Pages[newPage];
-            if (currentPage != null)
-                currentPage.SetActive(true);
+            if (prevPage != null && prevPage.pageGameObject != null)
+            {
+                if (currentPage.pageGameObject == null || currentPage.pageGameObject != prevPage.pageGameObject)
+                    prevPage.pageGameObject.SetActive(false);
+            }
+            if (currentPage != null && currentPage.pageGameObject != null)
+                currentPage.pageGameObject.SetActive(true);
             currentAudioSource = AudioSources[newPage];
             if (currentAudioSource != null)
             {
@@ -107,12 +113,12 @@ public class UdonStoryBoard : UdonSharpBehaviour
             pageCount++;
         if (pageCount > 0)
         {
-            Pages = new GameObject[pageCount];
+            Pages = new UdonStoryPage[pageCount];
             AudioSources = new AudioSource[pageCount];
             int index = 0;
             foreach (Transform t in gameObject.transform)
             {
-                Pages[index] = t.gameObject;
+                UdonStoryPage page = t.gameObject.GetComponent<UdonStoryPage>();
                 AudioSource AudSource = t.GetComponent<AudioSource>();
                 if (AudSource != null)
                 {
@@ -120,7 +126,13 @@ public class UdonStoryBoard : UdonSharpBehaviour
                     AudSource.loop = false;
                     AudSource.playOnAwake = false;
                 }
-                Pages[index++].SetActive(false);
+                if (page != null)
+                {
+                    if (page.pageGameObject != null) 
+                        page.pageGameObject.SetActive(false);
+                    Pages[index] = page;
+                }
+                index++;
             }
             Setpage(0);
         }
