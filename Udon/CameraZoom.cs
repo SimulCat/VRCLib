@@ -7,8 +7,8 @@ using VRC.Udon;
 
 public class CameraZoom : UdonSharpBehaviour
 {
-    [SerializeField] Transform myTarget;
-    [SerializeField] Camera myCamera;
+    [SerializeField] private Transform myTarget;
+    [SerializeField] private Camera myCamera;
     [SerializeField] Vector2 targetWidthHeight = new Vector2(1, 1);
     [SerializeField] float targetAspect = 0.75f;
     [SerializeField] int _zoom = 1;
@@ -79,8 +79,17 @@ public class CameraZoom : UdonSharpBehaviour
         }
     }
 
+    public void SetScale(Vector2 newscale)
+    {
+        if (newscale == targetWidthHeight)
+            return;
+        targetWidthHeight = newscale;
+        UpdateScale();
+    }
+
+
     [SerializeField]
-    bool camEnabled = false;
+    private bool camEnabled = false;
     public bool Enabled
     {
         get => camEnabled;
@@ -97,19 +106,12 @@ public class CameraZoom : UdonSharpBehaviour
 
     private Material displayMaterial;
 
-    public Material DisplayMaterial
+    private Material DisplayMaterial
     {
         get => displayMaterial;
         set { displayMaterial = value; }
     }
 
-    public void SetScale(Vector2 newscale)
-    {
-        if (newscale == targetWidthHeight)
-            return;
-        targetWidthHeight = newscale;
-        UpdateScale();
-    }
     // Start is called before the first frame update
     void Start()
     {
