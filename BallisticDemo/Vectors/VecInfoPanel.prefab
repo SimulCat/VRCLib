@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 631357838688633064}
   - component: {fileID: 8734660475621304788}
   m_Layer: 17
-  m_Name: VecInfo
+  m_Name: VecInfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
