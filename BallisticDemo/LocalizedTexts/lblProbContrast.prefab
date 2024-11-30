@@ -162,11 +162,11 @@ MonoBehaviour:
   myText: {fileID: 2598845697219396159}
   languageIndex: 0
   texts:
-  - Prob. Density Contrast
-  - "\u753B\u50CF\u306E\u660E\u308B\u3055"
-  - "\u5F71\u50CF\u5C0D\u6BD4\u5EA6"
-  - "\u5F71\u50CF\u5BF9\u6BD4\u5EA6"
-  - "\uC774\uBBF8\uC9C0 \uB300\uBE44"
+  - Contrast
+  - "\u5BFE\u6BD4"
+  - "\u5C0D\u6BD4"
+  - "\u5BF9\u6BD4"
+  - "\uCC28\uC774"
 --- !u!114 &6758528008067539247
 MonoBehaviour:
   m_ObjectHideFlags: 0

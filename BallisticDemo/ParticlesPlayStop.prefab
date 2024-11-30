@@ -916,6 +916,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitlePlayStop
       objectReference: {fileID: 0}
+    - target: {fileID: 6684861397486966840, guid: 1513492622b04ec498291ad9a9cef47b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684861397486966840, guid: 1513492622b04ec498291ad9a9cef47b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 7300642881104858233, guid: 1513492622b04ec498291ad9a9cef47b,
         type: 3}
       propertyPath: serializationData.Prefab

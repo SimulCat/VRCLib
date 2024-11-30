@@ -18,6 +18,7 @@ public class InfoPanel : UdonSharpBehaviour
     [SerializeField] private bool growShrink = true;
     [SerializeField] Vector2 panelSize = Vector2.one;
     [SerializeField] Vector2 shrinkSize = Vector2.one;
+    [SerializeField] int alignHorizontal;
     [SerializeField] bool showHideContentPanel= true;
     //   [SerializeField] float textBorder = 20;
     [SerializeField] RectTransform contentPanelRect;
@@ -99,15 +100,14 @@ public class InfoPanel : UdonSharpBehaviour
                 if (growShrink)
                 {
                     Vector2 newSize = activeInfoPage >= 0 ? panelSize : shrinkSize;
+                    Vector2 shrinkDelta = activeInfoPage >= 0 ? Vector2.zero : (panelSize - shrinkSize) * 0.5f;
+                    Vector3 newPosition = new Vector3(alignHorizontal * shrinkDelta.x, -shrinkDelta.y,0);
                     bool validSize = (newSize.x > 0) && (newSize.y > 0);
-                    Vector3 newPosition = activeInfoPage >= 0 ? Vector3.zero : new Vector3(0, -(panelSize.y - shrinkSize.y) / 2.0f, 0);
                     if (validSize)
                     {
                         contentPanelRect.sizeDelta = newSize;
                         contentPanelRect.localPosition = newPosition;
                     }
-                    else
-                        Debug.Log(gameObject.name + "ActiveInfoPage: ValidSize=false");
                     contentPanelRect.gameObject.SetActive(validSize);
                 }
                 else

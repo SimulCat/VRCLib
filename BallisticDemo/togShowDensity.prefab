@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8519928809965198013, guid: 6fe32fb7d24972e4bbbef7551d5059ef,
+        type: 3}
+      propertyPath: m_text
+      value: Show/Hide<br>Density Overlay
+      objectReference: {fileID: 0}
     - target: {fileID: 8988571413589562615, guid: 6fe32fb7d24972e4bbbef7551d5059ef,
         type: 3}
       propertyPath: m_Name
