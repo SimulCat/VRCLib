@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1914135015675435721
+--- !u!1 &6296859869220216791
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 353750179334081467}
-  - component: {fileID: 7675645821484936830}
-  - component: {fileID: 5897294868850070114}
-  - component: {fileID: 7040917948601839111}
-  - component: {fileID: 656312730557704816}
-  m_Layer: 17
-  m_Name: titleVecDiagram
+  - component: {fileID: 4243248937953843358}
+  - component: {fileID: 2913057478457869994}
+  - component: {fileID: 1685529453961445441}
+  - component: {fileID: 7739735949815937159}
+  - component: {fileID: 6803616819793893495}
+  m_Layer: 0
+  m_Name: lblVectorDiagram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &353750179334081467
+--- !u!224 &4243248937953843358
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914135015675435721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 6296859869220216791}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -16, y: -27}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 250, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7675645821484936830
+--- !u!222 &2913057478457869994
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914135015675435721}
+  m_GameObject: {fileID: 6296859869220216791}
   m_CullTransparentMesh: 0
---- !u!114 &5897294868850070114
+--- !u!114 &1685529453961445441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914135015675435721}
+  m_GameObject: {fileID: 6296859869220216791}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Momentum Transfer in Wave Diffraction
+  m_text: 'Vector Diagrams:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -77,8 +77,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294959104
-  m_fontColor: {r: 0, g: 0.8777292, b: 1, a: 1}
+    rgba: 4292465152
+  m_fontColor: {r: 0, g: 0.8235294, b: 0.8509804, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -95,15 +95,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -137,13 +137,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7040917948601839111
+--- !u!114 &7739735949815937159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914135015675435721}
+  m_GameObject: {fileID: 6296859869220216791}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f6e034f954ef14bacd2ec6be5b79c7, type: 3}
@@ -158,22 +158,22 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 656312730557704816}
-  myText: {fileID: 5897294868850070114}
+  _udonSharpBackingUdonBehaviour: {fileID: 6803616819793893495}
+  myText: {fileID: 1685529453961445441}
   languageIndex: 0
   texts:
-  - Momentum Transfer in Diffraction
-  - "\u6CE2\u306E\u56DE\u6298\u306B\u304A\u3051\u308B\u904B\u52D5\u91CF\u4F1D\u9054"
-  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52D5\u91CF\u50B3\u905E"
-  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52A8\u91CF\u4F20\u9012"
-  - "\uD30C\uB3D9 \uD68C\uC808\uC5D0\uC11C\uC758 \uC6B4\uB3D9\uB7C9 \uC804\uB2EC"
---- !u!114 &656312730557704816
+  - 'Vector Diagrams:'
+  - "\u30D9\u30AF\u30C8\u30EB\u56F3:"
+  - "\u5411\u91CF\u5716\uFF1A"
+  - "\u77E2\u91CF\u56FE\uFF1A"
+  - "\uBCA1\uD130 \uB2E4\uC774\uC5B4\uADF8\uB7A8:"
+--- !u!114 &6803616819793893495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914135015675435721}
+  m_GameObject: {fileID: 6296859869220216791}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
