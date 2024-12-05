@@ -6,43 +6,61 @@ using VRC.SDKBase;
 using VRC.Udon;
 
 [RequireComponent(typeof(Toggle))]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class SyncedToggle : UdonSharpBehaviour
 {
     [SerializeField]
     private Toggle toggle;
     [SerializeField]
     private UdonBehaviour toggleClient;
-    private string clientVariable;
-
-    public int toggleIndex = -1;
     [SerializeField]
-    private bool currentState = false;
+    private string clientVariable = "toggleIndex";
+    [SerializeField]
+    private int toggleIndex = -1;
+    [SerializeField,UdonSynced,FieldChangeCallback(nameof(SyncedState))]
+    private bool syncedState = false;
     [SerializeField]
     private bool reportedState = false;
+    private VRCPlayerApi player;
+    private bool locallyOwned = false;
 
-    public bool CurrentState
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        locallyOwned = Networking.IsOwner(this.gameObject);
+    }
+
+    public bool SyncedState
     {
         get 
         { 
-            return currentState; 
+            return syncedState; 
         }
         set 
         {
-            currentState = value;
-            if (currentState && reportedState != currentState) 
+            syncedState = value;
+            if (toggle != null && toggle.isOn != value)
+                toggle.SetIsOnWithoutNotify(value);
+            if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
             {
-                if (toggleClient != null)
+                if (reportedState != syncedState)
                 {
-                    toggleClient.SetProgramVariable<int>("toggleIndex",toggleIndex);
+                    if (toggleIndex < 0)
+                        toggleClient.SetProgramVariable<bool>(clientVariable, syncedState);
+                    else
+                    {
+                        if (syncedState)
+                            toggleClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                    }
                 }
+
             }
             reportedState = value;
+            RequestSerialization();
         }
     }
     public void setState(bool state = false)
     {
-        currentState = state;
+        syncedState = state;
         reportedState = state;
         if (toggle != null)
         {
@@ -52,13 +70,18 @@ public class SyncedToggle : UdonSharpBehaviour
     }
     public void onToggle()
     {
-        CurrentState = toggle.isOn;
+        if (!locallyOwned)
+            Networking.SetOwner(player, gameObject);
+        SyncedState = toggle.isOn;
     }
     void Start()
     {
+        player = Networking.LocalPlayer;
+        locallyOwned = Networking.IsOwner(gameObject);
+
         if (toggle == null)
             toggle = GetComponent<Toggle>();
         reportedState = !toggle.isOn;
-        CurrentState = !reportedState;
+        SyncedState = !reportedState;
     }
 }

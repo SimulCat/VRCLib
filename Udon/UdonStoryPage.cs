@@ -19,11 +19,13 @@ public class UdonStoryPage : UdonSharpBehaviour
     [SerializeField]
     public GameObject pageGameObject;
     [SerializeField]
-    private UdonBehaviour demoBehavior;
-    [SerializeField]
+    private UdonBehaviour[] demoBehaviors;
+    [SerializeField,Tooltip("State Variable Name")]
     private string[] demoStateVars;
-    [SerializeField]
-    private int[] demoStates;
+    [SerializeField,Tooltip("State Variable Type: 0=float, 1= int, 2= bool")]
+    private int[] demoStateVarTypes;
+    [SerializeField, Tooltip("State Variable Value")]
+    private float[] demoStateValues;
 
     public bool IsActive
     {
@@ -41,13 +43,32 @@ public class UdonStoryPage : UdonSharpBehaviour
                         images[i].ColourLevel = state;
                     }
                 }
-                if (demoBehavior != null)
+                if (demoBehaviors != null)
                 {
-                    for (int i = 0; i < demoStateVars.Length; i++)
+                    for (int i = 0; i < demoBehaviors.Length; i++)
                     {
-                        string s = demoStateVars[i];
-                        if (!string.IsNullOrEmpty(s))
-                            demoBehavior.SetProgramVariable<int>(s, demoStates[i]);
+                        if (demoBehaviors[i] != null)
+                        {
+                            string s = (demoStateVars != null) && (i < demoStateVars.Length) ? demoStateVars[i] :null;
+                            if (s != null)
+                            {
+                                switch (demoStateVarTypes[i])
+                                {
+                                    case 1: // int
+                                        int n = (demoStateVars != null) && (i < demoStateVars.Length) ? (int)demoStateValues[i] : 0;
+                                        demoBehaviors[i].SetProgramVariable<int>(s, n);
+                                        break;
+                                    case 2: // bool
+                                        bool b = (demoStateVars != null) && (i < demoStateVars.Length) ? demoStateValues[i] > 0.5f : false;
+                                        demoBehaviors[i].SetProgramVariable<bool>(s, b);
+                                        break;
+                                    default: // float
+                                        float v = (demoStateVars != null) && (i < demoStateVars.Length) ? demoStateValues[i] : 0;
+                                        demoBehaviors[i].SetProgramVariable<float>(s, v);
+                                        break;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -57,11 +78,6 @@ public class UdonStoryPage : UdonSharpBehaviour
 
     public void Start()
     {
-        if (pageGameObject != null)
-        {
-            if (demoBehavior == null)
-                demoBehavior = pageGameObject.GetComponent<UdonBehaviour>();
-        }
         imageListLen = (images == null) ? 0 : images.Length;
         int stateLen = (imageStates == null) ? 0 : imageStates.Length;
         if (imageListLen > 0 && stateLen < imageListLen)
@@ -71,13 +87,34 @@ public class UdonStoryPage : UdonSharpBehaviour
                 newStates[i] = imageStates[i];
             imageStates = newStates;
         }
-        if ((demoStateVars == null) || (demoStateVars.Length == 0))
+        int behaviourListLen = (demoBehaviors == null) ? 0 : demoBehaviors.Length;
+        if (behaviourListLen > 0)
         {
-            demoStateVars = new string[1];
-            demoStateVars[0] = "demoState";
+            int varNameLen = (demoStateVars == null) ? 0 : demoStateVars.Length;
+            if (varNameLen < behaviourListLen)
+            {
+                string[] newVars = new string[behaviourListLen];
+                for (int i = 0;i < varNameLen;i++)
+                    newVars[i] = demoStateVars[i];
+                demoStateVars = newVars;
+            }
+            int typeLen = (demoStateVarTypes == null) ? 0 : demoStateVarTypes.Length;
+            if (typeLen < behaviourListLen)
+            {
+                int[] newStateTypes = new int[behaviourListLen];
+                for (int i=0; i < typeLen;i++)
+                    newStateTypes[i] = demoStateVarTypes[i];
+                demoStateVarTypes = newStateTypes;
+            }
+            int valueListLen = (demoStateValues == null) ? 0 : demoStateValues.Length;
+            if (valueListLen < behaviourListLen)
+            {
+                float[] newValues = new float[behaviourListLen];
+                for (int i = 0; i < valueListLen; i++)
+                    newValues[i] = demoStateValues[i];
+                demoStateValues = newValues;
+            }
         }
-        if (demoStates == null || demoStates.Length == 0)
-            demoStates = new int[demoStateVars.Length];
         IsActive = isActive;  
     }
 }
