@@ -3,16 +3,15 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class InfoPage : UdonSharpBehaviour
 {
     [SerializeField] string[] pageTitles;
     [SerializeField,TextArea] string[] pageBodies;
-    [SerializeField] 
-    private int languageIndex = 0;
+    [SerializeField,FieldChangeCallback(nameof(LanguageIndex))] private int languageIndex = 0;
 
     
-    public int LangaugeIndex
+    public int LanguageIndex
     {
         get => languageIndex; 
         set => languageIndex = value;

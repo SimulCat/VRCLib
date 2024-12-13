@@ -13,8 +13,6 @@ public class InfoPanel : UdonSharpBehaviour
     [SerializeField] private ToggleGroup toggleGroup;
     [SerializeField] private Button closeButton;
     [SerializeField, FieldChangeCallback(nameof(LanguageIndex))] int languageIndex = 0;
-    [SerializeField,Tooltip("Added object made visible when panle is shown")] 
-    private GameObject supportPanel;
     [SerializeField] private bool growShrink = true;
     [SerializeField] Vector2 panelSize = Vector2.one;
     [SerializeField] Vector2 shrinkSize = Vector2.one;
@@ -24,7 +22,6 @@ public class InfoPanel : UdonSharpBehaviour
     [SerializeField] RectTransform contentPanelRect;
     [SerializeField] TextMeshProUGUI contentText;
     [SerializeField] Toggle[] toggles = null;
-    [SerializeField] Toggle[] modeToggles = null;
     [SerializeField] InfoPage[] pages = null;
     int toggleCount = 0;
 
@@ -32,7 +29,7 @@ public class InfoPanel : UdonSharpBehaviour
     private bool iamOwner;
     private VRCPlayerApi player;
 
-    [SerializeField,UdonSynced,FieldChangeCallback(nameof(ActiveInfoPage))] 
+    [SerializeField] 
     private int activeInfoPage = -1;
 
     [SerializeField] string[] defaultTexts;
@@ -48,10 +45,10 @@ public class InfoPanel : UdonSharpBehaviour
                 foreach (var page in pages)
                 {
                     if (page != null)
-                        page.LangaugeIndex = languageIndex;
+                        page.LanguageIndex = languageIndex;
                 }
             }
-            ActiveInfoPage = activeInfoPage;
+            UpdatePage();
         }
     }
 
@@ -68,67 +65,63 @@ public class InfoPanel : UdonSharpBehaviour
     }
 
 
-    public int ActiveInfoPage
+    private void UpdatePage()
     {
-        get => activeInfoPage;
-        set
+        activeInfoPage = mode;
+        //Debug.Log("ActiveInfoPage=" + value);
+        if (contentText != null)
         {
-            activeInfoPage = value;
-            //Debug.Log("ActiveInfoPage=" + value);
-            if (contentText != null)
+            if (show)
             {
-                if (value >= 0)
+                if (mode >= 0)
                 {
                     string title = "";
-                    if (pages[value] != null)
+                    if (pages[mode] != null)
                     {
-                        title = pages[value].PageTitle;
-                        contentText.text = string.Format("<align=center><b>{0}</b></align>\n{1}", title, pages[value].PageBody);
+                        title = pages[mode].PageTitle;
+                        contentText.text = string.Format("<align=center><b>{0}</b></align>\n{1}", title, pages[mode].PageBody);
                     }
                     else
                         contentText.text = "";
                 }
-                else
-                    contentText.text = defaultText;
             }
-            if (showHideContentPanel && contentPanelRect != null)
+            else
+                contentText.text = defaultText;
+        }
+        if (showHideContentPanel && contentPanelRect != null)
+        {
+            if (hasClose)
+                closeButton.gameObject.SetActive(show);
+            if (growShrink)
             {
-                if (hasClose)
-                    closeButton.gameObject.SetActive(activeInfoPage >= 0);
-                if (supportPanel != null)
-                    supportPanel.SetActive(activeInfoPage >= 0);
-                if (growShrink)
+                Vector2 newSize = show ? panelSize : shrinkSize;
+                Vector2 shrinkDelta = show ? Vector2.zero : (panelSize - shrinkSize) * 0.5f;
+                Vector3 newPosition = new Vector3(alignHorizontal * shrinkDelta.x, -shrinkDelta.y,0);
+                bool validSize = (newSize.x > 0) && (newSize.y > 0);
+                if (validSize)
                 {
-                    Vector2 newSize = activeInfoPage >= 0 ? panelSize : shrinkSize;
-                    Vector2 shrinkDelta = activeInfoPage >= 0 ? Vector2.zero : (panelSize - shrinkSize) * 0.5f;
-                    Vector3 newPosition = new Vector3(alignHorizontal * shrinkDelta.x, -shrinkDelta.y,0);
-                    bool validSize = (newSize.x > 0) && (newSize.y > 0);
-                    if (validSize)
-                    {
-                        contentPanelRect.sizeDelta = newSize;
-                        contentPanelRect.localPosition = newPosition;
-                    }
-                    contentPanelRect.gameObject.SetActive(validSize);
+                    contentPanelRect.sizeDelta = newSize;
+                    contentPanelRect.localPosition = newPosition;
                 }
-                else
-                {
-                    contentPanelRect.gameObject.SetActive(activeInfoPage >= 0);
-                }
+                contentPanelRect.gameObject.SetActive(validSize);
+            }
+            else
+            {
+                contentPanelRect.gameObject.SetActive(show);
             }
         }
+        updateToggles();
     }
     public void onBtnClose()
     {
-        if (selectedToggle >= 0)
-        {
-            SelectedToggle = -1;
-        }
+        Show = false;
     }
 
     public void onToggle()
     {
         int toggleIdx = -1;
-
+        if (!iamOwner)
+            Networking.SetOwner(player,gameObject);
         for (int i = 0; toggleIdx < 0 && i < toggles.Length; i++)
         {
             if (toggles[i] != null)
@@ -137,43 +130,57 @@ public class InfoPanel : UdonSharpBehaviour
                     toggleIdx = i;
             }
         }
-        //Debug.Log("Toggle Changed: " + toggleIdx.ToString());
-        SelectedToggle = toggleIdx;
+        if (toggleIdx >= 0)
+            mode = toggleIdx;
+        Show = toggleIdx >= 0;
     }
 
-    public void subToggle()
-    {
+    [SerializeField,FieldChangeCallback(nameof(Show))]
+    private bool show = false;
 
-    }
-    
-    [SerializeField,UdonSynced,FieldChangeCallback(nameof(SelectedToggle))]
-    private int selectedToggle = -1;
-    private bool togglePending = false;
-    private int pendingToggle;
-    private int SelectedToggle
+    private bool showing = false;
+    private bool Show
     {
-        get => selectedToggle;
+        get => show;
         set
         {
-            //Debug.Log("Toggle Select: " +  value.ToString());
-            if (!iamOwner)
+            show = value;
+            if (showing != value)
             {
-                togglePending = true;
-                pendingToggle = value;
-                Networking.SetOwner(player, gameObject);
-                return;
+                UpdatePage();
+                showing = value;
             }
-            togglePending = false;
-            selectedToggle = value;
-            ActiveInfoPage = selectedToggle;
-            if (value >= 0 && value < toggleCount)
+        }
+    }
+
+    private void updateToggles()
+    {
+        if (show)
+        {
+            if (mode >= 0 && mode < toggleCount)
             {
-                if (toggles[selectedToggle] != null)
-                    toggles[selectedToggle].SetIsOnWithoutNotify(true);
+                if (toggles[mode] != null)
+                    toggles[mode].SetIsOnWithoutNotify(true);
             }
-            if (toggleGroup != null && value < 0)
+        }
+        else
+        {
+            if (toggleGroup != null)
                 toggleGroup.SetAllTogglesOff(false);
-            RequestSerialization();
+        }
+    }
+
+    [SerializeField,FieldChangeCallback(nameof(Mode))]
+    private int mode = 0;
+    private int Mode
+    {
+        get => mode;
+        set
+        {
+            mode = value;
+            if (mode < 0)
+                Show = false;
+            UpdatePage();
         }
     }
     
@@ -181,14 +188,6 @@ public class InfoPanel : UdonSharpBehaviour
     private void UpdateOwnerShip()
     {
         iamOwner = Networking.IsOwner(this.gameObject);
-        if (iamOwner)
-        {
-            if (togglePending)
-            {
-                togglePending = false;
-                SelectedToggle = pendingToggle;
-            }
-        }
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
@@ -201,12 +200,6 @@ public class InfoPanel : UdonSharpBehaviour
         toggleCount = 0;
         if (toggles != null)
             toggleCount = toggles.Length;
-        //pages = new InfoPage[toggleCount];
-        //for (int i = 0; i < toggleCount; i++)
-        //{
-        //    if (toggles[i] != null)
-        //        pages[i] = toggles[i].GetComponent<InfoPage>();
-        //}
         player = Networking.LocalPlayer;
         UpdateOwnerShip();
         if (toggleGroup == null)
@@ -219,6 +212,6 @@ public class InfoPanel : UdonSharpBehaviour
         if (growShrink)
             growShrink = (shrinkSize.x * shrinkSize.y) > 0;
         toggleGroup.EnsureValidState();
-        onToggle();
+        UpdatePage();
     }
 }

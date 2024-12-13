@@ -12,9 +12,11 @@ public class SyncedToggle : UdonSharpBehaviour
     [SerializeField]
     private Toggle toggle;
     [SerializeField]
-    private UdonBehaviour toggleClient;
+    private UdonBehaviour[] udonClients;
     [SerializeField]
-    private string clientVariable = "toggleIndex";
+    private string clientVariable = "state";
+    [SerializeField]
+    private bool isBoolean = false;
     [SerializeField]
     private int toggleIndex = -1;
     [SerializeField,UdonSynced,FieldChangeCallback(nameof(SyncedState))]
@@ -40,19 +42,22 @@ public class SyncedToggle : UdonSharpBehaviour
             syncedState = value;
             if (toggle != null && toggle.isOn != value)
                 toggle.SetIsOnWithoutNotify(value);
-            if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
+            foreach (var udonClient in udonClients)
             {
-                if (reportedState != syncedState)
+                if (toggle != null && !string.IsNullOrEmpty(clientVariable))
                 {
-                    if (toggleIndex < 0)
-                        toggleClient.SetProgramVariable<bool>(clientVariable, syncedState);
-                    else
+                    if (reportedState != syncedState)
                     {
-                        if (syncedState)
-                            toggleClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                        if (isBoolean)
+                            udonClient.SetProgramVariable<bool>(clientVariable, syncedState);
+                        else
+                        {
+                            if (syncedState)
+                                udonClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                        }
                     }
-                }
 
+                }
             }
             reportedState = value;
             RequestSerialization();
