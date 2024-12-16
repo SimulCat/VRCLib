@@ -162,11 +162,11 @@ MonoBehaviour:
   myText: {fileID: 5897294868850070114}
   languageIndex: 0
   texts:
-  - Momentum Transfer in Diffraction
-  - "\u6CE2\u306E\u56DE\u6298\u306B\u304A\u3051\u308B\u904B\u52D5\u91CF\u4F1D\u9054"
-  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52D5\u91CF\u50B3\u905E"
-  - "\u6CE2\u884D\u5C04\u4E2D\u7684\u52A8\u91CF\u4F20\u9012"
-  - "\uD30C\uB3D9 \uD68C\uC808\uC5D0\uC11C\uC758 \uC6B4\uB3D9\uB7C9 \uC804\uB2EC"
+  - Interference and<br>Momentum
+  - "\u5E72\u6E09\u3068\u52E2\u3044"
+  - "\u5E79\u64FE\u548C\u52D5\u91CF"
+  - "\u5E72\u6270\u548C\u52A8\u91CF"
+  - "\uAC04\uC12D\uACFC \uC6B4\uB3D9\uB7C9"
 --- !u!114 &656312730557704816
 MonoBehaviour:
   m_ObjectHideFlags: 0

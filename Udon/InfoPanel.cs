@@ -7,11 +7,11 @@ using TMPro;
 using VRC.Udon;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-[RequireComponent(typeof(ToggleGroup))]
 public class InfoPanel : UdonSharpBehaviour
 {
     [SerializeField] private ToggleGroup toggleGroup;
     [SerializeField] private Button closeButton;
+    [SerializeField] private UdonToggle openToggle;
     [SerializeField, FieldChangeCallback(nameof(LanguageIndex))] int languageIndex = 0;
     [SerializeField] private bool growShrink = true;
     [SerializeField] Vector2 panelSize = Vector2.one;
@@ -131,7 +131,7 @@ public class InfoPanel : UdonSharpBehaviour
             }
         }
         if (toggleIdx >= 0)
-            mode = toggleIdx;
+            Mode = toggleIdx;
         Show = toggleIdx >= 0;
     }
 
@@ -149,6 +149,8 @@ public class InfoPanel : UdonSharpBehaviour
             {
                 UpdatePage();
                 showing = value;
+                if (openToggle != null)
+                    openToggle.setState(value);
             }
         }
     }
@@ -204,14 +206,16 @@ public class InfoPanel : UdonSharpBehaviour
         UpdateOwnerShip();
         if (toggleGroup == null)
             toggleGroup = gameObject.GetComponent<ToggleGroup>();
-        toggleGroup.allowSwitchOff = true;
-        toggleGroup.SetAllTogglesOff(false);
+        if (toggleGroup != null)
+        {
+            toggleGroup.allowSwitchOff = true;
+            toggleGroup.SetAllTogglesOff(false);
+        }
         hasClose = closeButton != null && closeButton.gameObject.activeSelf;
         if (contentPanelRect != null)
             panelSize = contentPanelRect.sizeDelta;
         if (growShrink)
             growShrink = (shrinkSize.x * shrinkSize.y) > 0;
-        toggleGroup.EnsureValidState();
         UpdatePage();
     }
 }

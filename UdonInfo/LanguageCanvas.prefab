@@ -122,9 +122,12 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 5610478455596095827}
   toggle: {fileID: 7443328789098981426}
-  toggleClient: {fileID: 339798345975980562}
+  udonClients:
+  - {fileID: 339798345975980562}
+  clientVariable: toggleIndex
+  isBoolean: 0
   toggleIndex: 2
-  currentState: 0
+  syncedState: 0
   reportedState: 0
 --- !u!114 &5610478455596095827
 MonoBehaviour:
@@ -145,7 +148,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
@@ -355,11 +358,10 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 339798345975980562}
   languageIndex: 0
   toggleIndex: -1
-  localizedTexts:
+  localizedTexts: []
+  localizationClients:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  localizationClients: []
 --- !u!114 &339798345975980562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,9 +919,12 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 5659302781768046500}
   toggle: {fileID: 613758207207091119}
-  toggleClient: {fileID: 339798345975980562}
+  udonClients:
+  - {fileID: 339798345975980562}
+  clientVariable: toggleIndex
+  isBoolean: 0
   toggleIndex: 3
-  currentState: 0
+  syncedState: 0
   reportedState: 0
 --- !u!114 &5659302781768046500
 MonoBehaviour:
@@ -940,7 +945,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
@@ -1145,9 +1150,12 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 605286672801832340}
   toggle: {fileID: 4574140829237715800}
-  toggleClient: {fileID: 339798345975980562}
+  udonClients:
+  - {fileID: 339798345975980562}
+  clientVariable: toggleIndex
+  isBoolean: 0
   toggleIndex: 0
-  currentState: 0
+  syncedState: 0
   reportedState: 0
 --- !u!114 &605286672801832340
 MonoBehaviour:
@@ -1168,7 +1176,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
@@ -1297,9 +1305,12 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7104163909597177099}
   toggle: {fileID: 7083629222511731444}
-  toggleClient: {fileID: 339798345975980562}
+  udonClients:
+  - {fileID: 339798345975980562}
+  clientVariable: toggleIndex
+  isBoolean: 0
   toggleIndex: 4
-  currentState: 0
+  syncedState: 0
   reportedState: 0
 --- !u!114 &7104163909597177099
 MonoBehaviour:
@@ -1320,7 +1331,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
@@ -1449,9 +1460,12 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8797454772290244210}
   toggle: {fileID: 7190048479865512957}
-  toggleClient: {fileID: 339798345975980562}
+  udonClients:
+  - {fileID: 339798345975980562}
+  clientVariable: toggleIndex
+  isBoolean: 0
   toggleIndex: 1
-  currentState: 0
+  syncedState: 0
   reportedState: 0
 --- !u!114 &8797454772290244210
 MonoBehaviour:
@@ -1472,7 +1486,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 1
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}

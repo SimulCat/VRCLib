@@ -6,7 +6,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 
 [RequireComponent(typeof(Toggle))]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 
 public class UdonToggle : UdonSharpBehaviour
 {

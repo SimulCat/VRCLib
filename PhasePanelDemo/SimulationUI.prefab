@@ -1470,18 +1470,18 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 6967118494463113989}
   toggleGroup: {fileID: 3107511097739108335}
   closeButton: {fileID: 0}
+  openToggle: {fileID: 0}
   languageIndex: 0
-  supportPanel: {fileID: 0}
   growShrink: 1
   panelSize: {x: 610, y: 450}
   shrinkSize: {x: 610, y: 76}
+  alignHorizontal: 0
   showHideContentPanel: 1
   contentPanelRect: {fileID: 7013033673740437331}
   contentText: {fileID: 6821593148504734539}
   toggles:
   - {fileID: 2890608389210959651}
   - {fileID: 3902535396866126969}
-  modeToggles: []
   pages:
   - {fileID: 4220627865209410048}
   - {fileID: 2641283021115033946}
@@ -1492,7 +1492,8 @@ MonoBehaviour:
   - "\u4F7F\u7528\u8907\u6578\u9032\u884C\u7D93\u5178\u6CE2\u6A21\u64EC"
   - "\u4F7F\u7528\u590D\u6570\u7684\u7ECF\u5178\u6CE2\u6D6A\u6A21\u62DF"
   - "\uBCF5\uC18C\uC218\uB97C \uC774\uC6A9\uD55C \uACE0\uC804\uD30C \uC2DC\uBBAC\uB808\uC774\uC158"
-  selectedToggle: 0
+  show: 0
+  mode: 0
 --- !u!114 &6967118494463113989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,11 +3740,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3319827582069813279, guid: 55686d3a4f9eec3489bbfff71f912841,
         type: 3}
-    - target: {fileID: 3545862361050509088, guid: 55686d3a4f9eec3489bbfff71f912841,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7089829161567303152, guid: 55686d3a4f9eec3489bbfff71f912841,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -3756,16 +3752,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8168440233102192247, guid: 55686d3a4f9eec3489bbfff71f912841,
         type: 3}
-    - target: {fileID: 8168440233102192247, guid: 55686d3a4f9eec3489bbfff71f912841,
-        type: 3}
-      propertyPath: localizedTexts.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168440233102192247, guid: 55686d3a4f9eec3489bbfff71f912841,
-        type: 3}
-      propertyPath: localizationClients.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8168440233102192247, guid: 55686d3a4f9eec3489bbfff71f912841,
         type: 3}
       propertyPath: localizationClients.Array.data[0]

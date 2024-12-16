@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class UdonTween : UdonSharpBehaviour
 {
     [SerializeField]
