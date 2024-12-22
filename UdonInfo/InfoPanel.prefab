@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 474722f98acc0184e80a13a21d2c2806, type: 2}
-  m_Color: {r: 0, g: 0.09970238, b: 0.16037738, a: 0.89411765}
+  m_Material: {fileID: 2100000, guid: e63289acce8192f418271a318edafc31, type: 2}
+  m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -293,11 +293,12 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4926412167092619927}
   toggleGroup: {fileID: 4193235092411364038}
   closeButton: {fileID: 2013130002804789347}
+  openToggle: {fileID: 0}
   languageIndex: 0
-  supportPanel: {fileID: 0}
   growShrink: 1
   panelSize: {x: 780, y: 550}
   shrinkSize: {x: 780, y: 75}
+  alignHorizontal: 0
   showHideContentPanel: 1
   contentPanelRect: {fileID: 3438419577815233409}
   contentText: {fileID: 469481845871911722}
@@ -308,7 +309,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  modeToggles: []
   pages:
   - {fileID: 1949190569399080650}
   - {fileID: 0}
@@ -323,7 +323,8 @@ MonoBehaviour:
   - "<align=center><b>\u6B61\u8FCE</b>"
   - "<align=center><b>\u6B22\u8FCE</b>"
   - <align=center><b>Bem-vindo</b>
-  selectedToggle: -1
+  show: 0
+  mode: 0
 --- !u!114 &4926412167092619927
 MonoBehaviour:
   m_ObjectHideFlags: 0

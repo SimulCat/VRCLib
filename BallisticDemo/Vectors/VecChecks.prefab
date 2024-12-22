@@ -160,7 +160,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1267618626679980928}
   toggleTransition: 1
   graphic: {fileID: 1304098119432046239}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 5685485618451249361}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 754681203337364936}
   toggleTransition: 1
   graphic: {fileID: 6762210574474127241}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 5685485618451249361}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8776749185330566258}
   toggleTransition: 1
   graphic: {fileID: 387661665948798497}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 5685485618451249361}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2738658068903167145}
   toggleTransition: 1
   graphic: {fileID: 8249434404199700106}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 5685485618451249361}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2363,7 +2363,7 @@ PrefabInstance:
     - target: {fileID: 4243248937953843358, guid: 51c91a6811a321b4883f54ee41d1071c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 179
+      value: 75.8
       objectReference: {fileID: 0}
     - target: {fileID: 4243248937953843358, guid: 51c91a6811a321b4883f54ee41d1071c,
         type: 3}
