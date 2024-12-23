@@ -87,11 +87,6 @@ MonoBehaviour:
   probVizSlider: {fileID: 0}
   pulseWidthSlider: {fileID: 0}
   speedRangeSlider: {fileID: 0}
-  matProbabilitySim: {fileID: 0}
-  matParticleFlow: {fileID: 0}
-  ihaveParticleFlow: 0
-  iHaveProbability: 0
-  iHaveProbSimMat: 0
   shaderPlaying: 0
   particlePlayState: 1
   crtUpdateRequired: 0

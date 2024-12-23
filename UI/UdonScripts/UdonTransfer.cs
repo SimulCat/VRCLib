@@ -10,7 +10,7 @@ public class UdonTransfer : UdonSharpBehaviour
     [SerializeField]
     Transform[] objects;
     [SerializeField]
-    Vector3[] targetPositions;
+    Vector3[] targetOffsets;
 
     [SerializeField, FieldChangeCallback(nameof(Tween))]
     float tween;
@@ -31,11 +31,11 @@ public class UdonTransfer : UdonSharpBehaviour
             for (int i = 0; i < nTransforms; i++)
                 startPoints[i] = objects[i] != null ? objects[i].position : transform.position;
             endPoints = new Vector3[nTransforms];
-            int nOthers = targetPositions == null ? 0 : targetPositions.Length;
+            int nOthers = targetOffsets == null ? 0 : targetOffsets.Length;
             for (int i = 0; i < nTransforms; i++)
             {
-                if (i < nOthers && targetPositions[i] != null)
-                    endPoints[i] = targetPositions[i];
+                if (i < nOthers && targetOffsets[i] != null)
+                    endPoints[i] = startPoints[i] + targetOffsets[i];
                 else
                     endPoints[i] = startPoints[i];
             }
