@@ -3664,6 +3664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfoPhaseSim
       objectReference: {fileID: 0}
+    - target: {fileID: 2747719007095901375, guid: 379c20e1787df174da3b00d891be1880,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
