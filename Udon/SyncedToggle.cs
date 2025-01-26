@@ -44,19 +44,21 @@ public class SyncedToggle : UdonSharpBehaviour
                 toggle.SetIsOnWithoutNotify(value);
             foreach (var udonClient in udonClients)
             {
-                if (toggle != null && !string.IsNullOrEmpty(clientVariable))
+                if (udonClient != null)
                 {
-                    if (reportedState != syncedState)
+                    if (toggle != null && !string.IsNullOrEmpty(clientVariable))
                     {
-                        if (isBoolean)
-                            udonClient.SetProgramVariable<bool>(clientVariable, syncedState);
-                        else
+                        if (reportedState != syncedState)
                         {
-                            if (syncedState)
-                                udonClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                            if (isBoolean)
+                                udonClient.SetProgramVariable<bool>(clientVariable, syncedState);
+                            else
+                            {
+                                if (syncedState)
+                                    udonClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                            }
                         }
                     }
-
                 }
             }
             reportedState = value;

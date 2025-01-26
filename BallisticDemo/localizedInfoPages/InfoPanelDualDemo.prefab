@@ -66,8 +66,8 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4786292712603142728}
   toggleGroup: {fileID: 598862764074050583}
   closeButton: {fileID: 5074177738794003192}
+  openToggle: {fileID: 0}
   languageIndex: 0
-  supportPanel: {fileID: 0}
   growShrink: 1
   panelSize: {x: 580, y: 440}
   shrinkSize: {x: 580, y: 60}
@@ -78,7 +78,6 @@ MonoBehaviour:
   toggles:
   - {fileID: 1914041061493196841}
   - {fileID: 0}
-  modeToggles: []
   pages:
   - {fileID: 4932546396710422838}
   - {fileID: 0}
@@ -89,7 +88,9 @@ MonoBehaviour:
   - "<align=center><b>\u6B61\u8FCE</b>"
   - "<align=center><b>\u6B22\u8FCE</b>"
   - "<align=center><b>\uD658\uC601</b>"
-  selectedToggle: -1
+  - <align=center><b>Bem-vindo</b>
+  show: 0
+  mode: 0
 --- !u!114 &4786292712603142728
 MonoBehaviour:
   m_ObjectHideFlags: 0

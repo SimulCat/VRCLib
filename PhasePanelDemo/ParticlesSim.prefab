@@ -57,27 +57,27 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 2205653872012261555}
-  probabilityCRT: {fileID: 8600000, guid: f17afdd68fff7e140ae1d6c507660c27, type: 2}
-  simSize: {x: 2.56, y: 1.6}
+  probabilityCRT: {fileID: 8600000, guid: e8e7dd6a3b595d746b22a8beea84d7d4, type: 2}
+  simSize: {x: 3.2, y: 1.6}
   showProbability: 1
   probVisPercent: 20
-  simPixels: {x: 1280, y: 800}
+  simPixels: {x: 1600, y: 800}
   texName: _MomentumMap
   particleMeshRend: {fileID: 6258560510294531421}
-  visibility: 0
+  visibility: 1
   pointsWide: 256
   gratingOffset: 0
   slitCount: 2
   slitPitch: 45
   slitWidth: 12
-  pulseParticles: 0
+  pulseParticles: 1
   pulseWidth: 1
   speedRange: 10
   simScale: 0
-  displayColor: {r: 0, g: 1, b: 1, a: 1}
+  displayColor: {r: 0.20091671, g: 0.3301887, b: 0.3301887, a: 1}
   maxParticleK: 10
   minParticleK: 1
-  setColour: 0
+  setColour: 1
   particleK: 1
   togPlay: {fileID: 0}
   togPause: {fileID: 0}
@@ -89,9 +89,6 @@ MonoBehaviour:
   speedRangeSlider: {fileID: 0}
   shaderPlaying: 0
   particlePlayState: 1
-  crtUpdateRequired: 0
-  gratingUpdateRequired: 0
-  simPixelScale: 1
 --- !u!114 &2205653872012261555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +155,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344193298862342957}
-  m_Mesh: {fileID: 4300000, guid: 34cf2552eb5ffa6499299f8517158697, type: 2}
+  m_Mesh: {fileID: 4300000, guid: fb378ca5223f89344be5d239bda90f47, type: 2}
 --- !u!23 &2695089172646522027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -179,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41081c3dcc3c67d46b11531c4eb8bdb4, type: 2}
+  - {fileID: 2100000, guid: eac3645b1091ff0409ade0a07dd5e2eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -253,7 +250,7 @@ MeshRenderer:
   m_GameObject: {fileID: 5280913569055782977}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -264,7 +261,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0522d6a6811352945b2caf8b16c8f1e1, type: 2}
+  - {fileID: 2100000, guid: 8ee8ebb2734675446b8e834f01b08763, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -308,12 +305,12 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 6802576719300033432}
-  meshDimensions: {x: 2.56, y: 1.6, z: 0.1}
+  meshDimensions: {x: 3.2, y: 1.6, z: 0.1}
   isRectangular: 0
   centerArrayOrigin: 1
-  pointsAcross: {x: 192, y: 120, z: 1}
+  pointsAcross: {x: 240, y: 120, z: 1}
   snapOrigin: 1
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 8ee8ebb2734675446b8e834f01b08763, type: 2}
   arraySpacing: {x: 0, y: 0, z: 0}
   arrayRadius: 0
   arrayOrigin: {x: 0, y: 0, z: 0}

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -142,8 +142,8 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 8510361697054010219}
   toggleGroup: {fileID: 7212602356984987910}
   closeButton: {fileID: 3397650608973070191}
+  openToggle: {fileID: 0}
   languageIndex: 0
-  supportPanel: {fileID: 0}
   growShrink: 1
   panelSize: {x: 480, y: 440}
   shrinkSize: {x: 480, y: 60}
@@ -154,7 +154,6 @@ MonoBehaviour:
   toggles:
   - {fileID: 8351947951563796691}
   - {fileID: 0}
-  modeToggles: []
   pages:
   - {fileID: 7018644261151182320}
   - {fileID: 0}
@@ -166,7 +165,8 @@ MonoBehaviour:
   - "<align=center><b><size=120%>\u4F7F\u7528\u590D\u6570\u7684\u7ECF\u5178\u6CE2\u6D6A\u6A21\u62DF"
   - "<align=center><b><size=120%>\uBCF5\uC18C\uC218\uB97C \uC774\uC6A9\uD55C \uACE0\uC804\uD30C
     \uC2DC\uBBAC\uB808\uC774\uC158"
-  selectedToggle: -1
+  show: 0
+  mode: 0
 --- !u!114 &8510361697054010219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,15 +571,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
-      propertyPath: pageTitles.Array.data[0]
-      value: Waves with Imaginary Numbers
+      propertyPath: pageBodies.Array.data[0]
+      value: This wave visualisation simulates motion by rotating the phase angle
+        of a field of complex numbers that encode the wave's amplitude and phase
+        information within the diffraction pattern.<br>A program running on the GPU
+        generates this field of complex numbers, allowing the pattern to be recalculated
+        in a single pass.<br>Recalculation takes place only when there's a change
+        in the wavelength or aperture pattern.
       objectReference: {fileID: 0}
     - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
+      objectReference: {fileID: 0}
+    - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
+      propertyPath: serializationData.SerializedFormat
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823376, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_IsOn
@@ -704,6 +713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InfoPhaseSim
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747719007095901375, guid: 379c20e1787df174da3b00d891be1880,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2747719007095901375, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}

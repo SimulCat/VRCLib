@@ -1,5 +1,4 @@
 ﻿
-using System.Security.AccessControl;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,10 +42,14 @@ public class SyncedTween : UdonSharpBehaviour
         if (syncedState)
         {
             if (stateToggle != null)
-                stateToggle.SetIsOnWithoutNotify(syncedState);
+                stateToggle.SetIsOnWithoutNotify(true);
             return;
         }
-        offToggle.SetIsOnWithoutNotify(true);
+        else
+        {
+            if (offToggle != null)
+                offToggle.SetIsOnWithoutNotify(true);
+        }
     }
 
     private bool SyncedState
