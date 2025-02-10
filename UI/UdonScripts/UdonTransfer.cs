@@ -17,9 +17,9 @@ public class UdonTransfer : UdonSharpBehaviour
 
     private float updatedValue = -1;
     private int nTransforms = -1;
-    [SerializeField]
+    //[SerializeField]
     private Vector3[] startPoints;
-    [SerializeField]
+    //[SerializeField]
     private Vector3[] endPoints;
 
     private void init()
