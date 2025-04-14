@@ -91,7 +91,6 @@ public class UdonSlider : UdonSharpBehaviour
             RequestSerialization();
         }
     }
-
     private void updateThreshold()
     {
         smoothThreshold = thresholdScale * Mathf.Max(0.01f, Mathf.Abs(maxValue - minValue));
