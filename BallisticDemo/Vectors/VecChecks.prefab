@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -226,7 +226,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: b68b51e024a3866499208156874c83bc,
+  serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -566,7 +566,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: 0644b6bf94f5eec4ea87e54bd1c2f69b,
+  serializedProgramAsset: {fileID: 11400000, guid: 91da3395536128a4484aa921b3a15926,
     type: 2}
   programSource: {fileID: 11400000, guid: e1d9fcc315f2f52458af8391ca708286, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -723,7 +723,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: b68b51e024a3866499208156874c83bc,
+  serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: b68b51e024a3866499208156874c83bc,
+  serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: b68b51e024a3866499208156874c83bc,
+  serializedProgramAsset: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
     type: 2}
   programSource: {fileID: 11400000, guid: 20cae734fbc0ce54bb0f46bebf455058, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
@@ -1368,12 +1368,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3426588723456191562, guid: 07ed77f859972614da37063c3acb017a,
+      objectReference: {fileID: 3426588723456191562, guid: 07ed77f859972614da37063c3acb017a,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5499064513375965687, guid: 07ed77f859972614da37063c3acb017a,
         type: 3}
       propertyPath: m_Name
@@ -1483,7 +1479,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 746011f08ca611d47982ae8716907852,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1623,29 +1619,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5170645877619918600, guid: c2e19982a08835b4c8f45a14cb1764d4,
         type: 3}
-      propertyPath: texts.Array.data[0]
-      value: Photon/Particle<br>Momentum
-      objectReference: {fileID: 0}
-    - target: {fileID: 5170645877619918600, guid: c2e19982a08835b4c8f45a14cb1764d4,
-        type: 3}
-      propertyPath: texts.Array.data[5]
-      value: "Momento do<br>F\xF3ton/Part\xEDcula"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5170645877619918600, guid: c2e19982a08835b4c8f45a14cb1764d4,
-        type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5170645877619918600, guid: c2e19982a08835b4c8f45a14cb1764d4,
+      objectReference: {fileID: 5170645877619918600, guid: c2e19982a08835b4c8f45a14cb1764d4,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6250473413320978285, guid: c2e19982a08835b4c8f45a14cb1764d4,
-        type: 3}
-      propertyPath: m_text
-      value: Photon/Particle<br>Momentum
-      objectReference: {fileID: 0}
     - target: {fileID: 6250473413320978285, guid: c2e19982a08835b4c8f45a14cb1764d4,
         type: 3}
       propertyPath: m_fontSize
@@ -1675,7 +1652,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 746011f08ca611d47982ae8716907852,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1712,34 +1689,20 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 551902598081025831, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 551902598081025831, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1068209140999254309, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 1a3e696820e4d7147a23fa711fd6ba71,
+      objectReference: {fileID: 11400000, guid: 0c4ebdb0d0e747c42af886ac0649096d,
         type: 2}
     - target: {fileID: 1668126260037727038, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 1a3e696820e4d7147a23fa711fd6ba71,
+      objectReference: {fileID: 11400000, guid: 0c4ebdb0d0e747c42af886ac0649096d,
         type: 2}
-    - target: {fileID: 1752222049951745798, guid: 15620c0cb5965214984fdc3992b44d4c,
-        type: 3}
-      propertyPath: contentText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752222049951745798, guid: 15620c0cb5965214984fdc3992b44d4c,
-        type: 3}
-      propertyPath: contentPanelRect
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1752222049951745798, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: toggles.Array.size
@@ -1784,12 +1747,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752222049951745798, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 1752222049951745798, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1820801105948259665, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_Group
@@ -1799,35 +1758,121 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 1a3e696820e4d7147a23fa711fd6ba71,
+      objectReference: {fileID: 11400000, guid: 0c4ebdb0d0e747c42af886ac0649096d,
         type: 2}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[0]
+      value: "Quantizing the Bragg model of diffraction is challenging because the
+        method depends on summing contributions at the detection point. In contrast,
+        the k-vector model, which emphasises diffraction at the source, offers a
+        more straightforward pathway to understanding scattering experiments.\r\n\r\nThe
+        diagram above illustrates that the momentum impulse exchanged between particles
+        and the slit pattern is identical to the momentum imparted to the plane wave
+        components in the k-vector diffraction model.\r\n\r\nThe momentum imparted
+        to a particle departing along a primary diffraction direction is given by
+        the formula <b>\u0394p=nh/d.</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[1]
+      value: "\u30D6\u30E9\u30C3\u30B0\u56DE\u6298\u30E2\u30C7\u30EB\u306E\u91CF\u5B50\u5316\u306F\u3001\u691C\u51FA\u70B9\u306B\u304A\u3051\u308B\u5BC4\u4E0E\u306E\u548C\u306B\u4F9D\u5B58\u3059\u308B\u305F\u3081\u56F0\u96E3\u3067\u3059\u3002\u5BFE\u7167\u7684\u306B\u3001\u5149\u6E90\u306B\u304A\u3051\u308B\u56DE\u6298\u3092\u91CD\u8996\u3059\u308Bk\u30D9\u30AF\u30C8\u30EB\u30E2\u30C7\u30EB\u306F\u3001\u6563\u4E71\u5B9F\u9A13\u3092\u7406\u89E3\u3059\u308B\u305F\u3081\u306E\u3088\u308A\u76F4\u63A5\u7684\u306A\u9053\u7B4B\u3092\u63D0\u4F9B\u3057\u307E\u3059\u3002\r\n\r\n\u4E0A\u306E\u56F3\u306F\u3001\u7C92\u5B50\u3068\u30B9\u30EA\u30C3\u30C8\u30D1\u30BF\u30FC\u30F3\u306E\u9593\u3067\u4EA4\u63DB\u3055\u308C\u308B\u904B\u52D5\u91CF\u30A4\u30F3\u30D1\u30EB\u30B9\u304C\u3001k\u30D9\u30AF\u30C8\u30EB\u56DE\u6298\u30E2\u30C7\u30EB\u306B\u304A\u3044\u3066\u5E73\u9762\u6CE2\u6210\u5206\u306B\u4E0E\u3048\u3089\u308C\u308B\u904B\u52D5\u91CF\u3068\u540C\u4E00\u3067\u3042\u308B\u3053\u3068\u3092\u793A\u3057\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u4E00\u6B21\u56DE\u6298\u65B9\u5411\u306B\u6CBF\u3063\u3066\u51FA\u767A\u3059\u308B\u7C92\u5B50\u306B\u4E0E\u3048\u3089\u308C\u308B\u904B\u52D5\u91CF\u306F\u3001\u5F0F<b>\u0394p=nh/d</b>\u3067\u4E0E\u3048\u3089\u308C\u307E\u3059\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[2]
+      value: "\u91CF\u5316\u5E03\u62C9\u683C\u884D\u5C04\u6A21\u578B\u5177\u6709\u6311\u6230\u6027\uFF0C\u56E0\u70BA\u8A72\u65B9\u6CD5\u4F9D\u8CF4\u65BC\u6AA2\u6E2C\u9EDE\u7684\u7E3D\u548C\u8CA2\u737B\u3002\u76F8\u8F03\u4E4B\u4E0B\uFF0C\u5F37\u8ABF\u6E90\u982D\u7E5E\u5C04\u7684
+        k \u5411\u91CF\u6A21\u578B\u70BA\u7406\u89E3\u6563\u5C04\u5BE6\u9A57\u63D0\u4F9B\u4E86\u66F4\u76F4\u63A5\u7684\u9014\u5F91\u3002\r\n\r\n\u4E0A\u5716\u8AAA\u660E\u7C92\u5B50\u8207\u72F9\u7E2B\u5716\u6848\u4E4B\u9593\u4EA4\u63DB\u7684\u52D5\u91CF\u885D\u91CF\u8207\u8CE6\u4E88
+        k \u5411\u91CF\u7E5E\u5C04\u6A21\u578B\u4E2D\u5E73\u9762\u6CE2\u5206\u91CF\u7684\u52D5\u91CF\u76F8\u540C\u3002\r\n\r\n\u6CBF\u4E3B\u8981\u7E5E\u5C04\u65B9\u5411\u96E2\u958B\u7684\u7C92\u5B50\u7684\u52D5\u91CF\u7531\u516C\u5F0F<b>\u0394p=nh/d</b>\u7D66\u51FA\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[3]
+      value: "\u5E03\u62C9\u683C\u884D\u5C04\u6A21\u578B\u7684\u91CF\u5316\u9887\u5177\u6311\u6218\u6027\uFF0C\u56E0\u4E3A\u8BE5\u65B9\u6CD5\u4F9D\u8D56\u4E8E\u5BF9\u68C0\u6D4B\u70B9\u7684\u8D21\u732E\u8FDB\u884C\u6C42\u548C\u3002\u76F8\u6BD4\u4E4B\u4E0B\uFF0C\u5F3A\u8C03\u6E90\u5934\u884D\u5C04\u7684k\u77E2\u91CF\u6A21\u578B\u4E3A\u7406\u89E3\u6563\u5C04\u5B9E\u9A8C\u63D0\u4F9B\u4E86\u66F4\u76F4\u63A5\u7684\u9014\u5F84\u3002\r\n\r\n\u4E0A\u56FE\u663E\u793A\uFF0C\u7C92\u5B50\u4E0E\u72ED\u7F1D\u56FE\u6848\u4E4B\u95F4\u4EA4\u6362\u7684\u52A8\u91CF\u51B2\u91CF\u4E0Ek\u77E2\u91CF\u884D\u5C04\u6A21\u578B\u4E2D\u8D4B\u4E88\u5E73\u9762\u6CE2\u5206\u91CF\u7684\u52A8\u91CF\u76F8\u540C\u3002\r\n\r\n\u6CBF\u4E3B\u884D\u5C04\u65B9\u5411\u79BB\u5F00\u7684\u7C92\u5B50\u6240\u83B7\u5F97\u7684\u52A8\u91CF\u7531\u516C\u5F0F<b>\u0394p=nh/d</b>\u7ED9\u51FA\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[4]
+      value: "\uBE0C\uB798\uADF8 \uD68C\uC808 \uBAA8\uB378\uC744 \uC591\uC790\uD654\uD558\uB294
+        \uAC83\uC740 \uAC80\uCD9C \uC9C0\uC810\uC5D0\uC11C\uC758 \uAE30\uC5EC\uB3C4\uB97C
+        \uD569\uC0B0\uD558\uB294 \uBC29\uC2DD\uC5D0 \uC758\uC874\uD558\uAE30 \uB54C\uBB38\uC5D0
+        \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uC774\uC640\uB294 \uB300\uC870\uC801\uC73C\uB85C,
+        \uAD11\uC6D0\uC5D0\uC11C\uC758 \uD68C\uC808\uC744 \uAC15\uC870\uD558\uB294
+        k-\uBCA1\uD130 \uBAA8\uB378\uC740 \uC0B0\uB780 \uC2E4\uD5D8\uC744 \uC774\uD574\uD558\uB294
+        \uB370 \uB354 \uAC04\uB2E8\uD55C \uACBD\uB85C\uB97C \uC81C\uACF5\uD569\uB2C8\uB2E4.\r\n\r\n\uC704
+        \uADF8\uB9BC\uC740 \uC785\uC790\uC640 \uC2AC\uB9BF \uD328\uD134 \uC0AC\uC774\uC5D0
+        \uAD50\uD658\uB418\uB294 \uC6B4\uB3D9\uB7C9 \uC784\uD384\uC2A4\uAC00 k-\uBCA1\uD130
+        \uD68C\uC808 \uBAA8\uB378\uC5D0\uC11C \uD3C9\uBA74\uD30C \uC131\uBD84\uC5D0
+        \uC804\uB2EC\uB418\uB294 \uC6B4\uB3D9\uB7C9\uACFC \uB3D9\uC77C\uD568\uC744
+        \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.\r\n\r\n\uC8FC \uD68C\uC808 \uBC29\uD5A5\uC744
+        \uB530\uB77C \uC774\uD0C8\uD558\uB294 \uC785\uC790\uC5D0 \uC804\uB2EC\uB418\uB294
+        \uC6B4\uB3D9\uB7C9\uC740 <b>\u0394p=nh/d</b>\uB77C\uB294 \uACF5\uC2DD\uC73C\uB85C
+        \uC8FC\uC5B4\uC9D1\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[5]
+      value: "Quantificar o modelo de difra\xE7\xE3o de Bragg \xE9 desafiador porque
+        o m\xE9todo depende da soma das contribui\xE7\xF5es no ponto de detec\xE7\xE3o.
+        Em contraste, o modelo do vetor k, que enfatiza a difra\xE7\xE3o na fonte,
+        oferece um caminho mais direto para a compreens\xE3o de experimentos de espalhamento.\r\n\r\nO
+        diagrama acima ilustra que o impulso de momento trocado entre as part\xEDculas
+        e o padr\xE3o de fenda \xE9 id\xEAntico ao momento transmitido \xE0s componentes
+        da onda plana no modelo de difra\xE7\xE3o do vetor k.\r\n\r\nO momento transmitido
+        a uma part\xEDcula que parte ao longo de uma dire\xE7\xE3o de difra\xE7\xE3o
+        prim\xE1ria \xE9 dado pela f\xF3rmula <b>\u0394p = nh/d.</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[0]
+      value: From Classical Diffraction to Quantum Scattering
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[1]
+      value: "\u53E4\u5178\u56DE\u6298\u304B\u3089\u91CF\u5B50\u6563\u4E71\u3078"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[2]
+      value: "\u5F9E\u7D93\u5178\u884D\u5C04\u5230\u91CF\u5B50\u6563\u5C04"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[3]
+      value: "\u4ECE\u7ECF\u5178\u884D\u5C04\u5230\u91CF\u5B50\u6563\u5C04"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[4]
+      value: "\uACE0\uC804\uC801 \uD68C\uC808\uC5D0\uC11C \uC591\uC790 \uC0B0\uB780\uAE4C\uC9C0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageTitles.Array.data[5]
+      value: "Da Difra\xE7\xE3o Cl\xE1ssica \xE0 Espalhamento Qu\xE2ntico"
+      objectReference: {fileID: 0}
     - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 2429898636806020013, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4180998583607803632, guid: 15620c0cb5965214984fdc3992b44d4c,
-        type: 3}
-      propertyPath: serializedProgramAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1a3e696820e4d7147a23fa711fd6ba71,
-        type: 2}
-    - target: {fileID: 4492940365658038372, guid: 15620c0cb5965214984fdc3992b44d4c,
-        type: 3}
-      propertyPath: serializedProgramAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: f923c620d8b25e84284d0a312939e117,
-        type: 2}
     - target: {fileID: 4662980476470768828, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: b3526e9ada9e5cd41863ff9ae5e65004,
+      objectReference: {fileID: 11400000, guid: da4b0d78e36f08d459c35c0302c6b05a,
         type: 2}
     - target: {fileID: 5866396320828835205, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -1903,12 +1948,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866396320828835205, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 5866396320828835205, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1922,7 +1963,7 @@ PrefabInstance:
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -1932,7 +1973,7 @@ PrefabInstance:
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -1942,12 +1983,12 @@ PrefabInstance:
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 64
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 64
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -1962,7 +2003,7 @@ PrefabInstance:
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -1987,12 +2028,12 @@ PrefabInstance:
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -35
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 94
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6371800444328492163, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
@@ -2018,38 +2059,77 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7127128720508797306, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 7127128720508797306, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[0]
+      value: "The plane wave (k-vector) propagation model focuses on the momentum
+        distribution in a wavefront by treating the diffracted wavefront as a combination
+        of overlapping plane waves.<br><br>In this model, the downstream diffraction
+        pattern results from a linear diffusion process that maintains the momentum
+        distribution across the wavefront from the moment it passes through the apertures
+        until detection.<br><br>The difference in momentum between a plane wave travelling
+        along a diffraction ray and one travelling straight ahead is <b>\u0394k=n/d</b> "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[1]
+      value: "\u5E73\u9762\u6CE2\uFF08k \u30D9\u30AF\u30C8\u30EB\uFF09\u4F1D\u64AD\u30E2\u30C7\u30EB\u306F\u3001\u56DE\u6298\u6CE2\u9762\u3092\u91CD\u306A\u308A\u5408\u3046\u5E73\u9762\u6CE2\u306E\u7D44\u307F\u5408\u308F\u305B\u3068\u3057\u3066\u6271\u3046\u3053\u3068\u3067\u3001\u6CE2\u9762\u5185\u306E\u904B\u52D5\u91CF\u5206\u5E03\u306B\u7126\u70B9\u3092\u5F53\u3066\u307E\u3059\u3002<br><br>\u3053\u306E\u30E2\u30C7\u30EB\u3067\u306F\u3001\u4E0B\u6D41\u306E\u56DE\u6298\u30D1\u30BF\u30FC\u30F3\u306F\u3001\u6CE2\u9762\u304C\u958B\u53E3\u90E8\u3092\u901A\u904E\u3057\u305F\u77AC\u9593\u304B\u3089\u691C\u51FA\u3055\u308C\u308B\u307E\u3067\u3001\u6CE2\u9762\u5168\u4F53\u306E\u904B\u52D5\u91CF\u5206\u5E03\u3092\u7DAD\u6301\u3059\u308B\u7DDA\u5F62\u62E1\u6563\u30D7\u30ED\u30BB\u30B9\u306B\u3088\u3063\u3066\u751F\u3058\u307E\u3059\u3002<br><br>\u56DE\u6298\u5149\u7DDA\u306B\u6CBF\u3063\u3066\u9032\u3080\u5E73\u9762\u6CE2\u3068\u76F4\u9032\u3059\u308B\u5E73\u9762\u6CE2\u306E\u904B\u52D5\u91CF\u306E\u5DEE\u306F
+        <b>\u0394k=n/d</b> \u3067\u3059\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[2]
+      value: "\u5E73\u9762\u6CE2\uFF08k \u5411\u91CF\uFF09\u50B3\u64AD\u6A21\u578B\u900F\u904E\u5C07\u884D\u5C04\u6CE2\u524D\u8996\u70BA\u91CD\u758A\u5E73\u9762\u6CE2\u7684\u7D44\u5408\u4F86\u95DC\u6CE8\u6CE2\u524D\u7684\u52D5\u91CF\u5206\u4F48\u3002
+        <br><br>\u5728\u6B64\u6A21\u578B\u4E2D\uFF0C\u4E0B\u6E38\u884D\u5C04\u5716\u6848\u7531\u7DDA\u6027\u64F4\u6563\u904E\u7A0B\u7522\u751F\uFF0C\u8A72\u904E\u7A0B\u5F9E\u6CE2\u524D\u7A7F\u904E\u5B54\u5F91\u76F4\u5230\u88AB\u6AA2\u6E2C\u5230\u70BA\u6B62\uFF0C\u4FDD\u6301\u6574\u500B\u6CE2\u524D\u7684\u52D5\u91CF\u5206\u4F48\u3002
+        <br><br>\u6CBF\u7E5E\u5C04\u5C04\u7DDA\u50B3\u64AD\u7684\u5E73\u9762\u6CE2\u8207\u76F4\u7DDA\u50B3\u64AD\u7684\u5E73\u9762\u6CE2\u4E4B\u9593\u7684\u52D5\u91CF\u5DEE\u70BA<b>\u0394k=n/d</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[3]
+      value: "\u5E73\u9762\u6CE2\uFF08k \u77E2\u91CF\uFF09\u4F20\u64AD\u6A21\u578B\u901A\u8FC7\u5C06\u884D\u5C04\u6CE2\u524D\u89C6\u4E3A\u91CD\u53E0\u5E73\u9762\u6CE2\u7684\u7EC4\u5408\u6765\u5173\u6CE8\u6CE2\u524D\u7684\u52A8\u91CF\u5206\u5E03\u3002<br><br>\u5728\u6B64\u6A21\u578B\u4E2D\uFF0C\u4E0B\u6E38\u884D\u5C04\u56FE\u6848\u7531\u7EBF\u6027\u6269\u6563\u8FC7\u7A0B\u4EA7\u751F\uFF0C\u8BE5\u8FC7\u7A0B\u4ECE\u6CE2\u524D\u7A7F\u8FC7\u5B54\u5F84\u76F4\u5230\u88AB\u68C0\u6D4B\u5230\u4E3A\u6B62\uFF0C\u4FDD\u6301\u6574\u4E2A\u6CE2\u524D\u7684\u52A8\u91CF\u5206\u5E03\u3002<br><br>\u6CBF\u884D\u5C04\u5C04\u7EBF\u4F20\u64AD\u7684\u5E73\u9762\u6CE2\u4E0E\u76F4\u7EBF\u4F20\u64AD\u7684\u5E73\u9762\u6CE2\u4E4B\u95F4\u7684\u52A8\u91CF\u5DEE\u4E3A<b>\u0394k=n/d</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[4]
+      value: "\uD3C9\uBA74\uD30C(k-\uBCA1\uD130) \uC804\uD30C \uBAA8\uB378\uC740
+        \uD68C\uC808\uB41C \uD30C\uBA74\uC744 \uC911\uCCA9\uB41C \uD3C9\uBA74\uD30C\uC758
+        \uC870\uD569\uC73C\uB85C \uCC98\uB9AC\uD558\uC5EC \uD30C\uBA74\uC758 \uC6B4\uB3D9\uB7C9
+        \uBD84\uD3EC\uC5D0 \uCD08\uC810\uC744 \uB9DE\uCDA5\uB2C8\uB2E4.<br><br>\uC774
+        \uBAA8\uB378\uC5D0\uC11C \uD558\uB958 \uD68C\uC808 \uD328\uD134\uC740 \uD30C\uBA74\uC774
+        \uAD6C\uBA4D\uC744 \uD1B5\uACFC\uD558\uB294 \uC21C\uAC04\uBD80\uD130 \uAC10\uC9C0\uB420
+        \uB54C\uAE4C\uC9C0 \uD30C\uBA74 \uC804\uCCB4\uC5D0 \uAC78\uCCD0 \uC6B4\uB3D9\uB7C9
+        \uBD84\uD3EC\uB97C \uC720\uC9C0\uD558\uB294 \uC120\uD615 \uD655\uC0B0 \uACFC\uC815\uC758
+        \uACB0\uACFC\uC785\uB2C8\uB2E4.<br><br>\uD68C\uC808 \uAD11\uC120\uC744 \uB530\uB77C
+        \uC774\uB3D9\uD558\uB294 \uD3C9\uBA74\uD30C\uC640 \uC9C1\uC9C4\uD558\uC5EC
+        \uC774\uB3D9\uD558\uB294 \uD3C9\uBA74\uD30C\uC758 \uC6B4\uB3D9\uB7C9 \uCC28\uC774\uB294
+        <b>\u0394k=n/d</b>\uC785\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+        type: 3}
+      propertyPath: pageBodies.Array.data[5]
+      value: "O modelo de propaga\xE7\xE3o de onda plana (vetor k) foca na distribui\xE7\xE3o
+        de momento em uma frente de onda, tratando a frente de onda difratada como
+        uma combina\xE7\xE3o de ondas planas sobrepostas.<br><br>Neste modelo, o
+        padr\xE3o de difra\xE7\xE3o a jusante resulta de um processo de difus\xE3o
+        linear que mant\xE9m a distribui\xE7\xE3o de momento na frente de onda desde
+        o momento em que passa pelas aberturas at\xE9 a detec\xE7\xE3o.<br><br>A
+        diferen\xE7a de momento entre uma onda plana viajando ao longo de um raio
+        de difra\xE7\xE3o e uma viajando em linha reta \xE9 <b>\u0394k=n/d</b>"
       objectReference: {fileID: 0}
     - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 7380805030850050531, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7715497387534460200, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7715497387534460200, guid: 15620c0cb5965214984fdc3992b44d4c,
+      objectReference: {fileID: 7715497387534460200, guid: 15620c0cb5965214984fdc3992b44d4c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8148471628215322891, guid: 15620c0cb5965214984fdc3992b44d4c,
-        type: 3}
-      propertyPath: serializedProgramAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1a3e696820e4d7147a23fa711fd6ba71,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2147,18 +2227,14 @@ PrefabInstance:
     - target: {fileID: 3426588723456191562, guid: 0561a275c7b9b9848bc332ae86e10625,
         type: 3}
       propertyPath: texts.Array.data[0]
-      value: Primary Interference<br>Directions
+      value: Primary Energy<br>Directions
       objectReference: {fileID: 0}
     - target: {fileID: 3426588723456191562, guid: 0561a275c7b9b9848bc332ae86e10625,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3426588723456191562, guid: 0561a275c7b9b9848bc332ae86e10625,
+      objectReference: {fileID: 3426588723456191562, guid: 0561a275c7b9b9848bc332ae86e10625,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5499064513375965687, guid: 0561a275c7b9b9848bc332ae86e10625,
         type: 3}
       propertyPath: m_Name
@@ -2273,7 +2349,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 746011f08ca611d47982ae8716907852,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2335,12 +2411,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3426588723456191562, guid: 7e670b63c231c0c449f8a75cd4af38a6,
+      objectReference: {fileID: 3426588723456191562, guid: 7e670b63c231c0c449f8a75cd4af38a6,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5499064513375965687, guid: 7e670b63c231c0c449f8a75cd4af38a6,
         type: 3}
       propertyPath: m_Name
@@ -2450,7 +2522,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 746011f08ca611d47982ae8716907852,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2592,7 +2664,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 746011f08ca611d47982ae8716907852,
+      objectReference: {fileID: 11400000, guid: 2c5689d2b713d6f4c92dc2c2e9da4f2a,
         type: 2}
     - target: {fileID: 7739735949815937159, guid: 51c91a6811a321b4883f54ee41d1071c,
         type: 3}
@@ -2633,12 +2705,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7739735949815937159, guid: 51c91a6811a321b4883f54ee41d1071c,
+      objectReference: {fileID: 7739735949815937159, guid: 51c91a6811a321b4883f54ee41d1071c,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
