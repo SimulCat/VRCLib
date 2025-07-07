@@ -15,7 +15,7 @@ public class LocalizedText : UdonSharpBehaviour
     [SerializeField,FieldChangeCallback(nameof(LanguageIndex))]
     private int languageIndex = 0;
 
-    [SerializeField] string[] texts;
+    [SerializeField,Multiline] string[] texts;
     private int currentIndex = -1;
     public int LanguageIndex
     { 
