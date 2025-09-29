@@ -42,6 +42,8 @@ public class SyncedSlider : UdonSharpBehaviour
     private float maxValue = 1;
     [SerializeField]
     private float minValue = 0;
+    [SerializeField]
+    bool debug = false;
     const float thresholdScale = 0.002f;
     float smoothThreshold = 0.003f;
 
@@ -79,10 +81,16 @@ public class SyncedSlider : UdonSharpBehaviour
         maxValue = max;
         if (!started)
         {
+            if (debug)
+                Debug.Log($"SyncedSlider:{gameObject.name} \nSetValues called before Start, setting initial values: {value}, {min}, {max}");
             reportedValue = value;
             syncedValue = value;
+            if (slider != null)
+                slider.SetValueWithoutNotify(value);
             return;
         }
+        if (debug)
+            Debug.Log($"SyncedSlider:{gameObject.name} \nSetValues called after Start, setting initial values: {value}, {min}, {max}");
         updateThreshold();
         if (locallyOwned)
         {
@@ -105,6 +113,8 @@ public class SyncedSlider : UdonSharpBehaviour
             syncedValue = value;
             return;
         }
+        if (slider == null)
+            slider = GetComponent<Slider>();
         updateThreshold();
         if (locallyOwned)
         {
@@ -187,6 +197,12 @@ public class SyncedSlider : UdonSharpBehaviour
         get => reportedValue;
         set
         {
+            if (!started)
+            {
+                if (debug)
+                    Debug.Log($"SyncedSlider:{gameObject.name} \nReport Attempt before Start, setting initial value: {value}");
+                return;
+            }
             reportedValue = value;
             if (iHaveClientVar)
             {
@@ -289,10 +305,9 @@ public class SyncedSlider : UdonSharpBehaviour
             hideLabel = true;
         if (slider != null)
         {
-            slider.interactable = interactable;
             slider.minValue = minValue;
             slider.maxValue = maxValue;
-           // slider.SetValueWithoutNotify(syncedValue);
+            slider.interactable = interactable;
         }
         reportedValue = syncedValue;
         targetValue = syncedValue;
