@@ -968,9 +968,6 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4683153376964916738}
   simCRT: {fileID: 8600000, guid: e8e7dd6a3b595d746b22a8beea84d7d4, type: 2}
   thePanel: {fileID: 0}
-  speedSlider: {fileID: 6567485331260317651}
-  waveSpeed: 1
-  defaultSpeed: 1
   dt: 0.3
   togPlay: {fileID: 8572109506217550539}
   togPause: {fileID: 5812894318783940142}
@@ -982,7 +979,9 @@ MonoBehaviour:
   togImPwr: {fileID: 1285560436743985672}
   togAmplitude: {fileID: 2140935827579824888}
   togProbability: {fileID: 8477438816117445229}
-  lambdaSlider: {fileID: 952994405989445044}
+  speedSlider: {fileID: 6567485331260317651}
+  waveSpeed: 1
+  momentumSlider: {fileID: 0}
   defaultLambda: 24
   lambda: 24
   pitchSlider: {fileID: 2719255282060182875}
@@ -5162,18 +5161,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0dafc6d0a135b468ad68c3591c0155, type: 3}
---- !u!114 &952994405989445044 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7937552624383831536, guid: 8c0dafc6d0a135b468ad68c3591c0155,
-    type: 3}
-  m_PrefabInstance: {fileID: 7142266259683491908}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa412dc0e73a76849ad79c183efeaf21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4366818911843029998 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6882736062723904426, guid: 8c0dafc6d0a135b468ad68c3591c0155,

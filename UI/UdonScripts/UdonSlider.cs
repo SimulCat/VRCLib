@@ -100,16 +100,10 @@ public class UdonSlider : UdonSharpBehaviour
     {
         if (mySlider == null)
             mySlider = GetComponent<Slider>();
-        if (mySlider.value < min)
-            mySlider.SetValueWithoutNotify(min);
-        if (mySlider.value > max)
-            mySlider.SetValueWithoutNotify(max);
         SetValue(Mathf.Clamp(mySlider.value, minValue, maxValue));
         minValue = min;
         maxValue = max;
         updateThreshold();
-        if (!started)
-            return;
         mySlider.minValue = minValue;
         mySlider.maxValue = maxValue;
     }
