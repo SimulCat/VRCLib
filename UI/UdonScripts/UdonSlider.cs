@@ -74,6 +74,11 @@ public class UdonSlider : UdonSharpBehaviour
         }
     }
 
+    public string ClientVariableName
+    {
+        get => clientVariableName;
+        set => clientVariableName = value;
+    }
     public void SetValue(float value)
     {
         if (!started)
@@ -98,8 +103,6 @@ public class UdonSlider : UdonSharpBehaviour
 
     public void SetLimits(float min, float max)
     {
-        if (mySlider == null)
-            mySlider = GetComponent<Slider>();
         SetValue(Mathf.Clamp(mySlider.value, minValue, maxValue));
         minValue = min;
         maxValue = max;
@@ -200,9 +203,14 @@ public class UdonSlider : UdonSharpBehaviour
         }
         else
         {
-            mySlider = GetComponent<Slider>();
             syncedValue = mySlider.value;
         }
+    }
+
+    public void ptrEnter()
+    {
+        if (!locallyOwned)
+            Networking.SetOwner(player, gameObject);
     }
 
     public void ptrDn()
@@ -234,9 +242,21 @@ public class UdonSlider : UdonSharpBehaviour
 
     private bool iHaveClientVar = false;
     private bool iHaveClientPtr = false;
+#if UNITY_EDITOR
+    public void OnValidate()
+    {
+        if (mySlider == null)
+            mySlider = GetComponent<Slider>();
+        mySlider.minValue = minValue;
+        mySlider.maxValue = maxValue;
+        mySlider.value = syncedValue;
+    }
+#endif
+
     public void Start()
     {
-        mySlider = GetComponent<Slider>();
+        if (mySlider == null)
+            mySlider = GetComponent<Slider>();
         player = Networking.LocalPlayer;
         locallyOwned = Networking.IsOwner(gameObject);
 

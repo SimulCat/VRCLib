@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
+using VRC.Udon.Serialization.OdinSerializer.Utilities;
 
 [RequireComponent(typeof(Toggle))]
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
@@ -16,7 +17,7 @@ public class SyncedToggle : UdonSharpBehaviour
     [SerializeField]
     private string clientVariable = "state";
     [SerializeField]
-    private bool isBoolean = false;
+    private bool isBoolean = true;
     [SerializeField]
     private int toggleIndex = -1;
     [SerializeField,UdonSynced,FieldChangeCallback(nameof(SyncedState))]
@@ -31,6 +32,27 @@ public class SyncedToggle : UdonSharpBehaviour
         locallyOwned = Networking.IsOwner(this.gameObject);
     }
 
+#if UNITY_EDITOR
+    public void OnValidate()
+    {
+        if (toggle == null)
+            toggle = GetComponent<Toggle>();
+        if (string.IsNullOrEmpty(clientVariable))
+            clientVariable = "state";
+    }
+#endif
+
+    public string ClientVariableName
+    {
+        get { return clientVariable; }
+        set { clientVariable = value; }
+    }
+
+    public bool IsBoolean
+    {
+        get { return isBoolean; }
+        set { isBoolean = value; }
+    }
     public bool SyncedState
     {
         get 
