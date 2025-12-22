@@ -24,6 +24,8 @@ public class UdonSlider : UdonSharpBehaviour
     private bool unitsInteger = false;
     [SerializeField]
     private bool displayInteger = false;
+    [SerializeField, UdonSynced, FieldChangeCallback(nameof(DisplayScale))]
+    private float displayScale = 1;
     [SerializeField]
     private string sliderUnit;
     [SerializeField]
@@ -103,10 +105,11 @@ public class UdonSlider : UdonSharpBehaviour
 
     public void SetLimits(float min, float max)
     {
-        SetValue(Mathf.Clamp(mySlider.value, minValue, maxValue));
         minValue = min;
         maxValue = max;
         updateThreshold();
+        if (!started)
+            return;
         mySlider.minValue = minValue;
         mySlider.maxValue = maxValue;
     }
@@ -131,14 +134,26 @@ public class UdonSlider : UdonSharpBehaviour
         set
         {
             sliderUnit = value;
-            Updatelabel();
+            UpdateLabel();
         }
     }
-    private void Updatelabel()
+
+    public float DisplayScale
+    {
+        get => displayScale;
+        set
+        {
+            displayScale = value;
+            UpdateLabel();
+            RequestSerialization();
+        }
+    }
+
+    private void UpdateLabel()
     {
         if (sliderLabel == null || hideLabel)
             return;
-        float displayValue = syncedValue;
+        float displayValue = syncedValue * displayScale;
         if (displayInteger)
             displayValue = Mathf.RoundToInt(displayValue);
         if (unitsInteger || displayInteger)
@@ -162,7 +177,7 @@ public class UdonSlider : UdonSharpBehaviour
         targetValue = value;
         if (smoothRate <= 0 && reportedValue != syncedValue)
             ReportedValue = syncedValue;
-        Updatelabel();
+        UpdateLabel();
     }
     public float SyncedValue
     {
@@ -249,7 +264,6 @@ public class UdonSlider : UdonSharpBehaviour
             mySlider = GetComponent<Slider>();
         mySlider.minValue = minValue;
         mySlider.maxValue = maxValue;
-        mySlider.value = syncedValue;
     }
 #endif
 
@@ -269,9 +283,10 @@ public class UdonSlider : UdonSharpBehaviour
         mySlider.interactable = interactable;
         mySlider.minValue = minValue;
         mySlider.maxValue = maxValue;
+        mySlider.SetValueWithoutNotify(syncedValue);
         reportedValue = syncedValue;
         targetValue = syncedValue;
-        SyncedValue = syncedValue;
+        UpdateLabel();
         updateThreshold();
         RequestSerialization();
         started = true;
