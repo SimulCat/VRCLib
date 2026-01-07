@@ -35,6 +35,13 @@ public class LocalizedText : UdonSharpBehaviour
             }
         } 
     }
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (myText==null)
+            myText=GetComponent<TextMeshProUGUI>();
+    }
+#endif
     void Start()
     {
         myText=GetComponent<TextMeshProUGUI>();

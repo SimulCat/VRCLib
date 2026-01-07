@@ -145,10 +145,18 @@ public class UdonSlider : UdonSharpBehaviour
         {
             displayScale = value;
             UpdateLabel();
-            RequestSerialization();
         }
     }
 
+    public bool DisplayInteger
+    {
+        get => displayInteger;
+        set
+        {
+            displayInteger = value;
+            UpdateLabel();
+        }
+    }
     private void UpdateLabel()
     {
         if (sliderLabel == null || hideLabel)
@@ -262,8 +270,6 @@ public class UdonSlider : UdonSharpBehaviour
     {
         if (mySlider == null)
             mySlider = GetComponent<Slider>();
-        mySlider.minValue = minValue;
-        mySlider.maxValue = maxValue;
     }
 #endif
 
