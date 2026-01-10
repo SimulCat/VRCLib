@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
-using VRC.Udon.Serialization.OdinSerializer.Utilities;
 
 [RequireComponent(typeof(Toggle))]
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]

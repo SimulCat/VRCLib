@@ -145,7 +145,7 @@ MonoBehaviour:
   openToggle: {fileID: 0}
   languageIndex: 0
   growShrink: 1
-  panelSize: {x: 480, y: 440}
+  panelSize: {x: 520, y: 440}
   shrinkSize: {x: 480, y: 60}
   alignHorizontal: -1
   showHideContentPanel: 1
@@ -571,24 +571,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
-      propertyPath: pageBodies.Array.data[0]
-      value: This wave visualisation simulates motion by rotating the phase angle
-        of a field of complex numbers that encode the wave's amplitude and phase
-        information within the diffraction pattern.<br>A program running on the GPU
-        generates this field of complex numbers, allowing the pattern to be recalculated
-        in a single pass.<br>Recalculation takes place only when there's a change
-        in the wavelength or aperture pattern.
-      objectReference: {fileID: 0}
-    - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
-        type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
+      objectReference: {fileID: 616234954069457075, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
-      propertyPath: serializationData.SerializedFormat
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823376, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_IsOn
@@ -622,7 +608,7 @@ PrefabInstance:
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
@@ -632,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
@@ -662,7 +648,7 @@ PrefabInstance:
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
@@ -687,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 458
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 1874167877741823377, guid: 379c20e1787df174da3b00d891be1880,
         type: 3}

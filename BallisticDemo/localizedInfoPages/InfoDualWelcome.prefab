@@ -279,6 +279,7 @@ MonoBehaviour:
   - "\u91CF\u5B50\u6563\u5C04\u4E0E\u6CE2\u6269\u6563\u3002"
   - "\uC591\uC790 \uC0B0\uB780 vs \uD30C\uB3D9 \uD655\uC0B0"
   - "Dispers\xE3o qu\xE2ntica vs difus\xE3o de ondas"
+  - Diffusion quantique vs diffusion d'ondes
   pageBodies:
   - On the left is a particle model of quantum scattering, and on the right is a
     classical wave model.<br><br>The particle scattering is based on a quantum scattering
@@ -311,6 +312,13 @@ MonoBehaviour:
     de espalhamento, juntamente com a difus\xE3o bal\xEDstica, replica os padr\xF5es
     de difra\xE7\xE3o e interfer\xEAncia de ondas sem mecanismos adicionais como
     dualidade onda-part\xEDcula e colapso da fun\xE7\xE3o de onda."
+  - "\xC0 gauche se trouve un mod\xE8le particulaire de diffusion quantique, et \xE0
+    droite un mod\xE8le ondulatoire classique.<br><br>La diffusion particulaire est
+    bas\xE9e sur un mod\xE8le de diffusion quantique d\xE9velopp\xE9 par William
+    Duane (1923) et Carolyne Van Vliet (1967 et 2010).<br><br>Ce mod\xE8le de diffusion,
+    coupl\xE9 \xE0 la diffusion balistique, reproduit la diffraction des ondes et
+    les figures d'interf\xE9rence sans m\xE9canismes suppl\xE9mentaires tels que
+    la dualit\xE9 onde-particule et l'effondrement de la fonction d'onde."
   languageIndex: 0
 --- !u!114 &7455451753687171459
 MonoBehaviour:
