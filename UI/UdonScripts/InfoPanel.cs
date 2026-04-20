@@ -79,7 +79,7 @@ public class InfoPanel : UdonSharpBehaviour
                     if (pages[mode] != null)
                     {
                         title = pages[mode].PageTitle;
-                        contentText.text = string.Format("<align=center><b>{0}</b></align>\n{1}", title, pages[mode].PageBody);
+                        contentText.text = string.Format("<align=center><b><size=120%>{0}</size></b></align>\n{1}", title, pages[mode].PageBody);
                     }
                     else
                         contentText.text = "";
