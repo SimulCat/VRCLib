@@ -13,7 +13,7 @@ public class UdonToggle : UdonSharpBehaviour
     [SerializeField]
     private Toggle toggle;
     [SerializeField]
-    private UdonBehaviour toggleClient;
+    public UdonBehaviour toggleClient;
     [SerializeField]
     private string clientVariable = "toggleIndex";
     [SerializeField]
@@ -22,6 +22,11 @@ public class UdonToggle : UdonSharpBehaviour
     private bool togState = false;
     [SerializeField]
     private bool reportedState = false;
+
+    public int ToggleIndex
+    {
+        get => toggleIndex;
+    }
 
     public bool TogState
     {
@@ -49,6 +54,12 @@ public class UdonToggle : UdonSharpBehaviour
             reportedState = value;
         }
     }
+
+    public bool Interactable
+    {
+        get => toggle.interactable;
+        set => toggle.interactable = value;
+    }
     public void setState(bool state = false)
     {
         togState = state;
@@ -59,6 +70,16 @@ public class UdonToggle : UdonSharpBehaviour
                 toggle.SetIsOnWithoutNotify(state);
         }
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if ( toggle == null)
+        {
+            toggle = GetComponent<Toggle>();
+        }
+    }
+#endif
     public void onToggle()
     {
         TogState = toggle.isOn;
