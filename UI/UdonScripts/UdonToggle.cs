@@ -15,9 +15,11 @@ public class UdonToggle : UdonSharpBehaviour
     [SerializeField]
     public UdonBehaviour toggleClient;
     [SerializeField]
-    private string clientVariable = "toggleIndex";
+    public string clientVariable = "toggleIndex";
     [SerializeField]
     private int toggleIndex = -1;
+    [SerializeField]
+    private int toggleValue = -1;
     [SerializeField, FieldChangeCallback(nameof(TogState))]
     private bool togState = false;
     [SerializeField]
@@ -26,6 +28,13 @@ public class UdonToggle : UdonSharpBehaviour
     public int ToggleIndex
     {
         get => toggleIndex;
+        set => toggleIndex = value;
+    }
+
+    public int ToggleValue
+    {
+        get => toggleValue;
+        set => toggleValue = value;
     }
 
     public bool TogState
@@ -46,7 +55,7 @@ public class UdonToggle : UdonSharpBehaviour
                     else
                     {
                         if (togState)
-                            toggleClient.SetProgramVariable<int>(clientVariable, toggleIndex);
+                            toggleClient.SetProgramVariable<int>(clientVariable, ToggleIndex);
                     }
                 }
 
@@ -60,7 +69,7 @@ public class UdonToggle : UdonSharpBehaviour
         get => toggle.interactable;
         set => toggle.interactable = value;
     }
-    public void setState(bool state = false)
+    public void setState(bool state)
     {
         togState = state;
         reportedState = state;
@@ -80,16 +89,18 @@ public class UdonToggle : UdonSharpBehaviour
         }
     }
 #endif
+    public void OnEnable() 
+    { 
+        if ( toggle == null)   
+        {
+            toggle = GetComponent<Toggle>();
+        }
+        reportedState = toggle.isOn;
+        togState = reportedState;
+    }
+
     public void onToggle()
     {
         TogState = toggle.isOn;
-    }
-    void Start()
-    {
-
-        if (toggle == null)
-            toggle = GetComponent<Toggle>();
-        reportedState = !toggle.isOn;
-        TogState = !reportedState;
     }
 }

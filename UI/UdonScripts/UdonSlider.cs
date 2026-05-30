@@ -272,19 +272,15 @@ public class UdonSlider : UdonSharpBehaviour
             mySlider = GetComponent<Slider>();
     }
 #endif
-
-    public void Start()
+    public void OnEnable()
     {
         if (mySlider == null)
             mySlider = GetComponent<Slider>();
-        player = Networking.LocalPlayer;
-        locallyOwned = Networking.IsOwner(gameObject);
+        if (sliderLabel != null && hideLabel)
+            sliderLabel.text = "";
 
         iHaveClientVar = (SliderClient != null) && (!string.IsNullOrEmpty(clientVariableName));
         iHaveClientPtr = (SliderClient != null) && (!string.IsNullOrEmpty(clientPtrEvent));
-
-        if (sliderLabel != null && hideLabel)
-            sliderLabel.text = "";
 
         mySlider.interactable = interactable;
         mySlider.minValue = minValue;
@@ -292,6 +288,12 @@ public class UdonSlider : UdonSharpBehaviour
         mySlider.SetValueWithoutNotify(syncedValue);
         reportedValue = syncedValue;
         targetValue = syncedValue;
+    }
+
+    public void Start()
+    {
+        player = Networking.LocalPlayer;
+        locallyOwned = Networking.IsOwner(gameObject);
         UpdateLabel();
         updateThreshold();
         RequestSerialization();

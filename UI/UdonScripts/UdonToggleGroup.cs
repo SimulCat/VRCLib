@@ -9,30 +9,45 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class UdonToggleGroup : UdonSharpBehaviour
 {
-    [SerializeField] ToggleGroup togGroup;
     [SerializeField] UdonToggle[] toggles;
-    private int numToggles = 0;
+    [SerializeField] int[] toggleValues;
+    [SerializeField] private int numToggles = 0;
     [SerializeField]
     private UdonBehaviour toggleClient;
+    [SerializeField,FieldChangeCallback(nameof(ActiveIndex))]
+    public int activeIndex = -1;
     [SerializeField]
     private string clientVariable = "activeToggle";
 
     [Header("Just here to see in inspector")]
     // No Fusion
-    [SerializeField, FieldChangeCallback(nameof(ActiveToggle))]
-    public int activeToggle = -1;
-    [SerializeField]
-    private bool debug = false;
+    [SerializeField, UdonSynced, FieldChangeCallback(nameof(ActiveValue))]
+    public int activeValue = -1;
+    //[SerializeField]
+    //private bool debug = false;
     [SerializeField]
     private bool interactable = true;
-        
+    private bool iamOwner = false;
+
+    /* 
+* Udon Sync Stuff
+*/
+    private void ReviewOwnerShip()
+    {
+        iamOwner = Networking.IsOwner(this.gameObject);
+    }
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        ReviewOwnerShip();
+    }
+
     public bool Interactable
         {
             get => interactable;
             set
             {
                 interactable = value;
-                for (int i = 0; i < toggles.Length; i++)
+                for (int i = 0; i < numToggles; i++)
                 {
                     if (toggles[i] == null)
                         continue;
@@ -40,62 +55,111 @@ public class UdonToggleGroup : UdonSharpBehaviour
                 }
             }
         }
-        public void SetActiveToggle(int toggleIndex = -1)
-        {
-            if (debug)
-                Debug.Log($"SetActiveToggle called with index {toggleIndex}");
-            foreach (UdonToggle tog in toggles)
-            {
-                if (tog == null)
-                    continue;
-                if (tog.ToggleIndex == toggleIndex && tog.TogState == false)
-                    tog.setState(true);
-            }
-            ActiveToggle = toggleIndex;
-        }
 
-        public int ActiveToggle
+    private void refreshToggles(int toggleValue)
+    {
+        if (numToggles <= 0)
+            return;
+        UdonToggle tog;
+        for (int i = 0; i < numToggles; i++)
         {
-            get => activeToggle;
-            set
+            tog = toggles[i];
+            if (tog == null)
+                continue;
+            if (toggleValues[i] != toggleValue && tog.TogState)
             {
-            if (debug)
-                Debug.Log($"ActiveToggle set to {value}");
-            if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
-                toggleClient.SetProgramVariable(clientVariable, value);
+                tog.setState(false);
+            }
+        }
+        for (int i = 0; i < numToggles; i++)
+        {
+            tog = toggles[i];
+            if (tog == null)
+                continue;
+            if (toggleValues[i] == toggleValue && !tog.TogState)
+            {
+                tog.setState(true);
+            }
         }
     }
 
+    public void SetActiveValue(int value)
+    {
+        ActiveValue = value;
+        refreshToggles(value);
+    }
+    public int ActiveValue
+        {
+            get => activeValue;
+            set
+            {
+                bool isChanged = value != activeValue;
+                activeValue = value;
+                if (isChanged)
+                {
+                    if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
+                        toggleClient.SetProgramVariable(clientVariable, value);
+                }
+                RequestSerialization();
+            }
+        }
+    public int ActiveIndex
+    {
+        get => activeIndex;
+        set
+        {
+            if (value < -1 || value >= numToggles)
+            {
+                //if (debug)
+                //    Debug.LogError($"ActiveIndex value {value} is out of range for toggle group with {numToggles} toggles.");
+                return;
+            }
+            int togValue = toggleValues[value];
+            bool valueChanged = togValue != activeValue;
+            if (!iamOwner)
+                Networking.SetOwner(Networking.LocalPlayer,gameObject);
+            activeIndex = value;
+            //if (debug)
+            //    Debug.Log($"ActiveIndex set to {value}, which corresponds to toggle value {togValue}. ActiveValue {activeValue}.");
+            ActiveValue = togValue;
+            refreshToggles(togValue);
+        }
+    }
+
+    private void OnEnable()
+    {
+        numToggles = toggles != null && toggles.Length > 0 ? toggles.Length : 0;
+        if (numToggles > 0)
+        {
+            toggleValues = new int[numToggles];
+            for (int i = 0; i < numToggles; i++)
+            {
+                UdonToggle Tog = toggles[i];
+                if (Tog == null) continue;
+                Tog.ToggleIndex = i;
+                Tog.clientVariable = "activeIndex";
+                toggleValues[i] = Tog.ToggleValue;
+            }
+        }
+    }
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if (togGroup == null)
-            togGroup = GetComponent<ToggleGroup>();
         if (toggles == null || toggles.Length == 0)
             toggles = GetComponentsInChildren<UdonToggle>();
         numToggles = 0;
         if ((toggles != null) &&  (toggles.Length > 0))
             numToggles = toggles.Length;
-        foreach (UdonToggle UdonTog in toggles)
-        {
-            if (UdonTog != null)
-            {
-                UdonTog.toggleClient = GetComponent<UdonBehaviour>();
-            }
-        }
+        OnEnable();
     }
 #endif
-    void Awake()
-        {
-            togGroup = GetComponent<ToggleGroup>();
-            if (togGroup == null)
-                togGroup = GetComponent<ToggleGroup>();
-        }
 
-        public void Start()
-        {
-        }
+    public void Start()
+    {
+        //player = Networking.LocalPlayer;
+        ReviewOwnerShip();
+    }
 
         // Update is called once per frame
-    }
+}
 
