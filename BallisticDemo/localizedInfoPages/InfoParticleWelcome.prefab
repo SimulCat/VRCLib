@@ -1,0 +1,361 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2243214637055950690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324933774725344639}
+  - component: {fileID: 873680275187129696}
+  - component: {fileID: 5979664785708801151}
+  - component: {fileID: 2214298585597898756}
+  m_Layer: 0
+  m_Name: InfoParticleWelcome
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1324933774725344639
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243214637055950690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2737262619348143368}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -37.5, y: 37.5}
+  m_SizeDelta: {x: 64, y: 64}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &873680275187129696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243214637055950690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.3529412, g: 1, b: 0.92156863, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.73333335, b: 0, a: 1}
+    m_PressedColor: {r: 0.94509804, g: 0.16470589, b: 0.90588236, a: 1}
+    m_SelectedColor: {r: 0, g: 0.96862745, b: 1, a: 1}
+    m_DisabledColor: {r: 0.35686275, g: 0.35686275, b: 0.35686275, a: 0.77254903}
+    m_ColorMultiplier: 1.27
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5900402320990086757}
+  toggleTransition: 1
+  graphic: {fileID: 7870533130803176639}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SendCustomEvent
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: onToggle
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &5979664785708801151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243214637055950690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0125298b98834fadb6477d8360741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _udonSharpBackingUdonBehaviour: {fileID: 2214298585597898756}
+  pageTitles:
+  - Quantum Scattering Without Interference
+  - "\u5E72\u6E09\u306E\u306A\u3044\u91CF\u5B50\u6563\u4E71"
+  - "\u7121\u5E79\u64FE\u91CF\u5B50\u6563\u5C04"
+  - "\u65E0\u5E72\u6270\u91CF\u5B50\u6563\u5C04"
+  - "\uAC04\uC12D \uC5C6\uB294 \uC591\uC790 \uC0B0\uB780"
+  - "Dispers\xE3o Qu\xE2ntica sem Interfer\xEAncia"
+  - "Diffusion quantique sans interf\xE9rence"
+  pageBodies:
+  - '
+
+    The simulations in this world demonstrate an intriguing quantum scattering
+    model that reproduces the diffraction patterns seen in the double slit experiment
+    without depending on wave propagation or direct interference.
+
+
+    The model
+    draws from Carolyne Van Vliet''s work, where she applies quantum physics to the
+    slit screen to quantise the momentum transferred between the screen and incoming
+    particles or photons.
+
+
+    When combined with ballistic diffusion, her model
+    provides an alternative to traditional models based on wave-particle duality
+    and interference effects. '
+  - "\u3053\u306E\u4E16\u754C\u306B\u304A\u3051\u308B\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u306F\u3001\u6CE2\u52D5\u4F1D\u64AD\u3084\u76F4\u63A5\u5E72\u6E09\u306B\u4F9D\u5B58\u305B\u305A\u306B\u3001\u4E8C\u91CD\u30B9\u30EA\u30C3\u30C8\u5B9F\u9A13\u3067\u898B\u3089\u308C\u308B\u56DE\u6298\u30D1\u30BF\u30FC\u30F3\u3092\u518D\u73FE\u3059\u308B\u8208\u5473\u6DF1\u3044\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u3092\u5B9F\u8A3C\u3057\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u3053\u306E\u30E2\u30C7\u30EB\u306F\u3001\u30AD\u30E3\u30ED\u30E9\u30A4\u30F3\u30FB\u30F4\u30A1\u30F3\u30FB\u30F4\u30EA\u30FC\u30C8\u306E\u7814\u7A76\u306B\u57FA\u3065\u3044\u3066\u3044\u307E\u3059\u3002\u5F7C\u5973\u306F\u91CF\u5B50\u7269\u7406\u5B66\u3092\u30B9\u30EA\u30C3\u30C8\u30B9\u30AF\u30EA\u30FC\u30F3\u306B\u9069\u7528\u3057\u3001\u30B9\u30AF\u30EA\u30FC\u30F3\u3068\u5165\u5C04\u3059\u308B\u7C92\u5B50\u307E\u305F\u306F\u5149\u5B50\u306E\u9593\u3067\u4F1D\u9054\u3055\u308C\u308B\u904B\u52D5\u91CF\u3092\u91CF\u5B50\u5316\u3057\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u5F3E\u9053\u62E1\u6563\u3068\u7D44\u307F\u5408\u308F\u305B\u308B\u3053\u3068\u3067\u3001\u5F7C\u5973\u306E\u30E2\u30C7\u30EB\u306F\u6CE2\u52D5\u7C92\u5B50\u4E8C\u91CD\u6027\u3068\u5E72\u6E09\u52B9\u679C\u306B\u57FA\u3065\u304F\u5F93\u6765\u306E\u30E2\u30C7\u30EB\u306B\u4EE3\u308F\u308B\u9078\u629E\u80A2\u3068\u306A\u308A\u307E\u3059\u3002"
+  - "\u672C\u6A21\u64EC\u5C55\u793A\u4E86\u4E00\u7A2E\u5F15\u4EBA\u5165\u52DD\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8A72\u6A21\u578B\u7121\u9700\u4F9D\u8CF4\u6CE2\u7684\u50B3\u64AD\u6216\u76F4\u63A5\u5E72\u6D89\u5373\u53EF\u91CD\u73FE\u96D9\u7E2B\u5BE6\u9A57\u4E2D\u89C0\u5BDF\u5230\u7684\u884D\u5C04\u5716\u6A23\u3002\r\n\r\n\u8A72\u6A21\u578B\u501F\u9452\u4E86\u5361\u7F85\u7433\xB7\u7BC4\xB7\u5F17\u5229\u7279\uFF08Carolyne
+    Van Vliet\uFF09\u7684\u5DE5\u4F5C\uFF0C\u5979\u5C07\u91CF\u5B50\u7269\u7406\u5B78\u61C9\u7528\u65BC\u72F9\u7E2B\u5C4F\uFF0C\u4EE5\u91CF\u5316\u72F9\u7E2B\u5C4F\u8207\u5165\u5C04\u7C92\u5B50\u6216\u5149\u5B50\u4E4B\u9593\u50B3\u905E\u7684\u52D5\u91CF\u3002\r\n\r\n\u7D50\u5408\u5F48\u9053\u64F4\u6563\u7406\u8AD6\uFF0C\u5979\u7684\u6A21\u578B\u70BA\u57FA\u65BC\u6CE2\u7C92\u4E8C\u8C61\u6027\u548C\u4E7E\u6D89\u6548\u61C9\u7684\u50B3\u7D71\u6A21\u578B\u63D0\u4F9B\u4E86\u4E00\u500B\u66FF\u4EE3\u65B9\u6848\u3002"
+  - "\u672C\u6A21\u62DF\u5C55\u793A\u4E86\u4E00\u79CD\u5F15\u4EBA\u5165\u80DC\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8BE5\u6A21\u578B\u65E0\u9700\u4F9D\u8D56\u6CE2\u7684\u4F20\u64AD\u6216\u76F4\u63A5\u5E72\u6D89\u5373\u53EF\u91CD\u73B0\u53CC\u7F1D\u5B9E\u9A8C\u4E2D\u89C2\u5BDF\u5230\u7684\u884D\u5C04\u56FE\u6837\u3002\r\n\r\n\u8BE5\u6A21\u578B\u501F\u9274\u4E86\u5361\u7F57\u7433\xB7\u8303\xB7\u5F17\u5229\u7279\uFF08Carolyne
+    Van Vliet\uFF09\u7684\u5DE5\u4F5C\uFF0C\u5979\u5C06\u91CF\u5B50\u7269\u7406\u5B66\u5E94\u7528\u4E8E\u72ED\u7F1D\u5C4F\uFF0C\u4EE5\u91CF\u5316\u72ED\u7F1D\u5C4F\u4E0E\u5165\u5C04\u7C92\u5B50\u6216\u5149\u5B50\u4E4B\u95F4\u4F20\u9012\u7684\u52A8\u91CF\u3002\r\n\r\n\u7ED3\u5408\u5F39\u9053\u6269\u6563\u7406\u8BBA\uFF0C\u5979\u7684\u6A21\u578B\u4E3A\u57FA\u4E8E\u6CE2\u7C92\u4E8C\u8C61\u6027\u548C\u5E72\u6D89\u6548\u5E94\u7684\u4F20\u7EDF\u6A21\u578B\u63D0\u4F9B\u4E86\u4E00\u79CD\u66FF\u4EE3\u65B9\u6848\u3002"
+  - "\uC774 \uC2DC\uBBAC\uB808\uC774\uC158\uC740 \uD30C\uB3D9 \uC804\uD30C\uB098
+    \uC9C1\uC811 \uAC04\uC12D\uC5D0 \uC758\uC874\uD558\uC9C0 \uC54A\uACE0 \uC774\uC911
+    \uC2AC\uB9BF \uC2E4\uD5D8\uC5D0\uC11C \uAD00\uCC30\uB418\uB294 \uD68C\uC808 \uD328\uD134\uC744
+    \uC7AC\uD604\uD558\uB294 \uD765\uBBF8\uB85C\uC6B4 \uC591\uC790 \uC0B0\uB780 \uBAA8\uB378\uC744
+    \uC81C\uC2DC\uD569\uB2C8\uB2E4.\r\n\r\n\uC774 \uBAA8\uB378\uC740 \uCE90\uB864\uB9B0
+    \uBC18 \uBE14\uB9AC\uD2B8(Carolyne Van Vliet)\uC758 \uC5F0\uAD6C\uC5D0\uC11C
+    \uBE44\uB86F\uB418\uC5C8\uB294\uB370, \uADF8\uB140\uB294 \uC591\uC790 \uBB3C\uB9AC\uD559\uC744
+    \uC2AC\uB9BF \uC2A4\uD06C\uB9B0\uC5D0 \uC801\uC6A9\uD558\uC5EC \uC2A4\uD06C\uB9B0\uACFC
+    \uC785\uC0AC \uC785\uC790 \uB610\uB294 \uAD11\uC790 \uC0AC\uC774\uC5D0\uC11C
+    \uC804\uB2EC\uB418\uB294 \uC6B4\uB3D9\uB7C9\uC744 \uC591\uC790\uD654\uD588\uC2B5\uB2C8\uB2E4.\r\n\r\n\uD0C4\uB3C4
+    \uD655\uC0B0\uACFC \uACB0\uD569\uB41C \uC774 \uBAA8\uB378\uC740 \uD30C\uB3D9-\uC785\uC790
+    \uC774\uC911\uC131\uACFC \uAC04\uC12D \uD6A8\uACFC\uC5D0 \uAE30\uBC18\uD55C \uAE30\uC874
+    \uBAA8\uB378\uC5D0 \uB300\uD55C \uB300\uC548\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
+  - "As simula\xE7\xF5es neste mundo demonstram um modelo de espalhamento qu\xE2ntico
+    intrigante que reproduz os padr\xF5es de difra\xE7\xE3o observados no experimento
+    da dupla fenda sem depender da propaga\xE7\xE3o de ondas ou da interfer\xEAncia
+    direta.\r\n\r\nO modelo se baseia no trabalho de Carolyne Van Vliet, onde ela
+    aplica a f\xEDsica qu\xE2ntica \xE0 tela da fenda para quantizar o momento transferido
+    entre a tela e as part\xEDculas ou f\xF3tons incidentes.\r\n\r\nQuando combinado
+    com a difus\xE3o bal\xEDstica, seu modelo oferece uma alternativa aos modelos
+    tradicionais baseados na dualidade onda-part\xEDcula e nos efeitos de interfer\xEAncia."
+  - "Les simulations pr\xE9sent\xE9es ici d\xE9montrent un mod\xE8le de diffusion
+    quantique fascinant qui reproduit les figures de diffraction observ\xE9es lors
+    de l'exp\xE9rience des fentes de Young sans faire appel \xE0 la propagation des
+    ondes ni \xE0 l'interf\xE9rence directe.\r\n\r\nCe mod\xE8le s'inspire des travaux
+    de Carolyne Van Vliet, qui applique la physique quantique \xE0 l'\xE9cran \xE0
+    fentes pour quantifier l'impulsion transf\xE9r\xE9e entre l'\xE9cran et les particules
+    ou photons incidents.\r\n\r\nCombin\xE9 \xE0 la diffusion balistique, son mod\xE8le
+    offre une alternative aux mod\xE8les traditionnels fond\xE9s sur la dualit\xE9
+    onde-corpuscule et les effets d'interf\xE9rence."
+  languageIndex: 0
+--- !u!114 &2214298585597898756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243214637055950690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTextPlacement: {fileID: 0}
+  interactText: Use
+  interactTextGO: {fileID: 0}
+  proximity: 2
+  SynchronizePosition: 0
+  AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
+  _syncMethod: 3
+  serializedProgramAsset: {fileID: 11400000, guid: db1a9e79a4287cd4d8e931fa4d6c3abd,
+    type: 2}
+  programSource: {fileID: 11400000, guid: 530112de8551329498e25f888f6d27e6, type: 2}
+  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
+  publicVariablesUnityEngineObjects: []
+  publicVariablesSerializationDataFormat: 0
+--- !u!1 &4761218667146885515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307642276189555117}
+  - component: {fileID: 504718476979590775}
+  - component: {fileID: 7870533130803176639}
+  m_Layer: 0
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1307642276189555117
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761218667146885515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2737262619348143368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &504718476979590775
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761218667146885515}
+  m_CullTransparentMesh: 0
+--- !u!114 &7870533130803176639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761218667146885515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 35630e38b4e5ffb40b44ec5348b4333f, type: 2}
+  m_Color: {r: 1, g: 0.7817019, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fc08e8838b0300145a0062b8431e0c29, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6200466754449664265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2737262619348143368}
+  - component: {fileID: 4605026302684001513}
+  - component: {fileID: 5900402320990086757}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2737262619348143368
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200466754449664265}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1307642276189555117}
+  m_Father: {fileID: 1324933774725344639}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4605026302684001513
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200466754449664265}
+  m_CullTransparentMesh: 0
+--- !u!114 &5900402320990086757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200466754449664265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 35630e38b4e5ffb40b44ec5348b4333f, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 84d3838ecee5201468330e78cbe403e7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1

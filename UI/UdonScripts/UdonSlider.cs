@@ -217,7 +217,7 @@ public class UdonSlider : UdonSharpBehaviour
     }
     public void onValue()
     {
-        if (!locallyOwned)
+        if (!locallyOwned && started)
             Networking.SetOwner(player, gameObject);
         if (started)
         {
@@ -232,13 +232,13 @@ public class UdonSlider : UdonSharpBehaviour
 
     public void ptrEnter()
     {
-        if (!locallyOwned)
+        if (!locallyOwned && started)
             Networking.SetOwner(player, gameObject);
     }
 
     public void ptrDn()
     {
-        if (!locallyOwned)
+        if (!locallyOwned && started)
             Networking.SetOwner(player, gameObject);
         if (pointerIsDown) 
             return;
@@ -274,6 +274,7 @@ public class UdonSlider : UdonSharpBehaviour
 #endif
     public void OnEnable()
     {
+        player = Networking.LocalPlayer;
         if (mySlider == null)
             mySlider = GetComponent<Slider>();
         if (sliderLabel != null && hideLabel)
@@ -292,7 +293,6 @@ public class UdonSlider : UdonSharpBehaviour
 
     public void Start()
     {
-        player = Networking.LocalPlayer;
         locallyOwned = Networking.IsOwner(gameObject);
         UpdateLabel();
         updateThreshold();
