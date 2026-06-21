@@ -139,6 +139,8 @@ public class UdonToggleGroup : UdonSharpBehaviour
                 Tog.ToggleIndex = i;
                 Tog.clientVariable = "activeIndex";
                 toggleValues[i] = Tog.ToggleValue;
+                if (i==activeIndex && !Tog.TogState) 
+                    Tog.setState(true);
             }
         }
     }
