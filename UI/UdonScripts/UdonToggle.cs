@@ -24,7 +24,7 @@ public class UdonToggle : UdonSharpBehaviour
     private bool togState = false;
     [SerializeField]
     private bool reportedState = false;
-
+    private bool enabled = false;
     public int ToggleIndex
     {
         get => toggleIndex;
@@ -73,7 +73,7 @@ public class UdonToggle : UdonSharpBehaviour
     {
         togState = state;
         reportedState = state;
-        if (toggle != null)
+        if (enabled && toggle != null)
         {
             if (toggle.isOn != state)
                 toggle.SetIsOnWithoutNotify(state);
@@ -95,12 +95,18 @@ public class UdonToggle : UdonSharpBehaviour
         {
             toggle = GetComponent<Toggle>();
         }
-        reportedState = toggle.isOn;
-        togState = reportedState;
+        toggle.isOn = togState;
+        reportedState = togState;
+        enabled = true;
     }
 
     public void onToggle()
     {
         TogState = toggle.isOn;
+        if (togState && toggleClient != null)
+        { 
+            toggleClient.SendCustomEvent("TogSet");
+        }
     }
+
 }
