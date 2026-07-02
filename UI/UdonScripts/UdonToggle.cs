@@ -92,10 +92,9 @@ public class UdonToggle : UdonSharpBehaviour
     public void OnEnable() 
     { 
         if ( toggle == null)   
-        {
             toggle = GetComponent<Toggle>();
-        }
-        toggle.isOn = togState;
+        if (toggle != null)
+            toggle.SetIsOnWithoutNotify(togState);
         reportedState = togState;
         enabled = true;
     }

@@ -96,21 +96,24 @@ public class UdonToggleGroup : UdonSharpBehaviour
         ActiveValue = value;
         refreshToggles(value);
     }
+
+    private bool valueChanged = false;
     public int ActiveValue
+    {
+        get => activeValue;
+        set
         {
-            get => activeValue;
-            set
+            valueChanged |= value != activeValue;
+            activeValue = value;
+            if (valueChanged)
             {
-                bool isChanged = value != activeValue;
-                activeValue = value;
-                if (isChanged)
-                {
-                    if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
-                        toggleClient.SetProgramVariable(clientVariable, value);
-                }
-                RequestSerialization();
+                if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
+                    toggleClient.SetProgramVariable(clientVariable, value);
+                refreshToggles(value);
             }
+            RequestSerialization();
         }
+    }
     public int ActiveIndex
     {
         get => activeIndex;
@@ -168,6 +171,11 @@ public class UdonToggleGroup : UdonSharpBehaviour
     {
         //player = Networking.LocalPlayer;
         ReviewOwnerShip();
+        if (iamOwner)
+        {
+            valueChanged = true;
+            ActiveValue = activeValue;
+        }
     }
 
         // Update is called once per frame
