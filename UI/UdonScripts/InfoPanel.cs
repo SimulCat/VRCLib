@@ -1,5 +1,4 @@
-﻿
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
@@ -11,7 +10,7 @@ public class InfoPanel : UdonSharpBehaviour
 {
     [SerializeField] private ToggleGroup toggleGroup;
     [SerializeField] private Button closeButton;
-    [SerializeField] private UdonToggle openToggle;
+    [SerializeField] private Toggle openToggle;
     [SerializeField, FieldChangeCallback(nameof(LanguageIndex))] int languageIndex = 0;
     [SerializeField] private bool growShrink = true;
     [SerializeField] Vector2 panelSize = Vector2.one;
@@ -149,8 +148,8 @@ public class InfoPanel : UdonSharpBehaviour
             {
                 UpdatePage();
                 showing = value;
-                if (openToggle != null)
-                    openToggle.setState(value);
+                if (!showing && (openToggle != null) && openToggle.isOn)
+                    openToggle.isOn = false;
             }
         }
     }
@@ -185,8 +184,18 @@ public class InfoPanel : UdonSharpBehaviour
             UpdatePage();
         }
     }
-    
-  
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (contentPanelRect == null)
+            return;
+        if  (panelSize.x <= 0)
+            panelSize.x = contentPanelRect.sizeDelta.x;
+        if (panelSize.y <= 0)
+            panelSize.y = contentPanelRect.sizeDelta.y;
+    }
+#endif
     private void UpdateOwnerShip()
     {
         iamOwner = Networking.IsOwner(this.gameObject);
@@ -212,8 +221,6 @@ public class InfoPanel : UdonSharpBehaviour
             toggleGroup.SetAllTogglesOff(false);
         }
         hasClose = closeButton != null && closeButton.gameObject.activeSelf;
-        if (contentPanelRect != null)
-            panelSize = contentPanelRect.sizeDelta;
         if (growShrink)
             growShrink = (shrinkSize.x * shrinkSize.y) > 0;
         UpdatePage();

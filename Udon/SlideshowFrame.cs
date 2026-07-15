@@ -1,7 +1,7 @@
 ﻿using UdonSharp;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.SDK3.Image;
+using TMPro;
 using VRC.SDK3.StringLoading;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
@@ -19,7 +19,7 @@ public class SlideshowFrame : UdonSharpBehaviour
     private new Renderer renderer;
 
     [SerializeField, Tooltip("Text field for captions.")]
-    private Text field;
+    private TextMeshProUGUI field;
 
     [SerializeField, Tooltip("Duration in seconds until the next image is shown.")]
     private float slideDurationSeconds = 10f;
@@ -33,16 +33,17 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     void Start()
     {
-        // Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
+        Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
         // Downloaded textures will be cached in a texture array.
         _downloadedTextures = new Texture2D[imageUrls.Length];
 
         // It's important to store the VRCImageDownloader as a variable, to stop it from being garbage collected!
         _imageDownloader = new VRCImageDownloader();
         if (_imageDownloader == null)
-            Debug.Log("Start SlideShow:No Downloader");
-
-        Debug.Log($"Start SlideShow:Go for Strings [{stringUrl}]");
+        {
+            Debug.Log($"{gameObject.name}: Start SlideShow: No VRC _imageDownloader");
+        }
+        //Debug.Log($"Start SlideShow:Go for Strings [{stringUrl}]");
         // Captions are downloaded once. On success, OnImageLoadSuccess() will be called
         VRCStringDownloader.LoadUrl(stringUrl, (IUdonEventReceiver)this);
         // Load the next image. Then do it again, and again, and...
@@ -54,13 +55,14 @@ public class SlideshowFrame : UdonSharpBehaviour
     }
     public void LoadNextRecursive()
     {
+        Debug.Log($"{gameObject.name}: LoadNextRecursive");
         LoadNext();
         SendCustomEventDelayedSeconds(nameof(LoadNextRecursive), slideDurationSeconds);
     }
 
     private void LoadNext()
     {
-        //Debug.Log("Loadnext");
+        Debug.Log($"{gameObject.name}: LoadNext");
 
         // All clients share the same server time. That's used to sync the currently displayed image.
         _loadedIndex = (int)(Networking.GetServerTimeInMilliseconds() / 1000f / slideDurationSeconds) % imageUrls.Length;
@@ -79,7 +81,7 @@ public class SlideshowFrame : UdonSharpBehaviour
             var rgbInfo = new TextureInfo();
             rgbInfo.GenerateMipMaps = true;
             rgbInfo.MaterialProperty = "_EmissionMap";
-            //Debug.Log("Load Image:" + imageUrls[_loadedIndex]);
+            Debug.Log($"{gameObject.name}: Load Image:" + imageUrls[_loadedIndex]);
 
             _imageDownloader.DownloadImage(imageUrls[_loadedIndex], renderer.material, (IUdonEventReceiver)this, rgbInfo);
         }
@@ -101,13 +103,14 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnStringLoadSuccess(IVRCStringDownload result)
     {
+        Debug.Log($"{gameObject.name}: String loaded: {result.Result.Length} characters.");
         _captions = result.Result.Split('\n',System.StringSplitOptions.None);
         UpdateCaptionText();
     }
 
     public override void OnStringLoadError(IVRCStringDownload result)
     {
-        Debug.LogError($"Could not load string {result.Error}");
+        Debug.LogError($"{gameObject.name}: Could not load string {result.Error}");
     }
 
     public override void OnImageLoadSuccess(IVRCImageDownload result)
@@ -119,12 +122,13 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnImageLoadError(IVRCImageDownload result)
     {
-        Debug.Log($"Image not loaded: {result.Error.ToString()}: {result.ErrorMessage}.");
+        
+        Debug.Log($"{gameObject.name}: Image not loaded: {result.Error.ToString()}: {result.ErrorMessage}.");
     }
 
     private void OnDestroy()
     {
-        Debug.Log("!!!!!!Dispose");
+        Debug.Log($"{gameObject.name}!!!!!!Dispose");
         _imageDownloader.Dispose();
     }
 }
