@@ -18,8 +18,8 @@ public class SlideshowFrame : UdonSharpBehaviour
     [SerializeField, Tooltip("Renderer to show downloaded images on.")]
     private new Renderer renderer;
 
-    [SerializeField, Tooltip("Text field for captions.")]
-    private TextMeshProUGUI field;
+    [SerializeField, Tooltip("Text captionBox for captions.")]
+    private TextMeshProUGUI captionBox;
 
     [SerializeField, Tooltip("Duration in seconds until the next image is shown.")]
     private float slideDurationSeconds = 10f;
@@ -33,7 +33,11 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     void OnEnable ()
     {
-        _downloadedTextures = new Texture2D[imageUrls.Length];
+        if (_downloadedTextures == null || _downloadedTextures.Length != imageUrls.Length)
+        {
+            _downloadedTextures = new Texture2D[imageUrls.Length];
+        }
+
     }
 
     private int prevIndex = -1;
@@ -55,7 +59,6 @@ public class SlideshowFrame : UdonSharpBehaviour
     {
         Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
         // Downloaded textures will be cached in a texture array.
-        _downloadedTextures = new Texture2D[imageUrls.Length];
 
         // It's important to store the VRCImageDownloader as a variable, to stop it from being garbage collected!
         _imageDownloader = new VRCImageDownloader();
@@ -125,13 +128,15 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     private void UpdateCaptionText()
     {
-        if (loadedIndex < _captions.Length)
+        if (captionBox == null)
+            return;
+        if (_captions!=null && loadedIndex >= 0 && loadedIndex < _captions.Length)
         {
-            field.text = _captions[loadedIndex];
+            captionBox.text = _captions[loadedIndex];
         }
         else
         {
-            field.text = "";
+            captionBox.text = "";
         }
     }
 
