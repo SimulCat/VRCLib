@@ -12,7 +12,6 @@ public class UdonStoryPage : UdonSharpBehaviour
 
     [SerializeField, FieldChangeCallback(nameof(LanguageIndex))]
     private int languageIndex  = 0;
-
     private int LanguageIndex
     {
         get => languageIndex;
@@ -31,7 +30,16 @@ public class UdonStoryPage : UdonSharpBehaviour
             }
         }
     }
-    
+    [SerializeField, FieldChangeCallback(nameof(PageNumber))]
+    private int pageNumber = -1;
+    public int PageNumber
+    {
+        get => pageNumber;
+        set
+        {
+            pageNumber = value;
+        }
+    }
     [SerializeField]
     private UdonColourMaterial[] images;
     //[SerializeField]
@@ -56,9 +64,23 @@ public class UdonStoryPage : UdonSharpBehaviour
         get => isActive;
         set 
         {
+            bool wasActive = isActive;
             isActive = value;
             if (isActive)
             {
+                for (int i=0; i < texts.Length; i++)
+                {
+                    if (texts[i] != null)
+                    {
+                        int textPage = texts[i].PageNumber;
+                        bool pageActive = texts[i].gameObject.activeSelf;
+                        bool isRequired = (pageNumber < 0) || (textPage < 0 || textPage == pageNumber);
+                        if (pageActive != isRequired)
+                        {
+                            texts[i].gameObject.SetActive(isRequired);
+                        }
+                    }
+                }
                 for (int i = 0; i < imageListLen; i++) 
                 {
                     if (images[i] != null)

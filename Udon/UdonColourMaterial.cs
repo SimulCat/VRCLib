@@ -7,14 +7,11 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class UdonColourMaterial : UdonSharpBehaviour
 {
-    [SerializeField]
-    private MeshRenderer mr;
     [SerializeField, FieldChangeCallback(nameof(IdleColour))]
     private  Color idleColour = Color.gray;
 
     [SerializeField, FieldChangeCallback(nameof(ColourLevel))] private float colourLevel = 0f;
-    [SerializeField]
-    private Material mat;
+    private Material currentMat = null;
     public float ColourLevel
     {
         get => colourLevel;
@@ -22,11 +19,11 @@ public class UdonColourMaterial : UdonSharpBehaviour
         {
             colourLevel = value;
             float Alpha = value < 0 ? 0 : 1;
-            if (mat != null)
+            if (currentMat != null)
             {
                 Color newCol = Color.Lerp(idleColour, highLightColour, Mathf.Clamp01(colourLevel));
                 newCol.a = Alpha;
-                mat.color = newCol; 
+                currentMat.color = newCol; 
             }
         }
     }
@@ -51,16 +48,30 @@ public class UdonColourMaterial : UdonSharpBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        if (currentMat  == null)
+        {
+            CheckMaterial();
+        }
+        ColourLevel = colourLevel;
+    }
+    private void CheckMaterial()
+    {
+        MeshRenderer mr = GetComponent<MeshRenderer>();
+        if (mr != null)
+            currentMat = mr.material;
+        if (currentMat != null)
+        {
+            idleColour = currentMat.color;
+        }
+    }
+
+
     void Start()
     {
-        if (mr == null)
-            mr = GetComponent<MeshRenderer>();
-        if (mat == null)
-            mat = mr.material;
-        if (mat != null)
-        {
-            idleColour = mat.color;
-        }
+        if (currentMat  == null)
+            CheckMaterial() ;
         ColourLevel = colourLevel;
     }
 }

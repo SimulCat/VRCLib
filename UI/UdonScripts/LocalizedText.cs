@@ -2,6 +2,7 @@
 using TMPro;
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Serialization.OdinSerializer.Utilities;
@@ -14,7 +15,16 @@ public class LocalizedText : UdonSharpBehaviour
     private TextMeshProUGUI myText;
     [SerializeField,FieldChangeCallback(nameof(LanguageIndex))]
     private int languageIndex = 0;
-
+    [SerializeField,FieldChangeCallback(nameof(PageNumber))]
+    private int pageNumber = -1;
+    public int PageNumber
+    {
+        get => pageNumber;
+        set
+        {
+            pageNumber = value;
+        }
+    }
     [SerializeField,Multiline] string[] texts;
     private int currentIndex = -1;
     public int LanguageIndex
