@@ -5,6 +5,7 @@ using TMPro;
 using VRC.SDK3.StringLoading;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
+using VRC.SDK3.Data;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class SlideshowFrame : UdonSharpBehaviour
@@ -14,7 +15,13 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     [SerializeField, Tooltip("URL of text file containing captions for images, one caption per line.")]
     private VRCUrl stringUrl;
-
+    [SerializeField, Tooltip("Use JSON format for captions.")]
+    private bool captionsJson = false;
+    [SerializeField]
+    private bool gotJson = false;
+    private DataList _captionList;
+    [SerializeField] private int captionCount = 0;
+    [SerializeField] private int slideCount = 0;
     [SerializeField, Tooltip("Renderer to show downloaded images on.")]
     private new Renderer renderer;
 
@@ -49,7 +56,7 @@ public class SlideshowFrame : UdonSharpBehaviour
             loadedIndex = value;
             if (prevIndex != loadedIndex)
             {
-                Debug.Log($"{gameObject.name}: LoadedImage changed to {loadedIndex}");
+                //Debug.Log($"{gameObject.name}: LoadedImage changed to {loadedIndex}");
                 LoadCurrentImage();
             }
             RequestSerialization();
@@ -78,7 +85,7 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public void OnOwnerShipTransfered()
     {
-        //Debug.Log($"{gameObject.name}: OnOwnerShipTransfered");
+        Debug.Log($"{gameObject.name}: OnOwnerShipTransfered");
         if (Networking.IsOwner(gameObject))
         {
             LoadNextRecursive();
@@ -89,10 +96,11 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public void LoadNextRecursive()
     {
-        //Debug.Log($"{gameObject.name}: LoadNextRecursive");
+        Debug.Log($"{gameObject.name}: LoadNextRecursive");
         if (Networking.IsOwner(gameObject))
         {
-            LoadedIndex = (loadedIndex + (_isFirstLoad ? 0 : 1)) % imageUrls.Length;
+            int maxIndex = Mathf.Max(Mathf.Min(imageUrls.Length, slideCount),1);
+            LoadedIndex = (loadedIndex + (_isFirstLoad ? 0 : 1)) % maxIndex;
             RequestSerialization();
             SendCustomEventDelayedSeconds(nameof(LoadNextRecursive), slideDurationSeconds);
         }
@@ -100,7 +108,7 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     private void LoadCurrentImage()
     {
-        //Debug.Log($"{gameObject.name}: LoadCurrentImage");
+        Debug.Log($"{gameObject.name}: LoadCurrentImage");
         _isFirstLoad = false;
 
         // All clients share the same server time. That's used to sync the currently displayed image.
@@ -142,14 +150,69 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnStringLoadSuccess(IVRCStringDownload result)
     {
-        //Debug.Log($"{gameObject.name}: String loaded: {result.Result.Length} characters.");
-        _captions = result.Result.Split('\n',System.StringSplitOptions.None);
+        Debug.Log($"{gameObject.name}: String loaded: {result.Result.Length} characters.");
+        bool deserialzed = VRCJson.TryDeserializeFromJson(result.Result, out DataToken rootToken);
+        if (deserialzed)
+        {
+            Debug.Log($"{gameObject.name}: JSON deserialized successfully.");
+            gotJson = true;
+            DataDictionary slideDict = rootToken.DataDictionary;
+            if (slideDict != null ) 
+            {
+                if (slideDict.TryGetValue("slideCount", out DataToken slideCountToken))
+                {
+                    Debug.Log($"{gameObject.name}: slidecount: {slideCountToken}");
+                    if (slideCountToken.IsNumber)
+                    {
+                        slideCount = (int)slideCountToken.Number;
+                    }
+                }
+                else
+                {
+                    Debug.Log($"{gameObject.name}: slideCount not found in JSON");
+                }
+            }
+
+            if (slideDict.TryGetValue("captions", out DataToken captionsToken))
+            {
+                _captionList = captionsToken.DataList;
+                Debug.Log($"{gameObject.name}: Found captions");
+            }
+            if (_captionList != null && _captionList.Count > 0)
+            {
+                captionsJson = true;
+                captionCount = _captionList.Count;
+                _captions = new string[captionCount];
+            }
+            else
+                captionCount = 0;
+            for (int i = 0; i < captionCount; i++)
+            {
+                    DataToken tok = _captionList[i];
+                    if (tok.TokenType == TokenType.String) 
+                        _captions[i] = tok.String;
+            }
+            if (captionCount > 0 && slideCount != captionCount)
+            {
+                slideCount = captionCount;
+            }
+            // Parse JSON array of strings
+        }
+        if (!gotJson)
+        {
+            _captions = result.Result.Split('\n', System.StringSplitOptions.None);
+            captionCount = _captions.Length;
+            if (slideCount != captionCount && captionCount > 0)
+            {
+                slideCount = captionCount;
+            }
+        }
         UpdateCaptionText();
     }
 
     public override void OnStringLoadError(IVRCStringDownload result)
     {
-        //Debug.LogError($"{gameObject.name}: Could not load string {result.Error}");
+        Debug.LogError($"{gameObject.name}: Could not load string {result.Error}");
     }
 
     public override void OnImageLoadSuccess(IVRCImageDownload result)
@@ -157,6 +220,9 @@ public class SlideshowFrame : UdonSharpBehaviour
         //Debug.Log($"Image loaded: {result.SizeInMemoryBytes} bytes.");
 
         _downloadedTextures[loadedIndex] = result.Result;
+        _downloadedTextures[loadedIndex].wrapMode = TextureWrapMode.Clamp;
+        _downloadedTextures[loadedIndex].filterMode = FilterMode.Bilinear;
+
     }
 
     public override void OnImageLoadError(IVRCImageDownload result)
