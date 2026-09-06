@@ -35,6 +35,8 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     private VRCImageDownloader _imageDownloader;
     [SerializeField]
+    private bool showdebug = false;
+    [SerializeField]
     private string[] _captions = new string[0];
     private Texture2D[] _downloadedTextures;
 
@@ -71,7 +73,8 @@ public class SlideshowFrame : UdonSharpBehaviour
         _imageDownloader = new VRCImageDownloader();
         if (_imageDownloader == null)
         {
-            Debug.Log($"{gameObject.name}: Start SlideShow: No VRC _imageDownloader");
+            if (showdebug)
+                Debug.Log($"{gameObject.name}: Start SlideShow: No VRC _imageDownloader");
         }
         //Debug.Log($"Start SlideShow:Go for Strings [{stringUrl}]");
         // Captions are downloaded once. On success, OnImageLoadSuccess() will be called
@@ -85,7 +88,8 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public void OnOwnerShipTransfered()
     {
-        Debug.Log($"{gameObject.name}: OnOwnerShipTransfered");
+        if (showdebug)
+            Debug.Log($"{gameObject.name}: OnOwnerShipTransfered");
         if (Networking.IsOwner(gameObject))
         {
             LoadNextRecursive();
@@ -96,7 +100,8 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public void LoadNextRecursive()
     {
-        Debug.Log($"{gameObject.name}: LoadNextRecursive");
+        if (showdebug)
+            Debug.Log($"{gameObject.name}: LoadNextRecursive");
         if (Networking.IsOwner(gameObject))
         {
             int maxIndex = Mathf.Max(Mathf.Min(imageUrls.Length, slideCount),1);
@@ -108,7 +113,8 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     private void LoadCurrentImage()
     {
-        Debug.Log($"{gameObject.name}: LoadCurrentImage");
+        if (showdebug)
+            Debug.Log($"{gameObject.name}: LoadCurrentImage");
         _isFirstLoad = false;
 
         // All clients share the same server time. That's used to sync the currently displayed image.
@@ -150,18 +156,21 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnStringLoadSuccess(IVRCStringDownload result)
     {
-        Debug.Log($"{gameObject.name}: String loaded: {result.Result.Length} characters.");
+        if (showdebug)
+            Debug.Log($"{gameObject.name}: String loaded: {result.Result.Length} characters.");
         bool deserialzed = VRCJson.TryDeserializeFromJson(result.Result, out DataToken rootToken);
         if (deserialzed)
         {
-            Debug.Log($"{gameObject.name}: JSON deserialized successfully.");
+            if (showdebug)
+                Debug.Log($"{gameObject.name}: JSON deserialized successfully.");
             gotJson = true;
             DataDictionary slideDict = rootToken.DataDictionary;
             if (slideDict != null ) 
             {
                 if (slideDict.TryGetValue("slideCount", out DataToken slideCountToken))
                 {
-                    Debug.Log($"{gameObject.name}: slidecount: {slideCountToken}");
+                    if (showdebug)
+                        Debug.Log($"{gameObject.name}: slidecount: {slideCountToken}");
                     if (slideCountToken.IsNumber)
                     {
                         slideCount = (int)slideCountToken.Number;
@@ -169,14 +178,16 @@ public class SlideshowFrame : UdonSharpBehaviour
                 }
                 else
                 {
-                    Debug.Log($"{gameObject.name}: slideCount not found in JSON");
+                    if (showdebug)
+                        Debug.Log($"{gameObject.name}: slideCount not found in JSON");
                 }
             }
 
             if (slideDict.TryGetValue("captions", out DataToken captionsToken))
             {
                 _captionList = captionsToken.DataList;
-                Debug.Log($"{gameObject.name}: Found captions");
+                if (showdebug)
+                    Debug.Log($"{gameObject.name}: Found captions");
             }
             if (_captionList != null && _captionList.Count > 0)
             {
@@ -227,13 +238,15 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnImageLoadError(IVRCImageDownload result)
     {
-        Debug.Log($"{gameObject.name}: Image not loaded: {result.Error.ToString()}: {result.ErrorMessage}.");
+        if (showdebug)
+            Debug.LogWarning($"{gameObject.name}: Image not loaded: {result.Error.ToString()}: {result.ErrorMessage}.");
         //Debug.Log($"{gameObject.name}: Image not loaded: {result.Error.ToString()}: {result.ErrorMessage}.");
     }
 
     private void OnDestroy()
     {
-        Debug.Log($"{gameObject.name}!!!!!!Dispose");
+        if (showdebug)
+            Debug.Log($"{gameObject.name}!!!!!!Dispose");
         _imageDownloader.Dispose();
     }
 }

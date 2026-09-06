@@ -23,8 +23,14 @@ public class UdonToggle : UdonSharpBehaviour
     [SerializeField, FieldChangeCallback(nameof(TogState))]
     private bool togState = false;
     [SerializeField]
+    private bool showDebug = false;
+    public bool ShowDebug
+    {
+        get => showDebug;
+        set => showDebug = value;
+    }
     private bool reportedState = false;
-    private bool enabled = false;
+    private bool isEnabled = false;
     public int ToggleIndex
     {
         get => toggleIndex;
@@ -73,7 +79,7 @@ public class UdonToggle : UdonSharpBehaviour
     {
         togState = state;
         reportedState = state;
-        if (enabled && toggle != null)
+        if (isEnabled && toggle != null)
         {
             if (toggle.isOn != state)
                 toggle.SetIsOnWithoutNotify(state);
@@ -96,12 +102,14 @@ public class UdonToggle : UdonSharpBehaviour
         if (toggle != null)
             toggle.SetIsOnWithoutNotify(togState);
         reportedState = togState;
-        enabled = true;
+        isEnabled = true;
     }
 
     public void onToggle()
     {
         TogState = toggle.isOn;
+        if (showDebug)
+            Debug.Log($"{gameObject.name}: onToggle: TogState={TogState}, toggleIndex={toggleIndex}, toggleValue={toggleValue}");
         if (togState && toggleClient != null)
         { 
             toggleClient.SendCustomEvent("TogSet");

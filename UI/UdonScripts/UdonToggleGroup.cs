@@ -26,7 +26,20 @@ public class UdonToggleGroup : UdonSharpBehaviour
     [SerializeField]
     private bool interactable = true;
     private bool iamOwner = false;
-
+    [SerializeField]
+    private bool showDebug = false;
+    public bool ShowDebug
+    {
+        get => showDebug;
+        set
+        {
+            foreach (UdonToggle tog in toggles)
+            {
+                if (tog != null)
+                    tog.ShowDebug = value;
+            }
+        } 
+    }
     /* 
 * Udon Sync Stuff
 */
@@ -44,10 +57,12 @@ public class UdonToggleGroup : UdonSharpBehaviour
         if (!iamOwner)
         { 
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            Debug.Log($"Toggle set: Grabbed Ownership");
+            if (showDebug)
+                Debug.Log($"Toggle set: Grabbed Ownership");
         }
         else
-            Debug.Log($"Toggle set: Already Owner");
+            if (showDebug)
+               Debug.Log($"Toggle set: Already Owner");
     }
     public bool Interactable
         {
@@ -121,8 +136,8 @@ public class UdonToggleGroup : UdonSharpBehaviour
         {
             if (value < -1 || value >= numToggles)
             {
-                //if (debug)
-                //    Debug.LogError($"ActiveIndex value {value} is out of range for toggle group with {numToggles} toggles.");
+                if (showDebug)
+                    Debug.LogError($"ActiveIndex value {value} is out of range for toggle group with {numToggles} toggles.");
                 return;
             }
             int togValue = toggleValues[value];
@@ -130,8 +145,8 @@ public class UdonToggleGroup : UdonSharpBehaviour
             if (!iamOwner)
                 Networking.SetOwner(Networking.LocalPlayer,gameObject);
             activeIndex = value;
-            //if (debug)
-            //    Debug.Log($"ActiveIndex set to {value}, which corresponds to toggle value {togValue}. ActiveValue {activeValue}.");
+            if (showDebug)
+                Debug.Log($"ActiveIndex set to {value}, which corresponds to toggle value {togValue}. ActiveValue {activeValue}.");
             ActiveValue = togValue;
             refreshToggles(togValue);
         }
@@ -163,6 +178,7 @@ public class UdonToggleGroup : UdonSharpBehaviour
         numToggles = 0;
         if ((toggles != null) &&  (toggles.Length > 0))
             numToggles = toggles.Length;
+        ShowDebug = showDebug;
         OnEnable();
     }
 #endif

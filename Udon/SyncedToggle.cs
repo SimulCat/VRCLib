@@ -23,6 +23,7 @@ public class SyncedToggle : UdonSharpBehaviour
     [SerializeField]
     private bool reportedState = false;
     private VRCPlayerApi player;
+    private bool isEnabled = false;
     private bool locallyOwned = false;
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
@@ -89,7 +90,7 @@ public class SyncedToggle : UdonSharpBehaviour
     {
         syncedState = state;
         reportedState = state;
-        if (toggle != null)
+        if (isEnabled && toggle != null)
         {
             if (toggle.isOn != state)
                 toggle.SetIsOnWithoutNotify(state);
@@ -101,13 +102,23 @@ public class SyncedToggle : UdonSharpBehaviour
             Networking.SetOwner(player, gameObject);
         SyncedState = toggle.isOn;
     }
+    void OnEnable()
+    {
+        if (toggle == null)
+            toggle = GetComponent<Toggle>();
+        if (toggle != null)
+        {
+            if (toggle.isOn != syncedState)
+                toggle.SetIsOnWithoutNotify(syncedState);
+            reportedState = !toggle.isOn;
+        }
+        isEnabled = true;
+    }
+
     void Start()
     {
         player = Networking.LocalPlayer;
         locallyOwned = Networking.IsOwner(gameObject);
-
-        if (toggle == null)
-            toggle = GetComponent<Toggle>();
         reportedState = !toggle.isOn;
         SyncedState = !reportedState;
     }
