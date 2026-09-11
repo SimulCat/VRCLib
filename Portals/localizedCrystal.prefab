@@ -165,29 +165,38 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 2025505161641879702}
   myText: {fileID: 7233174850867928878}
   languageIndex: 0
+  pageNumber: -1
   texts:
-  - "<align=center><b>The Quantum Crystal: <br>Neglected for 100 Years </b><br><br>Explore
-    William Duane's 1923 quantum scattering model of crystal diffraction, which utilizes
-    aspects of quantum physics neglected in interpretations relying on wave-particle
-    duality.<br><br><i> \"a theory of the reflection of X-rays by crystals\u201A
-    based on quantum ideas without reference to interference law\"</i></align>"
-  - "<align=center><b>\u91CF\u5B50\u7D50\u6676: <br>100 \u5E74\u9593\u7121\u8996\u3055\u308C\u3066\u304D\u305F</b><br><br>1923
-    \u5E74\u306B\u30A6\u30A3\u30EA\u30A2\u30E0 \u30C7\u30E5\u30A2\u30F3\u304C\u5C0E\u5165\u3057\u305F\u7D50\u6676\u56DE\u6298\u306E\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u306B\u3064\u3044\u3066\u8ABF\u3079\u307E\u3059\u3002\u3053\u306E\u30E2\u30C7\u30EB\u306F\u3001\u6CE2\u52D5\u7C92\u5B50\u4E8C\u91CD\u6027\u306B\u57FA\u3065\u304F\u89E3\u91C8\u3067\u306F\u7121\u8996\u3055\u308C\u3066\u304D\u305F\u91CF\u5B50\u7269\u7406\u5B66\u306E\u5074\u9762\u3092\u5F37\u8ABF\u3057\u3066\u3044\u307E\u3059\u3002<br><br><i>\u300C\u5E72\u6E09\u306E\u6CD5\u5247\u3092\u53C2\u7167\u305B\u305A\u306B\u91CF\u5B50\u6982\u5FF5\u306B\u57FA\u3065\u304F\u7D50\u6676\u306B\u3088\u308B
-    X \u7DDA\u306E\u53CD\u5C04\u306E\u7406\u8AD6\u300D</i></align>"
-  - "<align=center><b>\u91CF\u5B50\u6676\u9AD4\uFF1A<br>\u88AB\u5FFD\u8996\u4E86100
-    \u5E74</b><br><br>\u63A2\u7D22\u5A01\u5EC9\xB7\u675C\u5B89\u65BC1923 \u5E74\u63D0\u51FA\u7684\u6676\u9AD4\u884D\u5C04\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8A72\u6A21\u578B\u5229\u7528\u4E86\u5728\u4F9D\u8CF4\u6CE2\u7C92\u4E8C\u8C61\u6027\u7684\u89E3\u91CB\u4E2D\u88AB\u5FFD\u7565\u7684\u91CF\u5B50\u7269\u7406\u5B78\u9762\u5411\u3002
-    <br><br><i>\u300C\u4E00\u500B\u57FA\u65BC\u91CF\u5B50\u601D\u60F3\u800C\u4E0D\u53C3\u8003\u5E72\u6D89\u5B9A\u5F8B\u7684\u6676\u9AD4\u53CD\u5C04
-    X \u5C04\u7DDA\u7684\u7406\u8AD6\u300D</i></align>"
-  - "<align=center><b>\u91CF\u5B50\u6676\u4F53\uFF1A<br>\u88AB\u5FFD\u89C6\u4E86
-    100 \u5E74</b><br><br>\u63A2\u7D22\u5A01\u5EC9\xB7\u675C\u5B89\u4E8E 1923 \u5E74\u63D0\u51FA\u7684\u6676\u4F53\u884D\u5C04\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8BE5\u6A21\u578B\u5229\u7528\u4E86\u5728\u4F9D\u8D56\u6CE2\u7C92\u4E8C\u8C61\u6027\u7684\u89E3\u91CA\u4E2D\u88AB\u5FFD\u89C6\u7684\u91CF\u5B50\u7269\u7406\u5B66\u65B9\u9762\u3002<br><br><i>\u201C\u4E00\u79CD\u57FA\u4E8E\u91CF\u5B50\u601D\u60F3\u800C\u4E0D\u53C2\u8003\u5E72\u6D89\u5B9A\u5F8B\u7684\u6676\u4F53\u53CD\u5C04
-    X \u5C04\u7EBF\u7684\u7406\u8BBA\u201D</i></align>"
-  - "<align=center><b>\uC591\uC790 \uACB0\uC815: <br>100\uB144 \uB3D9\uC548 \uBB34\uC2DC\uB428</b><br><br>\uD30C\uB3D9-\uC785\uC790
-    \uC774\uC911\uC131\uC5D0 \uC758\uC874\uD558\uB294 \uD574\uC11D\uC5D0\uC11C \uBB34\uC2DC\uB41C
-    \uC591\uC790 \uBB3C\uB9AC\uD559\uC758 \uCE21\uBA74\uC744 \uD65C\uC6A9\uD55C \uC70C\uB9AC\uC5C4
-    \uB4C0\uC548\uC758 1923\uB144 \uC591\uC790 \uC0B0\uB780 \uACB0\uC815 \uD68C\uC808
-    \uBAA8\uB378\uC744 \uC0B4\uD3B4\uBCF4\uC138\uC694.<br><br><i> \"\uAC04\uC12D
-    \uBC95\uCE59\uC744 \uCC38\uC870\uD558\uC9C0 \uC54A\uACE0 \uC591\uC790\uC801 \uC544\uC774\uB514\uC5B4\uC5D0
-    \uAE30\uBC18\uD55C \uACB0\uC815\uC5D0 \uC758\uD55C X\uC120 \uBC18\uC0AC \uC774\uB860\"</i></align>"
+  - '<align=center><b>The Quantum Crystal: <br>Neglected for a Century</b><br><br>This
+    world illustrates how William Duane''s 1923 momentum-based quantum scattering
+    model applies to crystal diffraction.<br><br><i>"a theory of the reflection of
+    X-rays by crystals, based on quantum ideas without reference to interference
+    law"</i></align>'
+  - "<align=center><b>\u91CF\u5B50\u7D50\u6676\uFF1A<br>1\u4E16\u7D00\u306B\u308F\u305F\u308A\u9867\u307F\u3089\u308C\u306A\u304B\u3063\u305F\u7406\u8AD6</b><br><br>\u3053\u3053\u3067\u306F\u3001\u30A6\u30A3\u30EA\u30A2\u30E0\u30FB\u30C7\u30E5\u30A2\u30F3\u304C1923\u5E74\u306B\u63D0\u5531\u3057\u305F\u300C\u904B\u52D5\u91CF\u306B\u57FA\u3065\u304F\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u300D\u304C\u3001\u7D50\u6676\u56DE\u6298\u306B\u3069\u306E\u3088\u3046\u306B\u9069\u7528\u3055\u308C\u308B\u304B\u3092\u793A\u3057\u307E\u3059\u3002<br><br><i>\u300C\u5E72\u6E09\u306E\u6CD5\u5247\u306B\u4F9D\u62E0\u305B\u305A\u3001\u91CF\u5B50\u8AD6\u7684\u8003\u3048\u65B9\u306B\u57FA\u3065\u3044\u305F\u3001\u7D50\u6676\u306B\u3088\u308BX\u7DDA\u53CD\u5C04\u306E\u7406\u8AD6\u300D</i></align>"
+  - "<align=center><b>\u91CF\u5B50\u6676\u9AD4\uFF1A<br>\u88AB\u907A\u5FD8\u4E86\u4E00\u500B\u4E16\u7D00</b><br><br>\u672C\u4F8B\u5C55\u793A\u4E86\u5A01\u5EC9\xB7\u675C\u5B89\uFF08William
+    Duane\uFF09\u65BC1923\u5E74\u63D0\u51FA\u7684\u57FA\u65BC\u52D5\u91CF\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\u5982\u4F55\u61C9\u7528\u65BC\u6676\u9AD4\u884D\u5C04\u3002
+    <br><br><i>\u300C\u4E00\u500B\u57FA\u65BC\u91CF\u5B50\u6982\u5FF5\u3001\u7121\u9808\u5F15\u7528\u4E7E\u6D89\u5B9A\u5F8B\u7684\u6676\u9AD4X\u5C04\u7DDA\u53CD\u5C04\u7406\u8AD6\u300D</i></align>"
+  - "<align=center><b>\u91CF\u5B50\u6676\u4F53\uFF1A<br>\u88AB\u9057\u5FD8\u4E86\u4E00\u4E2A\u4E16\u7EAA</b><br><br>\u672C\u4F8B\u5C55\u793A\u4E86\u5A01\u5EC9\xB7\u675C\u5B89\uFF08William
+    Duane\uFF09\u4E8E1923\u5E74\u63D0\u51FA\u7684\u57FA\u4E8E\u52A8\u91CF\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\u5982\u4F55\u5E94\u7528\u4E8E\u6676\u4F53\u884D\u5C04\u3002<br><br><i>\u201C\u4E00\u79CD\u57FA\u4E8E\u91CF\u5B50\u6982\u5FF5\u3001\u65E0\u9700\u63F4\u5F15\u5E72\u6D89\u5B9A\u5F8B\u7684\u6676\u4F53X\u5C04\u7EBF\u53CD\u5C04\u7406\u8BBA\u201D</i></align>"
+  - "<align=center><b>\uC591\uC790 \uACB0\uC815: <br>\uD55C \uC138\uAE30 \uB3D9\uC548
+    \uC678\uBA74\uBC1B\uC558\uB358 \uC774\uB860</b><br><br>\uC774 \uC0AC\uB840\uB294
+    \uC70C\uB9AC\uC5C4 \uB4C0\uC548(William Duane)\uC774 1923\uB144\uC5D0 \uC81C\uC2DC\uD55C
+    \uC6B4\uB3D9\uB7C9 \uAE30\uBC18 \uC591\uC790 \uC0B0\uB780 \uBAA8\uB378\uC774
+    \uACB0\uC815 \uD68C\uC808\uC5D0 \uC5B4\uB5BB\uAC8C \uC801\uC6A9\uB418\uB294\uC9C0\uB97C
+    \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.<br><br><i>\"\uAC04\uC12D \uBC95\uCE59\uC744 \uCC38\uC870\uD558\uC9C0
+    \uC54A\uACE0 \uC591\uC790\uC801 \uAC1C\uB150\uC5D0 \uAE30\uCD08\uD558\uC5EC \uACB0\uC815\uC5D0
+    \uC758\uD55C X\uC120 \uBC18\uC0AC\uB97C \uC124\uBA85\uD558\uB294 \uC774\uB860\"</i></align>"
+  - "<align=center><b>O Cristal Qu\xE2ntico: <br>Negligenciado por um S\xE9culo</b><br><br>Este
+    exemplo ilustra como o modelo de espalhamento qu\xE2ntico baseado no momento,
+    proposto por William Duane em 1923, se aplica \xE0 difra\xE7\xE3o em cristais.<br><br><i>\"uma
+    teoria da reflex\xE3o de raios X por cristais, baseada em conceitos qu\xE2nticos
+    e sem refer\xEAncia \xE0 lei de interfer\xEAncia\"</i></align>"
+  - "<align=center><b>Le cristal quantique : <br>N\xE9glig\xE9 pendant un si\xE8cle</b><br><br>Ce
+    monde illustre la mani\xE8re dont le mod\xE8le de diffusion quantique fond\xE9
+    sur l'impulsion, propos\xE9 par William Duane en 1923, s'applique \xE0 la diffraction
+    par les cristaux.<br><br><i>\xAB une th\xE9orie de la r\xE9flexion des rayons
+    X par les cristaux, fond\xE9e sur des concepts quantiques sans r\xE9f\xE9rence
+    aux lois de l'interf\xE9rence \xBB</i></align>"
 --- !u!114 &2025505161641879702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +217,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 1
-  serializedProgramAsset: {fileID: 11400000, guid: e5e6feb73ec0a004ca9aaf0746015f60,
+  serializedProgramAsset: {fileID: 11400000, guid: 1c1dabace3c87094296b96c691bf1f39,
     type: 2}
   programSource: {fileID: 11400000, guid: 6f2ef19a3f106ae44991da16d0c64366, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF

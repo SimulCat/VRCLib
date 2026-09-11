@@ -15,7 +15,7 @@ public class UdonToggleGroup : UdonSharpBehaviour
     [SerializeField,FieldChangeCallback(nameof(ActiveIndex))]
     public int activeIndex = -1;
     [SerializeField]
-    private string clientVariable = "activeToggle";
+    public string clientVariable = "activeToggle";
 
     [Header("Just here to see in inspector")]
     // No Fusion
@@ -25,7 +25,6 @@ public class UdonToggleGroup : UdonSharpBehaviour
     //private bool debug = false;
     [SerializeField]
     private bool interactable = true;
-    private bool iamOwner = false;
     [SerializeField]
     private bool showDebug = false;
     public bool ShowDebug
@@ -41,8 +40,10 @@ public class UdonToggleGroup : UdonSharpBehaviour
         } 
     }
     /* 
-* Udon Sync Stuff
-*/
+    * Udon Sync Stuff
+    */
+    private bool iamOwner = false;
+
     private void ReviewOwnerShip()
     {
         iamOwner = Networking.IsOwner(this.gameObject);

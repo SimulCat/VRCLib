@@ -108,10 +108,11 @@ public class UdonSlider : UdonSharpBehaviour
         minValue = min;
         maxValue = max;
         updateThreshold();
-        if (!started)
-            return;
-        mySlider.minValue = minValue;
-        mySlider.maxValue = maxValue;
+        if (mySlider != null)
+        {
+            mySlider.minValue = minValue;
+            mySlider.maxValue = maxValue;
+        }
     }
     public string TitleText
     {

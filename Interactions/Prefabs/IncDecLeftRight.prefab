@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 203422364076196771}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuantumScatter.PhotonIncDec, QuantumScatter
         m_MethodName: decValue
         m_Mode: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 203422364076196771}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: QuantumScatter.PhotonIncDec, QuantumScatter
           m_MethodName: onPointerEnter
           m_Mode: 1
@@ -348,7 +348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4328325986701626445}
-  - component: {fileID: 203422364076196771}
   m_Layer: 5
   m_Name: IncDecLeftRight
   m_TagString: Untagged
@@ -369,37 +368,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 726050819729807360}
   - {fileID: 4300337401094940047}
   - {fileID: 7804373838022693395}
   - {fileID: 4328325985213053063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &203422364076196771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4328325986701626444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930ef03bf8c9c7140a3aeb146b5cc25a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  networkedRigidBody: {fileID: 1953626722235252054}
-  IncButton: {fileID: 8508409078990018342}
-  DecButton: {fileID: 968246050516807144}
-  _value: 2
-  minValue: 1
-  maxValue: 10
-  onValue:
-    m_PersistentCalls:
-      m_Calls: []
-  rbTransform: {fileID: 0}
-  _reportedValue: -1
-  networkObject: {fileID: 0}
-  debug: 1
 --- !u!1 &7873038878986323047
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +494,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 203422364076196771}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuantumScatter.PhotonIncDec, QuantumScatter
         m_MethodName: incValue
         m_Mode: 1
@@ -550,7 +523,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 203422364076196771}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: QuantumScatter.PhotonIncDec, QuantumScatter
           m_MethodName: onPointerEnter
           m_Mode: 1
@@ -562,83 +535,3 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1001 &742682554124508951
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4328325986701626445}
-    m_Modifications:
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594426931943662508, guid: 3a859a11e6acd274c9f24e6e701938ae,
-        type: 3}
-      propertyPath: m_Name
-      value: SyncedRB
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a859a11e6acd274c9f24e6e701938ae, type: 3}
---- !u!4 &726050819729807360 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 26452629313341207, guid: 3a859a11e6acd274c9f24e6e701938ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 742682554124508951}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1953626722235252054 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1248100720779092545, guid: 3a859a11e6acd274c9f24e6e701938ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 742682554124508951}
-  m_PrefabAsset: {fileID: 0}
