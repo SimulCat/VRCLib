@@ -75,7 +75,7 @@ public class UdonToggle : UdonSharpBehaviour
         get => toggle.interactable;
         set => toggle.interactable = value;
     }
-    public void setState(bool state)
+    public void SetState(bool state)
     {
         togState = state;
         reportedState = state;

@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: e63289acce8192f418271a318edafc31, type: 2}
-  m_Color: {r: 0.3254902, g: 0.26666668, b: 0.4509804, a: 1}
+  m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -504,10 +504,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
         type: 3}
+      propertyPath: texts.Array.data[0]
+      value: "<align=center><b>The Quantum Model of Crystal Diffraction: <br>Neglected
+        for a Century</b><br><br>This world illustrates how William Duane's 1923
+        momentum-based quantum scattering model applies to crystal diffraction.<br><br><i>\"\u22EF
+        a theory of the reflection of X-rays by crystals, based on quantum ideas
+        without reference to interference law\"</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "<align=center><b>\u7D50\u6676\u56DE\u6298\u306E\u91CF\u5B50\u30E2\u30C7\u30EB\uFF1A<br>1\u4E16\u7D00\u306B\u308F\u305F\u308A\u9867\u307F\u3089\u308C\u306A\u304B\u3063\u305F\u7406\u8AD6</b><br><br>\u672C\u5C55\u793A\u3067\u306F\u3001\u30A6\u30A3\u30EA\u30A2\u30E0\u30FB\u30C7\u30E5\u30A2\u30F3\u304C1923\u5E74\u306B\u63D0\u5531\u3057\u305F\u300C\u904B\u52D5\u91CF\u306B\u57FA\u3065\u304F\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u300D\u304C\u3001\u3044\u304B\u306B\u3057\u3066\u7D50\u6676\u56DE\u6298\u306B\u9069\u7528\u3055\u308C\u308B\u304B\u3092\u793A\u3057\u307E\u3059\u3002<br><br><i>\u300C\u2026\u2026\u5E72\u6E09\u306E\u6CD5\u5247\u306B\u8A00\u53CA\u3059\u308B\u3053\u3068\u306A\u304F\u3001\u91CF\u5B50\u8AD6\u7684\u767A\u60F3\u306B\u57FA\u3065\u3044\u3066\u7D50\u6676\u306B\u3088\u308BX\u7DDA\u53CD\u5C04\u3092\u8AAC\u660E\u3059\u308B\u7406\u8AD6\u300D</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "<align=center><b>\u6676\u9AD4\u884D\u5C04\u7684\u91CF\u5B50\u6A21\u578B\uFF1A<br>\u88AB\u5FFD\u8996\u4E86\u4E00\u500B\u4E16\u7D00</b><br><br>\u9019\u500B\u4E16\u754C\u5C55\u793A\u4E86\u5A01\u5EC9\xB7\u675C\u5B89
+        (William Duane) \u65BC 1923 \u5E74\u63D0\u51FA\u7684\u57FA\u65BC\u52D5\u91CF\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\u5982\u4F55\u61C9\u7528\u65BC\u6676\u9AD4\u884D\u5C04\u3002
+        <br><br><i>\u300C\u2026\u4E00\u7A2E\u57FA\u65BC\u91CF\u5B50\u601D\u60F3\uFF0C\u4E0D\u6D89\u53CA\u4E7E\u6D89\u5B9A\u5F8B\u7684\u6676\u9AD4\u53CD\u5C04
+        X \u5C04\u7DDA\u7684\u7406\u8AD6\u300D</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "<align=center><b>\u6676\u4F53\u884D\u5C04\u7684\u91CF\u5B50\u6A21\u578B\uFF1A<br>\u88AB\u5FFD\u89C6\u4E86\u4E00\u4E2A\u4E16\u7EAA</b><br><br>\u672C\u6587\u9610\u8FF0\u4E86\u5A01\u5EC9\xB7\u675C\u5B89\uFF08William
+        Duane\uFF09\u4E8E1923\u5E74\u63D0\u51FA\u7684\u57FA\u4E8E\u52A8\u91CF\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\u5982\u4F55\u5E94\u7528\u4E8E\u6676\u4F53\u884D\u5C04\u3002<br><br><i>\u201C\u2026\u2026\u4E00\u79CD\u57FA\u4E8E\u91CF\u5B50\u6982\u5FF5\u3001\u65E0\u9700\u63F4\u5F15\u5E72\u6D89\u5B9A\u5F8B\u7684\u6676\u4F53X\u5C04\u7EBF\u53CD\u5C04\u7406\u8BBA\u201D</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "<align=center><b>\uACB0\uC815 \uD68C\uC808\uC758 \uC591\uC790 \uBAA8\uB378:
+        <br>\uD55C \uC138\uAE30 \uB3D9\uC548 \uAC04\uACFC\uB41C \uC774\uB860</b><br><br>\uC774
+        \uB0B4\uC6A9\uC740 \uC70C\uB9AC\uC5C4 \uB4C0\uC548(William Duane)\uC774 1923\uB144\uC5D0
+        \uC81C\uC2DC\uD55C \uC6B4\uB3D9\uB7C9 \uAE30\uBC18 \uC591\uC790 \uC0B0\uB780
+        \uBAA8\uB378\uC774 \uACB0\uC815 \uD68C\uC808\uC5D0 \uC5B4\uB5BB\uAC8C \uC801\uC6A9\uB418\uB294\uC9C0\uB97C
+        \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.<br><br><i>\"\u22EF \uAC04\uC12D \uBC95\uCE59\uC744
+        \uCC38\uC870\uD558\uC9C0 \uC54A\uACE0 \uC591\uC790\uC801 \uAC1C\uB150\uC5D0
+        \uAE30\uCD08\uD558\uC5EC \uACB0\uC815\uC5D0 \uC758\uD55C X\uC120 \uBC18\uC0AC\uB97C
+        \uC124\uBA85\uD558\uB294 \uC774\uB860\"</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "<align=center><b>Um Modelo Qu\xE2ntico de Difra\xE7\xE3o em Cristais:
+        <br>Negligenciado por um S\xE9culo</b><br><br>Este trabalho ilustra como
+        o modelo de espalhamento qu\xE2ntico baseado no momento, proposto por William
+        Duane em 1923, se aplica \xE0 difra\xE7\xE3o em cristais.<br><br><i>\"\u22EF
+        uma teoria da reflex\xE3o de raios X por cristais, baseada em conceitos qu\xE2nticos
+        e sem refer\xEAncia \xE0 lei de interfer\xEAncia\"</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "<align=center><b>Un mod\xE8le quantique de la diffraction par les cristaux
+        : <br>n\xE9glig\xE9 pendant un si\xE8cle</b><br><br>Cet expos\xE9 illustre
+        la mani\xE8re dont le mod\xE8le quantique de diffusion fond\xE9 sur l'impulsion,
+        propos\xE9 par William Duane en 1923, s'applique \xE0 la diffraction par
+        les cristaux.<br><br><i>\xAB \u22EF une th\xE9orie de la r\xE9flexion des
+        rayons X par les cristaux, fond\xE9e sur des concepts quantiques sans r\xE9f\xE9rence
+        aux lois de l'interf\xE9rence \xBB</i></align>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4834396579833354152, guid: d865180e70ddedf4ba277401baa008fa,
         type: 3}
+    - target: {fileID: 7233174850867928878, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233174850867928878, guid: d865180e70ddedf4ba277401baa008fa,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -545,6 +617,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
         type: 2}
+    - target: {fileID: 2202912321493760737, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202912321493760737, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.26699895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202912321493760737, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.32722208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246164755134917143, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
+    - target: {fileID: 2555632328048375217, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
     - target: {fileID: 2701100827620226163, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializedProgramAsset
@@ -557,6 +656,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3091351646065611270, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+    - target: {fileID: 3122605748436508016, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
+    - target: {fileID: 4114288724612559855, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
+    - target: {fileID: 4145631646986113456, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
     - target: {fileID: 4575500704625952679, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -590,7 +707,7 @@ PrefabInstance:
     - target: {fileID: 5722810210426480916, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: localizedTexts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5722810210426480916, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
@@ -647,7 +764,7 @@ PrefabInstance:
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 380
+      value: 530
       objectReference: {fileID: 0}
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
@@ -720,6 +837,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
         type: 2}
+    - target: {fileID: 6950424160052570269, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
     - target: {fileID: 7000894556764781100, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -730,7 +853,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 91da3395536128a4484aa921b3a15926,
+      objectReference: {fileID: 11400000, guid: c951d36eda806364d9b0a3db15689648,
         type: 2}
     - target: {fileID: 7307966295252300502, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
@@ -767,6 +890,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9064946300988437969, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+    - target: {fileID: 9142714734691521658, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
+        type: 2}
     - target: {fileID: 9222887386878971605, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializationData.Prefab

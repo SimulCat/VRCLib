@@ -65,7 +65,7 @@ public class SyncedTween : UdonSharpBehaviour
         }
     }
 
-    public void setState(bool state)
+    public void SetState(bool state)
     {
         SyncedState = state;
         UpdateToggle();

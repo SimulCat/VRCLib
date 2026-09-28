@@ -86,7 +86,7 @@ public class SyncedToggle : UdonSharpBehaviour
             RequestSerialization();
         }
     }
-    public void setState(bool state = false)
+    public void SetState(bool state)
     {
         syncedState = state;
         reportedState = state;
