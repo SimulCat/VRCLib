@@ -58,7 +58,8 @@ public class SlideshowFrame : UdonSharpBehaviour
             loadedIndex = value;
             if (prevIndex != loadedIndex)
             {
-                //Debug.Log($"{gameObject.name}: LoadedImage changed to {loadedIndex}");
+                if (showdebug)
+                    Debug.Log($"{gameObject.name}: LoadedImage changed to {loadedIndex}");
                 LoadCurrentImage();
             }
             RequestSerialization();
@@ -66,7 +67,7 @@ public class SlideshowFrame : UdonSharpBehaviour
     }
     void Start()
     {
-        Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
+        if (showdebug)Debug.Log("!!!!!!!!!!!!!!!!Start SlideShow");
         // Downloaded textures will be cached in a texture array.
 
         // It's important to store the VRCImageDownloader as a variable, to stop it from being garbage collected!
@@ -132,7 +133,8 @@ public class SlideshowFrame : UdonSharpBehaviour
             var rgbInfo = new TextureInfo();
             rgbInfo.GenerateMipMaps = true;
             rgbInfo.MaterialProperty = "_EmissionMap";
-            //Debug.Log($"{gameObject.name}: Load Image:" + imageUrls[loadedIndex]);
+            if (showdebug)
+                Debug.Log($"{gameObject.name}: Load Image:" + imageUrls[loadedIndex]);
 
             _imageDownloader.DownloadImage(imageUrls[loadedIndex], renderer.material, (IUdonEventReceiver)this, rgbInfo);
         }
@@ -223,12 +225,14 @@ public class SlideshowFrame : UdonSharpBehaviour
 
     public override void OnStringLoadError(IVRCStringDownload result)
     {
-        Debug.LogError($"{gameObject.name}: Could not load string {result.Error}");
+        if (showdebug)
+            Debug.LogError($"{gameObject.name}: Could not load string {result.Error}");
     }
 
     public override void OnImageLoadSuccess(IVRCImageDownload result)
     {
-        //Debug.Log($"Image loaded: {result.SizeInMemoryBytes} bytes.");
+        if (showdebug)
+            Debug.Log($"Image loaded: {result.SizeInMemoryBytes} bytes.");
 
         _downloadedTextures[loadedIndex] = result.Result;
         _downloadedTextures[loadedIndex].wrapMode = TextureWrapMode.Clamp;

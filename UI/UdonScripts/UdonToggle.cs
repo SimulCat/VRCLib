@@ -6,7 +6,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 
 [RequireComponent(typeof(Toggle))]
-[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 
 public class UdonToggle : UdonSharpBehaviour
 {
@@ -15,11 +15,14 @@ public class UdonToggle : UdonSharpBehaviour
     [SerializeField]
     public UdonBehaviour toggleClient;
     [SerializeField]
-    public string clientVariable = "toggleIndex";
+    private string clientVariable = "toggleIndex";
+    public string ClientVariable
+    {
+        get => clientVariable;
+        set => clientVariable = value;
+    }
     [SerializeField]
     private int toggleIndex = -1;
-    [SerializeField]
-    private int toggleValue = -1;
     [SerializeField, FieldChangeCallback(nameof(TogState))]
     private bool togState = false;
     [SerializeField]
@@ -29,18 +32,11 @@ public class UdonToggle : UdonSharpBehaviour
         get => showDebug;
         set => showDebug = value;
     }
-    private bool reportedState = false;
     private bool isEnabled = false;
     public int ToggleIndex
     {
         get => toggleIndex;
         set => toggleIndex = value;
-    }
-
-    public int ToggleValue
-    {
-        get => toggleValue;
-        set => toggleValue = value;
     }
 
     public bool TogState
@@ -54,19 +50,15 @@ public class UdonToggle : UdonSharpBehaviour
             togState = value;
             if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
             {
-                if (reportedState != togState)
+                if (toggleIndex < 0)
+                    toggleClient.SetProgramVariable<bool>(clientVariable, togState);
+                else
                 {
-                    if (toggleIndex < 0)
-                        toggleClient.SetProgramVariable<bool>(clientVariable, togState);
-                    else
-                    {
-                        if (togState)
-                            toggleClient.SetProgramVariable<int>(clientVariable, ToggleIndex);
-                    }
+                    if (togState)
+                        toggleClient.SetProgramVariable<int>(clientVariable, ToggleIndex);
                 }
 
             }
-            reportedState = value;
         }
     }
 
@@ -78,7 +70,6 @@ public class UdonToggle : UdonSharpBehaviour
     public void SetState(bool state)
     {
         togState = state;
-        reportedState = state;
         if (isEnabled && toggle != null)
         {
             if (toggle.isOn != state)
@@ -101,7 +92,6 @@ public class UdonToggle : UdonSharpBehaviour
             toggle = GetComponent<Toggle>();
         if (toggle != null)
             toggle.SetIsOnWithoutNotify(togState);
-        reportedState = togState;
         isEnabled = true;
     }
 
@@ -109,7 +99,7 @@ public class UdonToggle : UdonSharpBehaviour
     {
         TogState = toggle.isOn;
         if (showDebug)
-            Debug.Log($"{gameObject.name}: onToggle: TogState={TogState}, toggleIndex={toggleIndex}, toggleValue={toggleValue}");
+            Debug.Log($"{gameObject.name}: onToggle: TogState={TogState}, toggleIndex={toggleIndex}");
         if (togState && toggleClient != null)
         { 
             toggleClient.SendCustomEvent("TogSet");

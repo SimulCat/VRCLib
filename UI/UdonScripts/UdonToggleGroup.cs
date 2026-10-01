@@ -12,17 +12,15 @@ public class UdonToggleGroup : UdonSharpBehaviour
     [SerializeField] private int numToggles = 0;
     [SerializeField]
     private UdonBehaviour toggleClient;
-    [SerializeField,FieldChangeCallback(nameof(ActiveIndex))]
+    [SerializeField,UdonSynced,FieldChangeCallback(nameof(ActiveIndex))]
     public int activeIndex = -1;
     [SerializeField]
     public string clientVariable = "activeToggle";
 
     [Header("Just here to see in inspector")]
     // No Fusion
-    [SerializeField, UdonSynced, FieldChangeCallback(nameof(ActiveValue))]
+    [SerializeField, FieldChangeCallback(nameof(ActiveValue))]
     public int activeValue = -1;
-    //[SerializeField]
-    //private bool debug = false;
     [SerializeField]
     private bool interactable = true;
     [SerializeField]
@@ -43,6 +41,10 @@ public class UdonToggleGroup : UdonSharpBehaviour
     * Udon Sync Stuff
     */
     private bool iamOwner = false;
+    public bool IsOwner
+    {
+        get => iamOwner;
+    }
 
     private void ReviewOwnerShip()
     {
@@ -51,6 +53,15 @@ public class UdonToggleGroup : UdonSharpBehaviour
     public override void OnOwnershipTransferred(VRCPlayerApi player)
     {
         ReviewOwnerShip();
+    }
+    public void onPointer()
+    {
+        if (showDebug)
+            Debug.Log($"onPointer: iamOwner={iamOwner}");
+        if (!iamOwner)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
     }
 
     public void TogSet()
@@ -113,21 +124,15 @@ public class UdonToggleGroup : UdonSharpBehaviour
         refreshToggles(value);
     }
 
-    private bool valueChanged = false;
     public int ActiveValue
     {
         get => activeValue;
         set
         {
-            valueChanged |= value != activeValue;
             activeValue = value;
-            if (valueChanged)
-            {
-                if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
-                    toggleClient.SetProgramVariable(clientVariable, value);
-                refreshToggles(value);
-            }
-            RequestSerialization();
+            if (toggleClient != null && !string.IsNullOrEmpty(clientVariable))
+                toggleClient.SetProgramVariable(clientVariable, value);
+            refreshToggles(value);
         }
     }
     public int ActiveIndex
@@ -141,15 +146,15 @@ public class UdonToggleGroup : UdonSharpBehaviour
                     Debug.LogError($"ActiveIndex value {value} is out of range for toggle group with {numToggles} toggles.");
                 return;
             }
-            int togValue = toggleValues[value];
-            bool valueChanged = togValue != activeValue;
+            activeIndex = value;
+            int togValue = toggleValues[activeIndex];
             if (!iamOwner)
                 Networking.SetOwner(Networking.LocalPlayer,gameObject);
-            activeIndex = value;
             if (showDebug)
                 Debug.Log($"ActiveIndex set to {value}, which corresponds to toggle value {togValue}. ActiveValue {activeValue}.");
             ActiveValue = togValue;
             refreshToggles(togValue);
+            RequestSerialization();
         }
     }
 
@@ -158,14 +163,13 @@ public class UdonToggleGroup : UdonSharpBehaviour
         numToggles = toggles != null && toggles.Length > 0 ? toggles.Length : 0;
         if (numToggles > 0)
         {
-            toggleValues = new int[numToggles];
             for (int i = 0; i < numToggles; i++)
             {
                 UdonToggle Tog = toggles[i];
                 if (Tog == null) continue;
                 Tog.ToggleIndex = i;
-                Tog.clientVariable = "activeIndex";
-                toggleValues[i] = Tog.ToggleValue;
+                //Tog.ClientVariable = "activeIndex";
+                //toggleValues[i] = Tog.ToggleValue;
                 if (i==activeIndex && !Tog.TogState) 
                     Tog.SetState(true);
             }
@@ -179,6 +183,8 @@ public class UdonToggleGroup : UdonSharpBehaviour
         numToggles = 0;
         if ((toggles != null) &&  (toggles.Length > 0))
             numToggles = toggles.Length;
+        if (toggleValues == null || toggleValues.Length != numToggles)
+            toggleValues = new int[numToggles];
         ShowDebug = showDebug;
         OnEnable();
     }
@@ -190,7 +196,6 @@ public class UdonToggleGroup : UdonSharpBehaviour
         ReviewOwnerShip();
         if (iamOwner)
         {
-            valueChanged = true;
             ActiveValue = activeValue;
         }
     }
