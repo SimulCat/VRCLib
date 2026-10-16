@@ -122,65 +122,74 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 2214298585597898756}
   pageTitles:
-  - Quantum Scattering Without Interference
-  - "\u5E72\u6E09\u306E\u306A\u3044\u91CF\u5B50\u6563\u4E71"
-  - "\u7121\u5E79\u64FE\u91CF\u5B50\u6563\u5C04"
-  - "\u65E0\u5E72\u6270\u91CF\u5B50\u6563\u5C04"
-  - "\uAC04\uC12D \uC5C6\uB294 \uC591\uC790 \uC0B0\uB780"
-  - "Dispers\xE3o Qu\xE2ntica sem Interfer\xEAncia"
-  - "Diffusion quantique sans interf\xE9rence"
+  - 3D Quantum Scattering Without Interference
+  - "\u5E72\u6E09\u3092\u4F34\u308F\u306A\u30443\u6B21\u5143\u91CF\u5B50\u6563\u4E71"
+  - "\u7121\u5E72\u6D89\u4E09\u7DAD\u91CF\u5B50\u6563\u5C04"
+  - "\u65E0\u5E72\u6D89\u7684\u4E09\u7EF4\u91CF\u5B50\u6563\u5C04"
+  - "\uAC04\uC12D\uC774 \uC5C6\uB294 3\uCC28\uC6D0 \uC591\uC790 \uC0B0\uB780"
+  - "Espalhamento Qu\xE2ntico 3D sem Interfer\xEAncia"
+  - "Diffusion quantique en 3D sans interf\xE9rence"
   pageBodies:
-  - '
-
-    The simulations in this world demonstrate an intriguing quantum scattering
-    model that reproduces the diffraction patterns seen in the double slit experiment
-    without depending on wave propagation or direct interference.
-
-
-    The model
-    draws from Carolyne Van Vliet''s work, where she applies quantum physics to the
-    slit screen to quantise the momentum transferred between the screen and incoming
-    particles or photons.
-
-
-    When combined with ballistic diffusion, her model
-    provides an alternative to traditional models based on wave-particle duality
-    and interference effects. '
-  - "\u3053\u306E\u4E16\u754C\u306B\u304A\u3051\u308B\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u306F\u3001\u6CE2\u52D5\u4F1D\u64AD\u3084\u76F4\u63A5\u5E72\u6E09\u306B\u4F9D\u5B58\u305B\u305A\u306B\u3001\u4E8C\u91CD\u30B9\u30EA\u30C3\u30C8\u5B9F\u9A13\u3067\u898B\u3089\u308C\u308B\u56DE\u6298\u30D1\u30BF\u30FC\u30F3\u3092\u518D\u73FE\u3059\u308B\u8208\u5473\u6DF1\u3044\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u3092\u5B9F\u8A3C\u3057\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u3053\u306E\u30E2\u30C7\u30EB\u306F\u3001\u30AD\u30E3\u30ED\u30E9\u30A4\u30F3\u30FB\u30F4\u30A1\u30F3\u30FB\u30F4\u30EA\u30FC\u30C8\u306E\u7814\u7A76\u306B\u57FA\u3065\u3044\u3066\u3044\u307E\u3059\u3002\u5F7C\u5973\u306F\u91CF\u5B50\u7269\u7406\u5B66\u3092\u30B9\u30EA\u30C3\u30C8\u30B9\u30AF\u30EA\u30FC\u30F3\u306B\u9069\u7528\u3057\u3001\u30B9\u30AF\u30EA\u30FC\u30F3\u3068\u5165\u5C04\u3059\u308B\u7C92\u5B50\u307E\u305F\u306F\u5149\u5B50\u306E\u9593\u3067\u4F1D\u9054\u3055\u308C\u308B\u904B\u52D5\u91CF\u3092\u91CF\u5B50\u5316\u3057\u3066\u3044\u307E\u3059\u3002\r\n\r\n\u5F3E\u9053\u62E1\u6563\u3068\u7D44\u307F\u5408\u308F\u305B\u308B\u3053\u3068\u3067\u3001\u5F7C\u5973\u306E\u30E2\u30C7\u30EB\u306F\u6CE2\u52D5\u7C92\u5B50\u4E8C\u91CD\u6027\u3068\u5E72\u6E09\u52B9\u679C\u306B\u57FA\u3065\u304F\u5F93\u6765\u306E\u30E2\u30C7\u30EB\u306B\u4EE3\u308F\u308B\u9078\u629E\u80A2\u3068\u306A\u308A\u307E\u3059\u3002"
-  - "\u672C\u6A21\u64EC\u5C55\u793A\u4E86\u4E00\u7A2E\u5F15\u4EBA\u5165\u52DD\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8A72\u6A21\u578B\u7121\u9700\u4F9D\u8CF4\u6CE2\u7684\u50B3\u64AD\u6216\u76F4\u63A5\u5E72\u6D89\u5373\u53EF\u91CD\u73FE\u96D9\u7E2B\u5BE6\u9A57\u4E2D\u89C0\u5BDF\u5230\u7684\u884D\u5C04\u5716\u6A23\u3002\r\n\r\n\u8A72\u6A21\u578B\u501F\u9452\u4E86\u5361\u7F85\u7433\xB7\u7BC4\xB7\u5F17\u5229\u7279\uFF08Carolyne
-    Van Vliet\uFF09\u7684\u5DE5\u4F5C\uFF0C\u5979\u5C07\u91CF\u5B50\u7269\u7406\u5B78\u61C9\u7528\u65BC\u72F9\u7E2B\u5C4F\uFF0C\u4EE5\u91CF\u5316\u72F9\u7E2B\u5C4F\u8207\u5165\u5C04\u7C92\u5B50\u6216\u5149\u5B50\u4E4B\u9593\u50B3\u905E\u7684\u52D5\u91CF\u3002\r\n\r\n\u7D50\u5408\u5F48\u9053\u64F4\u6563\u7406\u8AD6\uFF0C\u5979\u7684\u6A21\u578B\u70BA\u57FA\u65BC\u6CE2\u7C92\u4E8C\u8C61\u6027\u548C\u4E7E\u6D89\u6548\u61C9\u7684\u50B3\u7D71\u6A21\u578B\u63D0\u4F9B\u4E86\u4E00\u500B\u66FF\u4EE3\u65B9\u6848\u3002"
-  - "\u672C\u6A21\u62DF\u5C55\u793A\u4E86\u4E00\u79CD\u5F15\u4EBA\u5165\u80DC\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u8BE5\u6A21\u578B\u65E0\u9700\u4F9D\u8D56\u6CE2\u7684\u4F20\u64AD\u6216\u76F4\u63A5\u5E72\u6D89\u5373\u53EF\u91CD\u73B0\u53CC\u7F1D\u5B9E\u9A8C\u4E2D\u89C2\u5BDF\u5230\u7684\u884D\u5C04\u56FE\u6837\u3002\r\n\r\n\u8BE5\u6A21\u578B\u501F\u9274\u4E86\u5361\u7F57\u7433\xB7\u8303\xB7\u5F17\u5229\u7279\uFF08Carolyne
-    Van Vliet\uFF09\u7684\u5DE5\u4F5C\uFF0C\u5979\u5C06\u91CF\u5B50\u7269\u7406\u5B66\u5E94\u7528\u4E8E\u72ED\u7F1D\u5C4F\uFF0C\u4EE5\u91CF\u5316\u72ED\u7F1D\u5C4F\u4E0E\u5165\u5C04\u7C92\u5B50\u6216\u5149\u5B50\u4E4B\u95F4\u4F20\u9012\u7684\u52A8\u91CF\u3002\r\n\r\n\u7ED3\u5408\u5F39\u9053\u6269\u6563\u7406\u8BBA\uFF0C\u5979\u7684\u6A21\u578B\u4E3A\u57FA\u4E8E\u6CE2\u7C92\u4E8C\u8C61\u6027\u548C\u5E72\u6D89\u6548\u5E94\u7684\u4F20\u7EDF\u6A21\u578B\u63D0\u4F9B\u4E86\u4E00\u79CD\u66FF\u4EE3\u65B9\u6848\u3002"
-  - "\uC774 \uC2DC\uBBAC\uB808\uC774\uC158\uC740 \uD30C\uB3D9 \uC804\uD30C\uB098
-    \uC9C1\uC811 \uAC04\uC12D\uC5D0 \uC758\uC874\uD558\uC9C0 \uC54A\uACE0 \uC774\uC911
-    \uC2AC\uB9BF \uC2E4\uD5D8\uC5D0\uC11C \uAD00\uCC30\uB418\uB294 \uD68C\uC808 \uD328\uD134\uC744
-    \uC7AC\uD604\uD558\uB294 \uD765\uBBF8\uB85C\uC6B4 \uC591\uC790 \uC0B0\uB780 \uBAA8\uB378\uC744
-    \uC81C\uC2DC\uD569\uB2C8\uB2E4.\r\n\r\n\uC774 \uBAA8\uB378\uC740 \uCE90\uB864\uB9B0
-    \uBC18 \uBE14\uB9AC\uD2B8(Carolyne Van Vliet)\uC758 \uC5F0\uAD6C\uC5D0\uC11C
-    \uBE44\uB86F\uB418\uC5C8\uB294\uB370, \uADF8\uB140\uB294 \uC591\uC790 \uBB3C\uB9AC\uD559\uC744
-    \uC2AC\uB9BF \uC2A4\uD06C\uB9B0\uC5D0 \uC801\uC6A9\uD558\uC5EC \uC2A4\uD06C\uB9B0\uACFC
-    \uC785\uC0AC \uC785\uC790 \uB610\uB294 \uAD11\uC790 \uC0AC\uC774\uC5D0\uC11C
-    \uC804\uB2EC\uB418\uB294 \uC6B4\uB3D9\uB7C9\uC744 \uC591\uC790\uD654\uD588\uC2B5\uB2C8\uB2E4.\r\n\r\n\uD0C4\uB3C4
-    \uD655\uC0B0\uACFC \uACB0\uD569\uB41C \uC774 \uBAA8\uB378\uC740 \uD30C\uB3D9-\uC785\uC790
-    \uC774\uC911\uC131\uACFC \uAC04\uC12D \uD6A8\uACFC\uC5D0 \uAE30\uBC18\uD55C \uAE30\uC874
-    \uBAA8\uB378\uC5D0 \uB300\uD55C \uB300\uC548\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
-  - "As simula\xE7\xF5es neste mundo demonstram um modelo de espalhamento qu\xE2ntico
-    intrigante que reproduz os padr\xF5es de difra\xE7\xE3o observados no experimento
-    da dupla fenda sem depender da propaga\xE7\xE3o de ondas ou da interfer\xEAncia
-    direta.\r\n\r\nO modelo se baseia no trabalho de Carolyne Van Vliet, onde ela
-    aplica a f\xEDsica qu\xE2ntica \xE0 tela da fenda para quantizar o momento transferido
-    entre a tela e as part\xEDculas ou f\xF3tons incidentes.\r\n\r\nQuando combinado
-    com a difus\xE3o bal\xEDstica, seu modelo oferece uma alternativa aos modelos
-    tradicionais baseados na dualidade onda-part\xEDcula e nos efeitos de interfer\xEAncia."
-  - "Les simulations pr\xE9sent\xE9es ici d\xE9montrent un mod\xE8le de diffusion
-    quantique fascinant qui reproduit les figures de diffraction observ\xE9es lors
-    de l'exp\xE9rience des fentes de Young sans faire appel \xE0 la propagation des
-    ondes ni \xE0 l'interf\xE9rence directe.\r\n\r\nCe mod\xE8le s'inspire des travaux
-    de Carolyne Van Vliet, qui applique la physique quantique \xE0 l'\xE9cran \xE0
-    fentes pour quantifier l'impulsion transf\xE9r\xE9e entre l'\xE9cran et les particules
-    ou photons incidents.\r\n\r\nCombin\xE9 \xE0 la diffusion balistique, son mod\xE8le
-    offre une alternative aux mod\xE8les traditionnels fond\xE9s sur la dualit\xE9
-    onde-corpuscule et les effets d'interf\xE9rence."
+  - "This simulation offers 3D models of three real-life quantum experiments, scaled
+    up by 1000 times, so 1 metre in the simulation corresponds to 1 millimetre in
+    the actual experiment.\r\n\r\nTo produce visible scattering patterns at much
+    shorter distances than in real-life experiments, the Bach, Pope, and Zeilinger
+    simulations are configured to run with an increased Planck's constant, thereby
+    magnifying the quantum scattering patterns.\r\n\r\n<indent=4%>\u29BF Example
+    of low-voltage (16-80 V) electrons.\r\n\r\n\u29BF Bach, Pope et al. electron
+    diffraction (2012). \r\n\r\n\u29BF Zeilinger et al. cold neutron diffraction
+    (1988)."
+  - "\u3053\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u3067\u306F\u3001\u5B9F\u969B\u306E\u91CF\u5B50\u5B9F\u9A13\u30921000\u500D\u306B\u62E1\u5927\u3057\u305F3D\u30E2\u30C7\u30EB\u304C\u63D0\u4F9B\u3055\u308C\u3066\u3044\u307E\u3059\u3002\u3064\u307E\u308A\u3001\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u4E0A\u306E1\u30E1\u30FC\u30C8\u30EB\u306F\u3001\u5B9F\u969B\u306E\u5B9F\u9A13\u306B\u304A\u3051\u308B1\u30DF\u30EA\u30E1\u30FC\u30C8\u30EB\u306B\u76F8\u5F53\u3057\u307E\u3059\u3002\r\n\r\n\u5B9F\u969B\u306E\u5B9F\u9A13\u3088\u308A\u3082\u306F\u308B\u304B\u306B\u77ED\u3044\u8DDD\u96E2\u3067\u76EE\u8996\u53EF\u80FD\u306A\u6563\u4E71\u30D1\u30BF\u30FC\u30F3\u3092\u751F\u6210\u3059\u308B\u305F\u3081\u3001Bach\u3001Pope\u3001Zeilinger\u3089\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u3067\u306F\u3001\u30D7\u30E9\u30F3\u30AF\u5B9A\u6570\u3092\u5927\u304D\u304F\u8A2D\u5B9A\u3059\u308B\u3053\u3068\u3067\u3001\u91CF\u5B50\u6563\u4E71\u30D1\u30BF\u30FC\u30F3\u3092\u62E1\u5927\u3057\u3066\u8868\u793A\u3059\u308B\u3088\u3046\u306B\u69CB\u6210\u3055\u308C\u3066\u3044\u307E\u3059\u3002\r\n\r\n<indent=4%>\u29BF
+    \u4F4E\u96FB\u5727\uFF0816\uFF5E80 V\uFF09\u96FB\u5B50\u306E\u4F8B\u3002\r\n\r\n\u29BF
+    Bach\u3001Pope\u3089\u306B\u3088\u308B\u96FB\u5B50\u56DE\u6298\uFF082012\u5E74\uFF09\u3002\r\n\r\n\u29BF
+    Zeilinger\u3089\u306B\u3088\u308B\u51B7\u4E2D\u6027\u5B50\u56DE\u6298\uFF081988\u5E74\uFF09\u3002"
+  - "\u8A72\u6A21\u64EC\u63D0\u4F9B\u4E86\u4E09\u500B\u771F\u5BE6\u91CF\u5B50\u5BE6\u9A57\u7684\u4E09\u7DAD\u6A21\u578B\uFF0C\u4E26\u653E\u5927\u4E86
+    1000 \u500D\uFF0C\u56E0\u6B64\u6A21\u64EC\u4E2D\u7684 1 \u516C\u5C3A\u5C0D\u61C9\u65BC\u5BE6\u969B\u5BE6\u9A57\u4E2D\u7684
+    1 \u6BEB\u7C73\u3002\r\n\r\n\u70BA\u4E86\u5728\u6BD4\u771F\u5BE6\u5BE6\u9A57\u4E2D\u66F4\u77ED\u7684\u8DDD\u96E2\u4E0A\u7522\u751F\u53EF\u898B\u7684\u6563\u5C04\u5716\u6A23\uFF0CBach\u3001Pope
+    \u548C Zeilinger \u7684\u6A21\u64EC\u7A0B\u5E8F\u5747\u914D\u7F6E\u70BA\u4F7F\u7528\u66F4\u5927\u7684\u666E\u6717\u514B\u5E38\u6578\u904B\u884C\uFF0C\u5F9E\u800C\u653E\u5927\u91CF\u5B50\u6563\u5C04\u5716\u6A23\u3002\r\n\r\n\u29BF
+    \u4F4E\u96FB\u58D3 (16-80 V) \u96FB\u5B50\u7BC4\u4F8B\u3002\r\n\r\n\u29BF Bach\u3001Pope
+    \u7B49\u4EBA\uFF0C\u300A\u96FB\u5B50\u7E5E\u5C04\u300B(2012)\u3002\r\n\r\n\u29BF
+    Zeilinger \u7B49\u4EBA\uFF0C\u300A\u51B7\u4E2D\u5B50\u884D\u5C04\u300B(1988)\u3002"
+  - "\u8BE5\u6A21\u62DF\u5C55\u793A\u4E86\u4E09\u4E2A\u73B0\u5B9E\u91CF\u5B50\u5B9E\u9A8C\u7684
+    3D \u6A21\u578B\uFF0C\u8FD9\u4E9B\u6A21\u578B\u5747\u6309 1000 \u500D\u6BD4\u4F8B\u653E\u5927\uFF0C\u5373\u6A21\u62DF\u4E2D\u7684
+    1 \u7C73\u5BF9\u5E94\u5B9E\u9645\u5B9E\u9A8C\u4E2D\u7684 1 \u6BEB\u7C73\u3002\r\n\r\n\u4E3A\u4E86\u5728\u6BD4\u5B9E\u9645\u5B9E\u9A8C\u77ED\u5F97\u591A\u7684\u8DDD\u79BB\u4E0A\u4EA7\u751F\u53EF\u89C1\u7684\u6563\u5C04\u56FE\u6848\uFF0CBach\u3001Pope
+    \u548C Zeilinger \u7684\u6A21\u62DF\u8BBE\u5B9A\u91C7\u7528\u4E86\u589E\u5927\u7684\u666E\u6717\u514B\u5E38\u6570\uFF0C\u4ECE\u800C\u653E\u5927\u4E86\u91CF\u5B50\u6563\u5C04\u56FE\u6848\u3002\r\n\r\n<indent=4%>\u29BF
+    \u4F4E\u538B\uFF0816\u201380 V\uFF09\u7535\u5B50\u793A\u4F8B\u3002\r\n\r\n\u29BF
+    Bach\u3001Pope \u7B49\u4EBA\u7684\u7535\u5B50\u884D\u5C04\u5B9E\u9A8C\uFF082012
+    \u5E74\uFF09\u3002\r\n\r\n\u29BF Zeilinger \u7B49\u4EBA\u7684\u51B7\u4E2D\u5B50\u884D\u5C04\u5B9E\u9A8C\uFF081988
+    \u5E74\uFF09\u3002"
+  - "\uC774 \uC2DC\uBBAC\uB808\uC774\uC158\uC740 \uC2E4\uC81C \uC591\uC790 \uC2E4\uD5D8
+    3\uAC00\uC9C0\uB97C 1,000\uBC30\uB85C \uD655\uB300\uD55C 3D \uBAA8\uB378\uB85C
+    \uAD6C\uD604\uD55C \uAC83\uC73C\uB85C, \uC2DC\uBBAC\uB808\uC774\uC158\uC0C1\uC758
+    1\uBBF8\uD130\uB294 \uC2E4\uC81C \uC2E4\uD5D8\uC5D0\uC11C\uC758 1\uBC00\uB9AC\uBBF8\uD130\uC5D0
+    \uD574\uB2F9\uD569\uB2C8\uB2E4.\r\n\r\n\uC2E4\uC81C \uC2E4\uD5D8\uBCF4\uB2E4
+    \uD6E8\uC52C \uC9E7\uC740 \uAC70\uB9AC\uC5D0\uC11C\uB3C4 \uAC00\uC2DC\uC801\uC778
+    \uC0B0\uB780 \uD328\uD134\uC744 \uC5BB\uC744 \uC218 \uC788\uB3C4\uB85D, Bach,
+    Pope \uBC0F Zeilinger\uC758 \uC2DC\uBBAC\uB808\uC774\uC158\uC740 \uD50C\uB791\uD06C
+    \uC0C1\uC218\uB97C \uB192\uAC8C \uC124\uC815\uD558\uC5EC \uC591\uC790 \uC0B0\uB780
+    \uD328\uD134\uC744 \uD655\uB300\uD558\uB294 \uBC29\uC2DD\uC73C\uB85C \uAD6C\uC131\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\r\n\r\n<indent=4%>\u29BF
+    \uC800\uC804\uC555(16~80V) \uC804\uC790 \uC0AC\uB840.\r\n\r\n\u29BF Bach, Pope
+    \uB4F1\uC758 \uC804\uC790 \uD68C\uC808 \uC2E4\uD5D8(2012).\r\n\r\n\u29BF Zeilinger
+    \uB4F1\uC758 \uB0C9\uC911\uC131\uC790 \uD68C\uC808 \uC2E4\uD5D8(1988)."
+  - "Esta simula\xE7\xE3o apresenta modelos 3D de tr\xEAs experimentos qu\xE2nticos
+    reais, ampliados em 1.000 vezes; assim, 1 metro na simula\xE7\xE3o corresponde
+    a 1 mil\xEDmetro no experimento real.\r\n\r\nPara produzir padr\xF5es de espalhamento
+    vis\xEDveis a dist\xE2ncias muito menores do que nos experimentos reais, as simula\xE7\xF5es
+    de Bach, Pope e Zeilinger s\xE3o configuradas para operar com uma constante de
+    Planck aumentada, ampliando, dessa forma, os padr\xF5es de espalhamento qu\xE2ntico.\r\n\r\n<indent=4%>\u29BF
+    Exemplo de el\xE9trons de baixa tens\xE3o (16-80 V).\r\n\r\n\u29BF Difra\xE7\xE3o
+    de el\xE9trons de Bach, Pope et al. (2012).\r\n\r\n\u29BF Difra\xE7\xE3o de n\xEAutrons
+    frios de Zeilinger et al. (1988)."
+  - "Cette simulation propose des mod\xE8les 3D de trois exp\xE9riences quantiques
+    r\xE9elles, agrandis d'un facteur 1 000 ; ainsi, 1 m\xE8tre dans la simulation
+    correspond \xE0 1 millim\xE8tre dans l'exp\xE9rience r\xE9elle.\r\n\r\nPour produire
+    des figures de diffusion visibles \xE0 des distances bien plus courtes que dans
+    les exp\xE9riences r\xE9elles, les simulations de Bach, Pope et Zeilinger sont
+    configur\xE9es avec une constante de Planck augment\xE9e, ce qui amplifie les
+    figures de diffusion quantique.\r\n\r\n<indent=4%>\u29BF Exemple d'\xE9lectrons
+    \xE0 basse tension (16-80 V).\r\n\r\n\u29BF Exp\xE9rience de diffraction d'\xE9lectrons
+    de Bach, Pope et al. (2012).\r\n\r\n\u29BF Exp\xE9rience de diffraction de neutrons
+    froids de Zeilinger et al. (1988)."
   languageIndex: 0
 --- !u!114 &2214298585597898756
 MonoBehaviour:

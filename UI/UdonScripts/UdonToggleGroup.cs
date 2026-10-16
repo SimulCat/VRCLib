@@ -93,6 +93,8 @@ public class UdonToggleGroup : UdonSharpBehaviour
 
     private void refreshToggles(int toggleValue)
     {
+        if(showDebug)
+            Debug.Log($"{gameObject.name}->refreshToggles({toggleValue})");
         if (numToggles <= 0)
             return;
         UdonToggle tog;
@@ -158,6 +160,7 @@ public class UdonToggleGroup : UdonSharpBehaviour
         }
     }
 
+    private bool isEnabled = false;
     private void OnEnable()
     {
         numToggles = toggles != null && toggles.Length > 0 ? toggles.Length : 0;
@@ -174,6 +177,7 @@ public class UdonToggleGroup : UdonSharpBehaviour
                     Tog.SetState(true);
             }
         }
+        isEnabled = true;
     }
 #if UNITY_EDITOR
     private void OnValidate()

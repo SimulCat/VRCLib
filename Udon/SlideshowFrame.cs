@@ -205,7 +205,7 @@ public class SlideshowFrame : UdonSharpBehaviour
                     if (tok.TokenType == TokenType.String) 
                         _captions[i] = tok.String;
             }
-            if (captionCount > 0 && slideCount != captionCount)
+            if (captionCount > 0 && slideCount > captionCount)
             {
                 slideCount = captionCount;
             }
