@@ -67,10 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<align=center><b>Single Molecule Quantum Interference</b><br><br></align> 
-    When we scale the world up by 100x, the simulation shows how William Duane''s
-    model for quantum scattering can recreate observed patterns when molecules pass
-    through a 100nm grating.  '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
   m_sharedMaterial: {fileID: 4410821715232426517, guid: ddbcc27b0346e4644a45316aaf00c441,
@@ -110,7 +107,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -164,12 +161,14 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 9015544505056115341}
   myText: {fileID: 2601982787784720817}
   languageIndex: 0
+  pageNumber: 0
   texts:
-  - <align=center><b>Single Molecule Quantum Interference</b><br><br></align> By
-    scaling the world up by 100 times, the simulation illustrates how William Duane's
-    model for quantum interaction can be integrated with particle scattering to reproduce
-    the patterns observed when molecules experience quantum scattering while passing
-    through a 100nm grating.
+  - <align=center><b>Single Molecule Quantum Interference</b><br><br></align>This
+    simulation uses a quantum scattering model based on the work of Carolyne Van
+    Vliet to demonstrate a 2012 quantum experiment conducted by Markus Arndt's research
+    team at the University of Vienna.<br><br>The experiment shows real-time imaging
+    of individual molecules as they build up a quantum scattering pattern, one molecule
+    at a time.
   - "<align=center><b>\u5358\u4E00\u5206\u5B50\u306E\u91CF\u5B50\u5E72\u6E09</b><br><br></align>
     \u3053\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u3067\u306F\u3001\u4E16\u754C\u3092
     100 \u500D\u306B\u62E1\u5927\u3059\u308B\u3053\u3068\u3067\u3001\u30A6\u30A3\u30EA\u30A2\u30E0

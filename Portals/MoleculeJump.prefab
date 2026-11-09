@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 450}
+  m_SizeDelta: {x: 480, y: 475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4654220990510228632
 CanvasRenderer:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e0e82266d8f3e5d4bad3273d88747449, type: 2}
+  m_Material: {fileID: 2100000, guid: e63289acce8192f418271a318edafc31, type: 2}
   m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2
+  m_PixelsPerUnitMultiplier: 3
 --- !u!114 &8946073194995109524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +435,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
         type: 3}
+      propertyPath: texts.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "<align=center><b>\u5358\u4E00\u5206\u5B50\u306E\u91CF\u5B50\u5E72\u6E09</b><br><br></align>\u3053\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\u30B7\u30E7\u30F3\u306F\u3001\u30AD\u30E3\u30ED\u30EA\u30F3\u30FB\u30F4\u30A1\u30F3\u30FB\u30D5\u30EA\u30FC\u30C8\uFF08Carolyne
+        Van Vliet\uFF09\u306E\u7814\u7A76\u306B\u57FA\u3065\u304F\u91CF\u5B50\u6563\u4E71\u30E2\u30C7\u30EB\u3092\u7528\u3044\u3001\u30A6\u30A3\u30FC\u30F3\u5927\u5B66\u306E\u30DE\u30EB\u30AF\u30B9\u30FB\u30A2\u30EB\u30F3\u30C8\uFF08Markus
+        Arndt\uFF09\u7814\u7A76\u30C1\u30FC\u30E0\u304C2012\u5E74\u306B\u884C\u3063\u305F\u91CF\u5B50\u5B9F\u9A13\u3092\u518D\u73FE\u3057\u305F\u3082\u306E\u3067\u3059\u3002<br><br>\u3053\u306E\u5B9F\u9A13\u3067\u306F\u3001\u500B\u3005\u306E\u5206\u5B50\u304C\u4E00\u3064\u305A\u3064\u91CF\u5B50\u6563\u4E71\u30D1\u30BF\u30FC\u30F3\u3092\u5F62\u6210\u3057\u3066\u3044\u304F\u69D8\u5B50\u3092\u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u3067\u53EF\u8996\u5316\u3057\u3066\u3044\u307E\u3059\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "<align=center><b>\u55AE\u5206\u5B50\u91CF\u5B50\u4E7E\u6D89</b><br><br></align>\u6B64\u6A21\u64EC\u4F7F\u7528\u57FA\u65BC
+        Carolyne Van Vliet \u5DE5\u4F5C\u7684\u91CF\u5B50\u6563\u5C04\u6A21\u578B\uFF0C\u5C55\u793A\u4E86\u7DAD\u4E5F\u7D0D\u5927\u5B78
+        Markus Arndt \u7814\u7A76\u5718\u968A\u65BC 2012 \u5E74\u9032\u884C\u7684\u4E00\u9805\u91CF\u5B50\u5BE6\u9A57\u3002
+        <br><br>\u5BE6\u9A57\u5C55\u793A\u4E86\u55AE\u4E00\u5206\u5B50\u9010\u4E00\u5EFA\u69CB\u91CF\u5B50\u6563\u5C04\u5716\u6848\u7684\u5373\u6642\u6210\u50CF\u904E\u7A0B\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "<align=center><b>\u5355\u5206\u5B50\u91CF\u5B50\u5E72\u6D89</b><br><br></align>\u672C\u6A21\u62DF\u57FA\u4E8E
+        Carolyne Van Vliet \u7684\u7814\u7A76\u6210\u679C\uFF0C\u91C7\u7528\u91CF\u5B50\u6563\u5C04\u6A21\u578B\u6765\u6F14\u793A\u7EF4\u4E5F\u7EB3\u5927\u5B66
+        Markus Arndt \u7814\u7A76\u56E2\u961F\u4E8E 2012 \u5E74\u5F00\u5C55\u7684\u4E00\u9879\u91CF\u5B50\u5B9E\u9A8C\u3002<br><br>\u8BE5\u5B9E\u9A8C\u5C55\u793A\u4E86\u5355\u4E2A\u5206\u5B50\u9010\u4E00\u7D2F\u79EF\u5F62\u6210\u91CF\u5B50\u6563\u5C04\u56FE\u6848\u65F6\u7684\u5B9E\u65F6\u6210\u50CF\u8FC7\u7A0B\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "<align=center><b>\uB2E8\uC77C \uBD84\uC790 \uC591\uC790 \uAC04\uC12D</b><br><br></align>\uC774
+        \uC2DC\uBBAC\uB808\uC774\uC158\uC740 \uCE90\uB864\uB77C\uC778 \uBC18 \uBE14\uB9AC\uD2B8(Carolyne
+        Van Vliet)\uC758 \uC5F0\uAD6C\uC5D0 \uAE30\uBC18\uD55C \uC591\uC790 \uC0B0\uB780
+        \uBAA8\uB378\uC744 \uC0AC\uC6A9\uD558\uC5EC, \uBE48 \uB300\uD559\uAD50(University
+        of Vienna)\uC758 \uB9C8\uB974\uCFE0\uC2A4 \uC544\uB978\uD2B8(Markus Arndt)
+        \uC5F0\uAD6C\uD300\uC774 2012\uB144\uC5D0 \uC218\uD589\uD55C \uC591\uC790
+        \uC2E4\uD5D8\uC744 \uC7AC\uD604\uD569\uB2C8\uB2E4.<br><br>\uC774 \uC2E4\uD5D8\uC740
+        \uAC1C\uBCC4 \uBD84\uC790\uB4E4\uC774 \uD558\uB098\uC529 \uC591\uC790 \uC0B0\uB780
+        \uD328\uD134\uC744 \uD615\uC131\uD574 \uB098\uAC00\uB294 \uACFC\uC815\uC744
+        \uC2E4\uC2DC\uAC04 \uC601\uC0C1\uC73C\uB85C \uBCF4\uC5EC\uC90D\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "<align=center><b>Interfer\xEAncia Qu\xE2ntica de Mol\xE9cula \xDAnica</b><br><br></align>Esta
+        simula\xE7\xE3o utiliza um modelo de espalhamento qu\xE2ntico baseado no
+        trabalho de Carolyne Van Vliet para demonstrar um experimento qu\xE2ntico
+        realizado em 2012 pela equipe de pesquisa de Markus Arndt, na Universidade
+        de Viena.<br><br>O experimento apresenta a visualiza\xE7\xE3o em tempo real
+        de mol\xE9culas individuais \xE0 medida que elas formam um padr\xE3o de espalhamento
+        qu\xE2ntico, uma mol\xE9cula de cada vez."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "<align=center><b>Interf\xE9rence quantique de mol\xE9cules individuelles</b><br><br></align>Cette
+        simulation utilise un mod\xE8le de diffusion quantique fond\xE9 sur les travaux
+        de Carolyne Van Vliet pour illustrer une exp\xE9rience quantique r\xE9alis\xE9e
+        en 2012 par l'\xE9quipe de recherche de Markus Arndt, \xE0 l'Universit\xE9
+        de Vienne.<br><br>L'exp\xE9rience permet d'observer en temps r\xE9el des
+        mol\xE9cules individuelles formant une figure de diffusion quantique, mol\xE9cule
+        par mol\xE9cule."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5970736099573708584, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
@@ -539,6 +602,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9015544505056115341, guid: 6b61906ff6fc9ff48b7adf7c68bc99f8,
+        type: 3}
+      propertyPath: serializedProgramAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 950399a6036d27343ad484dfae361065,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

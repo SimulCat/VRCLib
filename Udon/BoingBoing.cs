@@ -8,14 +8,13 @@ using VRC.Udon.Common;
 public class BoingBoing : UdonSharpBehaviour
 {
     [SerializeField, Range(1, 12)]
-    int maxJumps = 5;
+    int maxJumps = 9;
     [SerializeField, Range(1f, 10f)]
     float midAirJumpVelocity = 5f;
-    [SerializeField]
+    //[SerializeField]
     private int _jumpCount = 0;
-    [SerializeField]
-    bool showDebug = false;
-    bool iAmOwner = false;
+    //[SerializeField]
+    //bool showDebug = false;
     private VRCPlayerApi _localPlayer;
 
     public override void InputJump(bool value, UdonInputEventArgs args)

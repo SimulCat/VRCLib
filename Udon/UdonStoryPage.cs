@@ -10,26 +10,6 @@ public class UdonStoryPage : UdonSharpBehaviour
     [SerializeField,FieldChangeCallback(nameof(IsActive))]
     private bool isActive = false;
 
-    [SerializeField, FieldChangeCallback(nameof(LanguageIndex))]
-    private int languageIndex  = 0;
-    private int LanguageIndex
-    {
-        get => languageIndex;
-        set
-        {
-            languageIndex = value;
-            if (texts != null)
-            {
-                for (int i = 0; i < texts.Length; i++)
-                {
-                    if (texts[i] != null)
-                    {
-                        texts[i].LanguageIndex = languageIndex;
-                    }
-                }
-            }
-        }
-    }
     [SerializeField, FieldChangeCallback(nameof(PageNumber))]
     private int pageNumber = -1;
     public int PageNumber
@@ -66,6 +46,20 @@ public class UdonStoryPage : UdonSharpBehaviour
         {
             bool wasActive = isActive;
             isActive = value;
+            if (wasActive && !isActive)
+            {
+                for (int i = 0; i < texts.Length; i++)
+                {
+                    if (texts[i] != null)
+                    {
+                        int textPage = texts[i].PageNumber;
+                        if (textPage == pageNumber)
+                        {
+                            texts[i].gameObject.SetActive(false);
+                        }
+                    }
+                }
+            }
             if (isActive)
             {
                 for (int i=0; i < texts.Length; i++)
@@ -135,6 +129,7 @@ public class UdonStoryPage : UdonSharpBehaviour
         if (pageGameObject != null)
         {
             LocalizedText[] pageTexts = pageGameObject.GetComponentsInChildren<LocalizedText>(true);
+            Debug.Log($"{gameObject.name}Page {pageNumber} has {pageTexts.Length} LocalizedText components");
             if (pageTexts != null && pageTexts.Length > 0)
             {
                 if (texts == null || texts.Length != pageTexts.Length)

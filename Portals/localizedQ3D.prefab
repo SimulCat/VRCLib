@@ -69,16 +69,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<align=center><b>Quantum Simulation 3D</b></align>
 
-    <br>A portal
-    to a simulation of scaled-up versions of real-world electron and neutron scattering
+    <br>A portal to
+    a simulation of scaled-up versions of real-world electron and neutron scattering
     experiments, where you can watch particles build up quantum fringe patterns,
     one at a time.
 
-    
 
-    The simulation illustrates how Carolyne Van Vliet''s
-    quantum scattering model effectively works. She initially derived William Duane''s
-    1923 quantum rule for crystals from modern quantum theory in 1967 and subsequently
+
+    The simulation illustrates how Carolyne Van Vliet''s quantum
+    scattering model effectively works. She initially derived William Duane''s 1923
+    quantum rule for crystals from modern quantum theory in 1967 and subsequently
     expanded her derivation in 2010 to include the single- and double-slit experiments. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddbcc27b0346e4644a45316aaf00c441, type: 2}
@@ -181,7 +181,7 @@ MonoBehaviour:
     of scaled-up versions of real-world electron and neutron scattering experiments,
     where you can watch particles build up quantum fringe patterns, one at a time.
 
-    
+
 
     The
     simulation illustrates how Carolyne Van Vliet''s quantum scattering model effectively

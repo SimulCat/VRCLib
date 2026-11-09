@@ -57,6 +57,7 @@ public class SyncedTween : UdonSharpBehaviour
         get => syncedState;
         set
         {
+            Debug.Log($"SyncedState set to {value} from {syncedState}");
             isPlaying |=  value != prevState;
             syncedState = value;
             prevState = value;
@@ -100,6 +101,12 @@ public class SyncedTween : UdonSharpBehaviour
                 Networking.SetOwner(localPlayer, gameObject);
             SyncedState = togVal;
         }
+    }
+
+    public void onPointer()
+    {
+        if (!locallyOwned)
+            Networking.SetOwner(localPlayer, gameObject);
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)

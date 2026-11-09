@@ -90,11 +90,16 @@ public class SyncedToggle : UdonSharpBehaviour
     {
         syncedState = state;
         reportedState = state;
-        if (isEnabled && toggle != null)
+        if (toggle != null)
         {
             if (toggle.isOn != state)
                 toggle.SetIsOnWithoutNotify(state);
         }
+    }
+    public void onPointer()
+    {
+        if (!locallyOwned)
+            Networking.SetOwner(player, gameObject);
     }
     public void onToggle()
     {

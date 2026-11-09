@@ -161,6 +161,7 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 6796803534721907264}
   myText: {fileID: 5666750341327064147}
   languageIndex: 0
+  pageNumber: -1
   texts: []
 --- !u!114 &6796803534721907264
 MonoBehaviour:
@@ -178,6 +179,7 @@ MonoBehaviour:
   interactText: Use
   interactTextGO: {fileID: 0}
   proximity: 2
+  OutlineRenderers: []
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0

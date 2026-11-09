@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 450}
+  m_SizeDelta: {x: 480, y: 475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &132513319126003461
 CanvasRenderer:
@@ -369,6 +369,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3477198553881469046, guid: a32e814df3ade4a4da7a246921a9b7dc,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 5165143751577077480, guid: a32e814df3ade4a4da7a246921a9b7dc,
         type: 3}
       propertyPath: m_Pivot.x
@@ -473,7 +478,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedProgramAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 1c1dabace3c87094296b96c691bf1f39,
+      objectReference: {fileID: 11400000, guid: 950399a6036d27343ad484dfae361065,
         type: 2}
     - target: {fileID: 6590067031822985451, guid: a32e814df3ade4a4da7a246921a9b7dc,
         type: 3}

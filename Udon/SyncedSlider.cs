@@ -52,7 +52,17 @@ public class SyncedSlider : UdonSharpBehaviour
     private bool locallyOwned = false;
     private bool started = false;
 
-
+    [SerializeField]
+    private float valueOffset = 0f;
+    public float ValueOffset
+    {
+        get => valueOffset;
+        set
+        {
+            valueOffset = value;
+            UpdateLabel();
+        }
+    }
     public override void OnOwnershipTransferred(VRCPlayerApi player)
     {
         locallyOwned = Networking.IsOwner(this.gameObject);
@@ -184,11 +194,11 @@ public class SyncedSlider : UdonSharpBehaviour
             return;
         if (!hideLabel)
         {
-            float displayValue = syncedValue * displayScale;
+            float displayValue = (valueOffset + syncedValue) * displayScale;
             if (displayInteger)
                 displayValue = Mathf.RoundToInt(displayValue);
             if (unitsInteger || displayInteger)
-                sliderLabel.text = string.Format("{0}{1}", (int)displayValue, sliderUnit);
+                sliderLabel.text = string.Format("{0}{1}", (int)(displayValue), sliderUnit);
             else
                 sliderLabel.text = string.Format("{0:0.0}{1}", displayValue, sliderUnit);
         }
@@ -294,6 +304,23 @@ public class SyncedSlider : UdonSharpBehaviour
         else
             ReportedValue = targetValue;
     }
+
+    private bool isEnabled = false;
+    private void OnEnable()
+    {
+        if (isEnabled)
+            return;
+        isEnabled = true;
+        if (sliderLabel == null)
+            hideLabel = true;
+        if (slider != null)
+        {
+            slider.minValue = minValue;
+            slider.maxValue = maxValue;
+        }
+        iHaveClientVar = (SliderClient != null) && (!string.IsNullOrEmpty(clientVariableName));
+        iHaveClientPtr = (SliderClient != null) && (!string.IsNullOrEmpty(clientPointerState));
+    }
     public void Start()
     {
         player = Networking.LocalPlayer;
@@ -301,8 +328,6 @@ public class SyncedSlider : UdonSharpBehaviour
         
         iHaveClientVar = (SliderClient != null) && (!string.IsNullOrEmpty(clientVariableName));
         iHaveClientPtr = (SliderClient != null) && (!string.IsNullOrEmpty(clientPointerState));
-        if (sliderLabel == null)
-            hideLabel = true;
         if (slider != null)
         {
             slider.minValue = minValue;
