@@ -27,8 +27,10 @@ public class SyncedTween : UdonSharpBehaviour
     private bool syncedState = false;
     private bool isPlaying = false;
     [SerializeField]
+    private bool debug = false;
     bool locallyOwned = true;
     private VRCPlayerApi localPlayer;
+
 
     private bool prevState;
 
@@ -57,7 +59,8 @@ public class SyncedTween : UdonSharpBehaviour
         get => syncedState;
         set
         {
-            Debug.Log($"SyncedState set to {value} from {syncedState}");
+            if (debug)
+                Debug.Log($"{gameObject.name} SyncedState set to {value} from {syncedState}");
             isPlaying |=  value != prevState;
             syncedState = value;
             prevState = value;
@@ -115,6 +118,19 @@ public class SyncedTween : UdonSharpBehaviour
         locallyOwned = player.isLocal;
     }
 
+    private void OnEnable()
+    {
+        if (stateToggle == null)
+            stateToggle = GetComponent<Toggle>();
+        if (string.IsNullOrEmpty(linkedVariableName))
+            linkedVariableName = gameObject.name;
+        localPlayer = Networking.LocalPlayer;
+        locallyOwned = Networking.IsOwner(gameObject);
+        UpdateToggle();
+        animationTime = syncedState ? 1f : 0f;
+        isPlaying = true;
+    }
+
     private void Update()
     {
         if (!isPlaying)
@@ -126,16 +142,8 @@ public class SyncedTween : UdonSharpBehaviour
 
     private void Start()
     {
-        if (stateToggle == null)
-            stateToggle = GetComponent<Toggle>();
-        if (string.IsNullOrEmpty(linkedVariableName))
-            linkedVariableName = gameObject.name;
         localPlayer = Networking.LocalPlayer;
         locallyOwned = Networking.IsOwner(gameObject);
-        if (stateToggle != null)
-            SyncedState = stateToggle.isOn;
-        else
-            SyncedState = syncedState;
         animationTime = syncedState ? 1f : 0f;
     }
 }

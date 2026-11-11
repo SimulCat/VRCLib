@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json.Linq;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -9,7 +10,8 @@ public class UdonStoryPage : UdonSharpBehaviour
 {
     [SerializeField,FieldChangeCallback(nameof(IsActive))]
     private bool isActive = false;
-
+    [SerializeField, Tooltip("Debugging")]
+    private bool debug = false;
     [SerializeField, FieldChangeCallback(nameof(PageNumber))]
     private int pageNumber = -1;
     public int PageNumber
@@ -38,12 +40,13 @@ public class UdonStoryPage : UdonSharpBehaviour
     private int[] demoStateVarTypes;
     [SerializeField, Tooltip("State Variable Value")]
     private float[] demoStateValues;
-
     public bool IsActive
     {
         get => isActive;
         set 
         {
+            if (debug)
+               Debug.Log($"{gameObject.name} Page {pageNumber} IsActive set to {value}");
             bool wasActive = isActive;
             isActive = value;
             if (wasActive && !isActive)
@@ -129,7 +132,8 @@ public class UdonStoryPage : UdonSharpBehaviour
         if (pageGameObject != null)
         {
             LocalizedText[] pageTexts = pageGameObject.GetComponentsInChildren<LocalizedText>(true);
-            Debug.Log($"{gameObject.name}Page {pageNumber} has {pageTexts.Length} LocalizedText components");
+            if (debug) 
+                Debug.Log($"{gameObject.name}Page {pageNumber} has {pageTexts.Length} LocalizedText components");
             if (pageTexts != null && pageTexts.Length > 0)
             {
                 if (texts == null || texts.Length != pageTexts.Length)
@@ -141,6 +145,12 @@ public class UdonStoryPage : UdonSharpBehaviour
         }
     }
 #endif
+    private void OnEnable()
+    {
+        if (debug)
+            Debug.Log($"{gameObject.name} Enabled with IsActive set to {isActive}");
+        IsActive = isActive;
+    }
 
     public void Start()
     {

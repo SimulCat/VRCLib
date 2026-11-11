@@ -47,9 +47,9 @@ public class UdonStoryBoard : UdonSharpBehaviour
             }
             if (currentPage != null)
             {
-                currentPage.IsActive = true;
-                if (newGO != null)
+                if (newGO != null && !newGO.activeSelf)
                     newGO.SetActive(true);
+                currentPage.IsActive = true;
             }
         }
         pageIndex= newPage;
