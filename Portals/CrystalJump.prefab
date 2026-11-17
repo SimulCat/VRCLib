@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e63289acce8192f418271a318edafc31, type: 2}
+  m_Material: {fileID: 2100000, guid: bf00bb6a47714d6479979748b60a4a4e, type: 2}
   m_Color: {r: 0.047058824, g: 0.08235294, b: 0.16862746, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117030155612077635}
   - component: {fileID: 5005945279142463107}
+  - component: {fileID: 7049541843592402128}
   m_Layer: 0
   m_Name: CrystalPortal
   m_TagString: Untagged
@@ -132,6 +133,27 @@ MonoBehaviour:
   effectPrefabName: 
   roomName: 
   updateFlag: 0
+--- !u!65 &7049541843592402128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606363513243621310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4129686313598961383
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,10 +656,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2246164755134917143, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246164755134917143, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
       propertyPath: serializedProgramAsset
       value: 
       objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
         type: 2}
+    - target: {fileID: 2555632328048375217, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2555632328048375217, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializedProgramAsset
@@ -658,16 +690,31 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3122605748436508016, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122605748436508016, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
       propertyPath: serializedProgramAsset
       value: 
       objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
         type: 2}
     - target: {fileID: 4114288724612559855, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114288724612559855, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
       propertyPath: serializedProgramAsset
       value: 
       objectReference: {fileID: 11400000, guid: 6be90721f39b2b6469628adef2b66046,
         type: 2}
+    - target: {fileID: 4145631646986113456, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4145631646986113456, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializedProgramAsset
@@ -773,6 +820,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -809,12 +871,12 @@ PrefabInstance:
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.515
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 6538450926626013178, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
@@ -837,6 +899,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4aa18cb4f02dd6d4c9112c6995890546,
         type: 2}
+    - target: {fileID: 6950424160052570269, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6950424160052570269, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializedProgramAsset
@@ -890,6 +957,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9064946300988437969, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
+    - target: {fileID: 9142714734691521658, guid: f3e49b37979ed234f9aacfef1d6422c0,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9142714734691521658, guid: f3e49b37979ed234f9aacfef1d6422c0,
         type: 3}
       propertyPath: serializedProgramAsset

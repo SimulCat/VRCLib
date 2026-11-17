@@ -22,6 +22,24 @@ public class LocalizedText : UdonSharpBehaviour
             pageNumber = value;
         }
     }
+    [SerializeField, FieldChangeCallback(nameof(IsActive))]
+    private bool isActive = true;
+    public bool IsActive
+    {
+        get => isActive;
+        set
+        {
+            isActive = value;
+            if (isActive)
+            {
+                currentIndex = -1;
+                LanguageIndex = languageIndex;
+            }
+        }
+    }
+
+    [SerializeField]
+    private bool debug = false;
     [SerializeField,Multiline] string[] texts;
     private int currentIndex = -1;
     public int LanguageIndex
@@ -30,7 +48,7 @@ public class LocalizedText : UdonSharpBehaviour
         set
         {
             languageIndex = Mathf.Max(value, 0);
-            if (!isEnabled ||  myText == null || texts==null)
+            if (!isActive || myText == null || texts==null)
                 return;
             if (currentIndex != languageIndex)
             {
@@ -44,8 +62,7 @@ public class LocalizedText : UdonSharpBehaviour
             }
         } 
     }
-    private bool isEnabled = false;
-
+    
     private void checkForText()
     {
         if (myText != null)
@@ -63,16 +80,18 @@ public class LocalizedText : UdonSharpBehaviour
 
     private void OnEnable()
     {
-        isEnabled = true;
+        if (debug)
+            Debug.Log($"{gameObject.name}: OnEnable() called.");
+        if (!isActive)
+            return;
         currentIndex = -1;
         LanguageIndex = languageIndex;
-        if (myText == null)
-            Debug.LogWarning($"{gameObject.name}: OnEnable() No TextMeshProUGUI component found on this GameObject or its parent.");
     }
 
     private void OnDisable()
     {
-        isEnabled = false;
+        if (debug)
+            Debug.Log($"{gameObject.name}: OnDisable() called.");
     }
 #if UNITY_EDITOR
     private void OnValidate()
@@ -82,6 +101,8 @@ public class LocalizedText : UdonSharpBehaviour
 #endif
     void Start()
     {
+        if (debug)
+            Debug.Log($"{gameObject.name}: Start() called.");
         checkForText();
         if (texts == null || texts.Length <= 0)
         {

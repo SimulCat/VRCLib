@@ -46,7 +46,7 @@ public class UdonStoryPage : UdonSharpBehaviour
         set 
         {
             if (debug)
-               Debug.Log($"{gameObject.name} Page {pageNumber} IsActive set to {value}");
+               Debug.Log($"{gameObject.name} UdonStoryPage {pageNumber} IsActive set to {value}");
             bool wasActive = isActive;
             isActive = value;
             if (wasActive && !isActive)
@@ -58,6 +58,7 @@ public class UdonStoryPage : UdonSharpBehaviour
                         int textPage = texts[i].PageNumber;
                         if (textPage == pageNumber)
                         {
+                            texts[i].IsActive = false;
                             texts[i].gameObject.SetActive(false);
                         }
                     }
@@ -74,6 +75,7 @@ public class UdonStoryPage : UdonSharpBehaviour
                         bool isRequired = (pageNumber < 0) || (textPage < 0 || textPage == pageNumber);
                         if (pageActive != isRequired)
                         {
+                            texts[i].IsActive = isRequired;
                             texts[i].gameObject.SetActive(isRequired);
                         }
                     }
