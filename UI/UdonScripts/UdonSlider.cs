@@ -48,7 +48,7 @@ public class UdonSlider : UdonSharpBehaviour
     // UdonSync stuff
     private VRCPlayerApi player;
     private bool locallyOwned = false;
-    private bool started = false;
+    private bool isEnabled = false;
     const float thresholdScale = 0.002f;
     float smoothThreshold = 0.003f;
     public override void OnOwnershipTransferred(VRCPlayerApi player)
@@ -83,7 +83,7 @@ public class UdonSlider : UdonSharpBehaviour
     }
     public void SetValue(float value)
     {
-        if (!started)
+        if (!isEnabled)
         {
             syncedValue = value;
             reportedValue = value;
@@ -107,6 +107,8 @@ public class UdonSlider : UdonSharpBehaviour
     {
         minValue = min;
         maxValue = max;
+        if (!isEnabled)
+            return;
         updateThreshold();
         if (mySlider != null)
         {
@@ -218,9 +220,9 @@ public class UdonSlider : UdonSharpBehaviour
     }
     public void onValue()
     {
-        if (!locallyOwned && started)
+        if (!locallyOwned && isEnabled)
             Networking.SetOwner(player, gameObject);
-        if (started)
+        if (isEnabled)
         {
             SetSmoothingTarget(mySlider.value);
             RequestSerialization();
@@ -231,15 +233,15 @@ public class UdonSlider : UdonSharpBehaviour
         }
     }
 
-    public void ptrEnter()
+    public void onPointer()
     {
-        if (!locallyOwned && started)
+        if (!locallyOwned && isEnabled)
             Networking.SetOwner(player, gameObject);
     }
 
     public void ptrDn()
     {
-        if (!locallyOwned && started)
+        if (!locallyOwned && isEnabled)
             Networking.SetOwner(player, gameObject);
         if (pointerIsDown) 
             return;
@@ -290,6 +292,7 @@ public class UdonSlider : UdonSharpBehaviour
         mySlider.SetValueWithoutNotify(syncedValue);
         reportedValue = syncedValue;
         targetValue = syncedValue;
+        isEnabled = true;
     }
 
     public void Start()
@@ -298,6 +301,5 @@ public class UdonSlider : UdonSharpBehaviour
         UpdateLabel();
         updateThreshold();
         RequestSerialization();
-        started = true;
     }
 }
