@@ -15,6 +15,7 @@ public class SyncedIncDec : UdonSharpBehaviour
 
     [SerializeField] Button IncButton;
     [SerializeField] Button DecButton;
+    [SerializeField]string valuePrefix = "";
     [SerializeField] TextMeshProUGUI ValueText;
     [SerializeField] int value = 0;
     [SerializeField] int minValue = 0;
@@ -50,7 +51,7 @@ public class SyncedIncDec : UdonSharpBehaviour
                     Debug.Log($"{gameObject.name}:IncDec set to {newValue}");
             }
             if (ValueText != null)
-                ValueText.text = $"{newValue}";
+                ValueText.text = $"{valuePrefix}{newValue}";
             if (reportedValue != newValue)
             {
                 reportedValue = newValue;
@@ -113,10 +114,12 @@ public class SyncedIncDec : UdonSharpBehaviour
     }
     void OnEnable()
     {
+        if (valuePrefix == null)
+            valuePrefix = "";
     }
 
     void Start()
     {
-        ValueText.text = $"{value}";
+        ValueText.text = $"{valuePrefix}{value}";
     }
 }
